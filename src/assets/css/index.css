@@ -1,0 +1,146 @@
+/* * IMMOBILE CARD CSS */
+.immobile-card-container {
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 0.5rem;
+  border-radius: 12px;
+
+  padding: 1rem;
+  width: 12rem;
+  transition: padding 0.5s;
+}
+
+.immobile-card-container:hover {
+  padding: 0;
+}
+
+/* card immobile header */
+.img-immobile-container {
+  position: relative;
+  border-radius: 10px;
+  aspect-ratio: 1;
+
+  /* debug */
+  background-color: lightgray;
+}
+
+.immobile-img-heart {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+
+  color: gray;
+}
+
+/* card immobile body */
+.body-container {
+  padding: 0.5rem;
+}
+
+.body-container h2 {
+  font-size: 1.2rem;
+}
+
+.immobile-card-body-content span {
+  display: block;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 450px) {
+  .immobile-card-container {
+    width: 80%;
+  }
+}
+
+/* ? debug */
+.container-card-prova {
+  display: flex;
+  justify-content: center;
+}
+
+.header-space {
+  height: 125px;
+}
+
+nav .logo {
+  height: 35px;
+}
+
+nav .user-icon {
+  background-color: grey;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+nav .menu-icon {
+  scale: 1.1;
+}
+
+nav .nav-toggler {
+  border: 1px solid rgba(128, 128, 128, 0.556);
+  padding: 5px 15px;
+  border-radius: 30px;
+  background-color: rgba(243, 243, 243, 0.558);
+}
+
+nav .nav-toggler:hover {
+  box-shadow: 0px 2px 4px 0 #8f8f8f;
+}
+
+.user-icon i {
+  scale: 1;
+  margin-bottom: 2px;
+}
+
+.search-bar {
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-bar .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.search-bar .form-label {
+  margin-bottom: 5px;
+}
+
+.search-bar .form-control {
+  border: none;
+  box-shadow: none;
+}
+
+.search-bar .form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.search-bar .btn-search {
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.search-bar .btn-search:hover {
+  background-color: #d32f2f;
+}
+
+.debug {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  padding: 1.5rem;
+  border: 1px solid red;
+}
