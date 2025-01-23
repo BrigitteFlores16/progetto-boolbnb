@@ -1,33 +1,30 @@
 // COMPONENT EXPORT
 
-export default function ComfortsImmobile({ id, email, telefono, nome, cognome }) {
+export default function ComfortsImmobile({ id, tipologia, num_stanze, num_letti, num_bagni, mq }) {
+
+    let givenProps = true;
+
+    if (!id && !tipologia && !num_stanze && !num_letti && !num_bagni && !mq) {
+        givenProps = false;
+    }
+
     return <>
-        <div key={id} className='cardProprietario scheda'>
-
-            {/* NOME PROFILO */}
-            <div className='cardProprietario profilo'>
-                {/* ICONA LETTERA */}
-                <div className='cardProprietario profiloIcona'>
-                    <span className="cardProprietario circle">{nome.charAt(0).toUpperCase()}</span>
-                </div>
-                {/* NOME */}
-                <h3 className="cardProprietario profiloNome">{nome} {cognome}</h3>
-            </div>
-
-            {/* CONTATTI */}
-            <div className="cardProprietario recapiti">
-
-                <div className="cardProprietario recapitiDettagli">
-                    <p className="cardProprietario contatti"><i class="fa-solid fa-phone cardProprietario contattiInfo"></i> Chiama ora</p>
-                    <p className="cardProprietario contatti"><i class="fa-solid fa-envelope cardProprietario contattiInfo"></i> Scrivi a</p>
-                </div>
-
-                <div className="cardProprietario recapitiDettagli">
-                    <a className="cardProprietario contattiInfo" href={`tel:${telefono}`}>{telefono}</a>
-                    <a className="cardProprietario contattiInfo" href={`mailto:${email}`}>{email}</a>
+        {givenProps &&
+            <div key={id} className='cardComforts scheda'>
+                <h3 className="cardComforts titoloLista">Comforts</h3>
+                <div className="cardComforts listaComforts">
+                    {/* TIPOLOGIA */}
+                    {tipologia ? <p className="cardComforts comfort"><i class="fa-solid fa-house cardComforts icona"></i> {tipologia}</p> : ''}
+                    {/* STANZE */}
+                    {num_stanze ? <p className="cardComforts comfort"><i class="fa-solid fa-door-open cardComforts icona"></i> Stanze: {num_stanze}</p> : ''}
+                    {/* LETTI */}
+                    {num_letti ? <p className="cardComforts comfort"><i class="fa-solid fa-bed cardComforts icona"></i> Posti letto: {num_letti}</p> : ''}
+                    {/* BAGNI */}
+                    {num_bagni ? <p className="cardComforts comfort"><i class="fa-solid fa-shower cardComforts icona"></i> Bagni: {num_bagni}</p> : ''}
+                    {/* MQ */}
+                    {mq ? <p className="cardComforts comfort"><i class="fa-regular fa-square cardComforts icona"></i> Metri quadri: {mq}</p> : ''}
                 </div>
             </div>
-
-        </div>
+        }
     </>
 }

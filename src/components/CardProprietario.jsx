@@ -18,8 +18,8 @@ export default function CardProprietario({ id, email, telefono, nome, cognome })
             <div className="cardProprietario recapiti">
 
                 <div className="cardProprietario recapitiDettagli">
-                    <p className="cardProprietario contatti"><i class="fa-solid fa-phone cardProprietario contattiInfo"></i> Chiama ora</p>
-                    <p className="cardProprietario contatti"><i class="fa-solid fa-envelope cardProprietario contattiInfo"></i> Scrivi a</p>
+                    <p className="cardProprietario contatti"><i class="fa-solid fa-phone cardProprietario contattiInfo"></i> Chiama</p>
+                    <p className="cardProprietario contatti"><i class="fa-solid fa-envelope cardProprietario contattiInfo"></i> Scrivi</p>
                 </div>
 
                 <div className="cardProprietario recapitiDettagli">
