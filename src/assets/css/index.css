@@ -96,7 +96,7 @@ nav .nav-toggler:hover {
 }
 /*SEARCHBAR*/
 
-.container-searchbar{
+.container-searchbar {
   display: flex;
   justify-content: center;
 }
@@ -116,8 +116,6 @@ nav .nav-toggler:hover {
 .search-bar .form-group {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .search-bar .form-label {
@@ -145,16 +143,15 @@ nav .nav-toggler:hover {
   background-color: #d32f2f;
 }
 
-@media (max-width:768px){
-  .search-bar .form-group{
+@media (max-width: 768px) {
+  .search-bar .form-group {
     display: none;
   }
-  .search-bar .form-group:first-child{
-    display:block;
-    width:100%;
+  .search-bar .form-group:first-child {
+    display: block;
+    width: 100%;
   }
 }
-
 
 /******************************************
 # CARD PROPRIETARIO
@@ -164,10 +161,9 @@ nav .nav-toggler:hover {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  width: 30%;
   border-radius: 15px;
-  border: 3px solid #DD0E63;
-  gap: 1rem;
+  border: 3px solid #dd0e63;
+  gap: 0.5rem;
 
   /* RESET */
   box-sizing: border-box;
@@ -178,7 +174,7 @@ nav .nav-toggler:hover {
 
 .cardProprietario.profilo {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
@@ -189,7 +185,7 @@ nav .nav-toggler:hover {
   color: white;
   width: 35px;
   aspect-ratio: 1;
-  background-color: #DD0E63;
+  background-color: #dd0e63;
   border-radius: 100%;
 }
 
@@ -219,13 +215,11 @@ nav .nav-toggler:hover {
 }
 
 .cardProprietario.contattiInfo {
-  color: #DD0E63;
+  color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-
-
 
 /******************************************
 # CARD COMFORTS
@@ -251,7 +245,7 @@ nav .nav-toggler:hover {
 .cardComforts.listaComforts {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .cardComforts.comfort {
@@ -259,13 +253,11 @@ nav .nav-toggler:hover {
 }
 
 .cardComforts.icona {
-  color: #DD0E63;
+  color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-
-
 
 /******************************************
 # DEBUG
@@ -276,4 +268,16 @@ nav .nav-toggler:hover {
   color: white;
   padding: 1.5rem;
   border: 1px solid red;
+}
+
+/* DETTAGLIO IMMOBILE */
+
+.image-container {
+  max-height: 400px;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.image-container .img {
+  object-fit: cover;
 }
