@@ -15,8 +15,18 @@ export default function CardProprietario({ id, email, telefono, nome, cognome })
             </div>
 
             {/* CONTATTI */}
-            <p className="cardProprietario contatti">Telefono: <a className="cardProprietario contattiInfo" href={`tel:${telefono}`}>{telefono}</a></p>
-            <p className="cardProprietario contatti">Email: <a className="cardProprietario contattiInfo" href={`mailto:${email}`}>{email}</a></p>
+            <div className="cardProprietario recapiti">
+
+                <div className="cardProprietario recapitiDettagli">
+                    <p className="cardProprietario contatti"><i class="fa-solid fa-phone cardProprietario contattiInfo"></i> Chiama ora</p>
+                    <p className="cardProprietario contatti"><i class="fa-solid fa-envelope cardProprietario contattiInfo"></i> Scrivi a</p>
+                </div>
+
+                <div className="cardProprietario recapitiDettagli">
+                    <a className="cardProprietario contattiInfo" href={`tel:${telefono}`}>{telefono}</a>
+                    <a className="cardProprietario contattiInfo" href={`mailto:${email}`}>{email}</a>
+                </div>
+            </div>
 
         </div>
     </>
