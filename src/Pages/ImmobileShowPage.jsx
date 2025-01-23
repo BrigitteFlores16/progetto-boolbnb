@@ -8,40 +8,29 @@ export default function ImmobileShowPage() {
     <>
       <div className="container">
         <h1 className="h3 mb-3">Titolo Immobile</h1>
-        <div className="image-container d-lg-flex align-items-center gap-1 rounded-1">
-          <div className="bigger-image-container">
-            <img
-              className="image-fluid rounded-1"
-              src="https://placehold.co/600x400"
-              alt=""
-            />
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <div className="image-container d-flex justify-content-center">
+              <img
+                className="image-fluid h-100 w-100 rounded-1"
+                src="https://placehold.co/600x400"
+                alt=""
+              />
+            </div>
           </div>
-          <div className="stacked-image-container d-none d-lg-flex flex-column gap-1 rounded-1">
-            <img
-              className="image-fluid rounded-1"
-              src="https://placehold.co/300x200"
-              alt=""
-            />
-            <img
-              className="image-fluid rounded-1"
-              src="https://placehold.co/300x200"
-              alt=""
-            />
-          </div>
-          <div className="stacked-image-container d-none d-lg-flex flex-column gap-1 rounded-1">
-            <img
-              className="image-fluid rounded-1"
-              src="https://placehold.co/300x200"
-              alt=""
-            />
-            <img
-              className="image-fluid rounded-1"
-              src="https://placehold.co/300x200"
-              alt=""
+          <div className="col-12 col-md-6">
+            <ComfortsImmobile
+              id="1"
+              tipologia="Villetta"
+              num_stanze="5"
+              num_letti="5"
+              num_bagni="3"
+              mq="120"
             />
           </div>
         </div>
-        <h2 className="h4 mt-3">Città, Indirizzo</h2>
+
+        <h2 className="h5 mt-5">Città, Indirizzo</h2>
         <div className="row">
           <div className="col-12 col-md-8">
             <p>
@@ -68,14 +57,6 @@ export default function ImmobileShowPage() {
             />
           </div>
         </div>
-        <ComfortsImmobile
-          id="1"
-          tipologia="Villetta"
-          num_stanze="5"
-          num_letti="5"
-          num_bagni="3"
-          mq="120"
-        />
       </div>
     </>
   );
