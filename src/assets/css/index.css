@@ -150,7 +150,7 @@ nav .nav-toggler:hover {
   flex-direction: column;
   padding: 1.2rem;
   background-color: rgb(224, 224, 224);
-  width: 35%;
+  width: max-content;
   border-radius: 15px;
   gap: .5rem;
 
