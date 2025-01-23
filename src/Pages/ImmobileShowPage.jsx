@@ -18,7 +18,14 @@ export default function ImmobileShowPage() {
           cognome="Rosanio"
         />
 
-        <ComfortsImmobile />
+        <ComfortsImmobile
+          id='1'
+          tipologia='Villetta'
+          num_stanze='5'
+          num_letti='5'
+          num_bagni='3'
+          mq='120'
+        />
       </div>
     </>
   );
