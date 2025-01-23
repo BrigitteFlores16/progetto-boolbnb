@@ -3,7 +3,7 @@ import {faSearch} from "@fortawesome/free-solid-svg-icons"
 export default function SearchBar(){
     return(
 <div className="bg-light">
-<div className="container mt-5">
+<div className="container-searchbar mt-5">
   <div className="search-bar">
     <div className="form-group">
       <strong><label htmlFor="search" className="form-label text-muted small">Dove</label></strong>
