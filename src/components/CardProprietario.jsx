@@ -2,21 +2,21 @@
 
 export default function CardProprietario({ id, email, telefono, nome, cognome }) {
     return <>
-        <div key={id} className='debug'>
+        <div key={id} className='cardProprietario scheda'>
 
             {/* NOME PROFILO */}
-            <div className='debug'>
+            <div className='cardProprietario profilo'>
                 {/* ICONA LETTERA */}
-                <div className='debug'>
-                    icona lettera {nome.charAt(0).toUpperCase()}
+                <div className='cardProprietario profiloIcona'>
+                    <span className="cardProprietario circle">{nome.charAt(0).toUpperCase()}</span>
                 </div>
                 {/* NOME */}
-                <h3 className="debug">{nome} {cognome}</h3>
+                <h3 className="cardProprietario profiloNome">{nome} {cognome}</h3>
             </div>
 
             {/* CONTATTI */}
-            <p className="debug">Telefono: <span className="debug">{telefono}</span></p>
-            <p className="debug">Email: <span className="debug">{email}</span></p>
+            <p className="cardProprietario contatti">Telefono: <span className="cardProprietario contattiInfo">{telefono}</span></p>
+            <p className="cardProprietario contatti">Email: <span className="cardProprietario contattiInfo">{email}</span></p>
 
         </div>
     </>
