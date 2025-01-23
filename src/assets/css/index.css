@@ -153,9 +153,9 @@ nav .nav-toggler:hover {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  background-color: rgb(224, 224, 224);
   width: 30%;
   border-radius: 15px;
+  border: 3px solid rgb(224, 224, 224);
   gap: .5rem;
 
   /* RESET */
