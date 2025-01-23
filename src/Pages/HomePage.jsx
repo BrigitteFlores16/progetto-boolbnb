@@ -39,6 +39,8 @@ export default function HomePage() {
           nome="Camillo"
           cognome="Rosanio"
         />
+
+        {/* Card Immpbili */}
         <div className="main-container-card">
           {fetchDataImmobili?.length &&
             fetchDataImmobili.map((el) => {
