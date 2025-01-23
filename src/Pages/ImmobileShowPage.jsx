@@ -7,8 +7,6 @@ export default function ImmobileShowPage() {
   return (
     <>
       <div className="container">
-        <h1>PAGINA DETTAGLIO IMMOBILE</h1>
-
         <h1 className="h3 mb-3">Titolo Immobile</h1>
         <div className="image-container d-lg-flex align-items-center gap-1 rounded-1">
           <div className="bigger-image-container">
