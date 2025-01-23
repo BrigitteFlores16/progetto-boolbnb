@@ -1,5 +1,6 @@
 // COMPONENTS IMPORT
 import CardProprietario from "../components/CardProprietario";
+import ComfortsImmobile from "../components/ComfortsImmobile";
 
 
 // COMPONENT EXPORT
@@ -16,6 +17,8 @@ export default function ImmobileShowPage() {
           nome="Camillo"
           cognome="Rosanio"
         />
+
+        <ComfortsImmobile />
       </div>
     </>
   );
