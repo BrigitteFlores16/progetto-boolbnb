@@ -1,0 +1,59 @@
+/* * IMMOBILE CARD CSS */
+.immobile-card-container {
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 0.5rem;
+  border-radius: 12px;
+
+  padding: 1rem;
+  width: 12rem;
+  transition: padding 0.5s;
+}
+
+.immobile-card-container:hover {
+  padding: 0;
+}
+
+/* card immobile header */
+.img-immobile-container {
+  position: relative;
+  border-radius: 10px;
+  aspect-ratio: 1;
+
+  /* debug */
+  background-color: lightgray;
+}
+
+.immobile-img-heart {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+
+  color: gray;
+}
+
+/* card immobile body */
+.body-container {
+  padding: 0.5rem;
+}
+.body-container h2 {
+  font-size: 1.2rem;
+}
+
+.immobile-card-body-content span {
+  display: block;
+  font-size: 0.7rem;
+}
+
+@media screen and (max-width: 450px) {
+  .immobile-card-container {
+    width: 80%;
+  }
+}
+
+/* ? debug */
+.container-card-prova {
+  display: flex;
+  justify-content: center;
+}
