@@ -103,14 +103,15 @@ nav .nav-toggler:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  max-width: 800px;
-  margin: 0 auto;
+  margin-right: 30px;
+  width: 50rem;
 }
 
 .search-bar .form-group {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  
+  
 }
 
 .search-bar .form-label {
