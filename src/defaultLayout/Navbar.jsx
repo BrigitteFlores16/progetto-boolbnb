@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg py-4">
+      <nav className="navbar fixed-top navbar-expand-lg text-bg-light py-4 ">
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img
@@ -33,7 +33,7 @@ export default function Navbar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Ricerca 
+                  Ricerca
                 </Link>
               </li>
               <li className="nav-item">
@@ -50,6 +50,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      <div className="header-space"></div>
     </>
   );
 }
