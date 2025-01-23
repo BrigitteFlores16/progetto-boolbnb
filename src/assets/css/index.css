@@ -148,9 +148,9 @@ nav .nav-toggler:hover {
 .cardProprietario.scheda {
   display: flex;
   flex-direction: column;
-  padding: 1.2rem;
+  padding: 1.5rem;
   background-color: rgb(224, 224, 224);
-  width: max-content;
+  width: 30%;
   border-radius: 15px;
   gap: .5rem;
 
@@ -190,7 +190,6 @@ nav .nav-toggler:hover {
 
 .cardProprietario.contatti {
   margin: 0;
-  margin-left: calc(35px + .5rem);
 }
 
 .cardProprietario.contattiInfo {
