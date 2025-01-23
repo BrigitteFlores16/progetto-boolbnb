@@ -15,8 +15,8 @@ export default function CardProprietario({ id, email, telefono, nome, cognome })
             </div>
 
             {/* CONTATTI */}
-            <p className="cardProprietario contatti">Telefono: <span className="cardProprietario contattiInfo" href={`tel:${telefono}`}>{telefono}</span></p>
-            <p className="cardProprietario contatti">Email: <span className="cardProprietario contattiInfo" href={`mailto:${email}`}>{email}</span></p>
+            <p className="cardProprietario contatti">Telefono: <a className="cardProprietario contattiInfo" href={`tel:${telefono}`}>{telefono}</a></p>
+            <p className="cardProprietario contatti">Email: <a className="cardProprietario contattiInfo" href={`mailto:${email}`}>{email}</a></p>
 
         </div>
     </>

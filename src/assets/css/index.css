@@ -196,6 +196,7 @@ nav .nav-toggler:hover {
 .cardProprietario.contattiInfo {
   color: #DD0E63;
   cursor: pointer;
+  text-decoration: none;
 }
 
 
