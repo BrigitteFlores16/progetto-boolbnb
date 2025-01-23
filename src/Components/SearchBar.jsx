@@ -4,19 +4,19 @@ export default function SearchBar() {
       <div className="container mt-5">
         <div className="search-bar">
           <div className="form-group">
-            <strong><label htmlFor="search" className="form-label text-muted small">Dove</label></strong>
+            <strong><label htmlFor="search" className="form-label  ">Dove</label></strong>
             <input type="text" className="form-control" id="search" placeholder="Cerca destinazioni" />
           </div>
           <div className="form-group">
-            <strong><label htmlFor="rooms" className="form-label text-muted small">Numero stanze</label></strong>
+            <strong><label htmlFor="rooms" className="form-label  ">Numero stanze</label></strong>
             <input type="number" className="form-control" id="rooms" placeholder="Numero minimo stanze" />
           </div>
           <div className="form-group">
-            <strong><label htmlFor="beds" className="form-label text-muted small">Numero letti</label></strong>
+            <strong className=""><label htmlFor="beds" className="form-label  ">Numero letti</label></strong>
             <input type="number" className="form-control" id="beds" placeholder="Numero minimo letti" />
           </div>
           <div className="form-group">
-            <strong><label htmlFor="type" className="form-label text-muted small">Tipologia</label></strong>
+            <strong><label htmlFor="type" className="form-label   text-dark">Tipologia</label></strong>
             <select className="form-select" id="type">
               <option value="appartamento">Appartamento</option>
               <option value="villa">Villa</option>
@@ -28,7 +28,7 @@ export default function SearchBar() {
             </select>
           </div>
           <button className='btn btn-search'>
-            <i class="fa-regular fa-square"></i>
+            <i class="fa-regular fa-search"></i>
           </button>
         </div>
       </div>
