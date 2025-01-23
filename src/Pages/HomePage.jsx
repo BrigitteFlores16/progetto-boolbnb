@@ -1,18 +1,25 @@
 import SearchBar from "../components/SearchBar";
+import { useState, useEffect } from "react";
 
 import ImmobileCard from "../Components/ImmobileCard";
 
 // COMPONENT EXPORT
 
 export default function HomePage() {
-  const immobili = {
-    titolo: "Titolo",
-    num_likes: "Numero like",
-    indirizzo: "Indirizzo",
-    num_letti: "Numero letti",
-    num_bagni: "Numero bagnmi",
-    mq: "Metri quadrati",
-    voto: "voto",
+  const [fetchDataImmobili, setFetchDataImmobili] = useState();
+
+  useEffect(() => {
+    handleFetchImmobili();
+  }, []);
+
+  const handleFetchImmobili = async () => {
+    await fetch("http://localhost:3000/api/immobili")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setFetchDataImmobili(data.immobili);
+        console.log(fetchDataImmobili);
+      });
   };
 
   return (
@@ -22,13 +29,12 @@ export default function HomePage() {
 
         <SearchBar />
 
-        <div className="container-card-prova">
-          <ImmobileCard immobile={immobili} />
-          <ImmobileCard immobile={immobili} />
-          <ImmobileCard immobile={immobili} />
-          <ImmobileCard immobile={immobili} />
-          <ImmobileCard immobile={immobili} />
-          <ImmobileCard immobile={immobili} />
+        {/* Card Immpbili */}
+        <div className="main-container-card">
+          {fetchDataImmobili?.length &&
+            fetchDataImmobili.map((el) => {
+              return <ImmobileCard key={el.id} immobile={el} />;
+            })}
         </div>
       </div>
     </>
