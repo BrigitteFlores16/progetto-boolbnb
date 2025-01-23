@@ -59,6 +59,10 @@
   justify-content: center;
 }
 
+.header-space {
+  height: 125px;
+}
+
 nav .logo {
   height: 35px;
 }
@@ -66,18 +70,18 @@ nav .logo {
 nav .user-icon {
   background-color: grey;
   color: white;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50px;
 }
 
 nav .menu-icon {
-  scale: 1.2;
+  scale: 1.1;
 }
 
 nav .nav-toggler {
   border: 1px solid rgba(128, 128, 128, 0.556);
-  padding: 7px 15px;
+  padding: 5px 15px;
   border-radius: 30px;
   background-color: rgba(243, 243, 243, 0.558);
 }
@@ -87,7 +91,7 @@ nav .nav-toggler:hover {
 }
 
 .user-icon i {
-  scale: 1.2;
+  scale: 1;
   margin-bottom: 2px;
 }
 
@@ -133,15 +137,6 @@ nav .nav-toggler:hover {
 .search-bar .btn-search:hover {
   background-color: #d32f2f;
 }
-
-.container {
-  margin-top: 2rem;
-}
-
-
-
-
-
 
 .debug {
   background-color: rgb(37, 37, 37);
