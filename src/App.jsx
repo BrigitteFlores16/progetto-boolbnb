@@ -4,7 +4,6 @@ import HomePage from "./Pages/HomePage";
 import ImmobileShowPage from "./Pages/ImmobileShowPage";
 import ImmobileStorePage from "./Pages/ImmobileStorePage";
 import NotFound from "./Pages/NotFound";
-import CardRecensione from "./Components/CardRecensione";
 
 function App() {
   return (

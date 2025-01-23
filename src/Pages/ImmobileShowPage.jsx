@@ -1,9 +1,22 @@
 // COMPONENTS IMPORT
-import CardProprietario from "../components/CardProprietario";
-import ComfortsImmobile from "../components/ComfortsImmobile";
+import CardProprietario from "../Components/CardProprietario";
+import ComfortsImmobile from "../Components/ComfortsImmobile";
+import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
+import recensioniArray from "../array_recensioni";
 
 // COMPONENT EXPORT
 export default function ImmobileShowPage() {
+  const averageRating = getAverageRating(recensioniArray);
+
+  let title;
+  if (averageRating > 4) {
+    title = "Amato dagli ospiti";
+  } else if (averageRating >= 2) {
+    title = "Apprezzato dagli ospiti";
+  } else {
+    title = "Da migliorare";
+  }
+
   return (
     <>
       <div className="container">
@@ -76,6 +89,19 @@ export default function ImmobileShowPage() {
           num_bagni="3"
           mq="120"
         />
+        <div className="my-4"></div>
+        <div className="text-center">
+          <h2 className="display-1 fw-bold">{averageRating.toFixed(1)}</h2>
+          <p className="mb-4">{title}</p>
+          <hr />
+        </div>
+        <div className="row">
+          {recensioniArray.map((recensione, index) => (
+            <div key={index} className="col-md-6 mb-4">
+              <CardRecensione recensione={recensione} />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
