@@ -1,3 +1,5 @@
+export default function SearchBar(){
+    return(
 <div className="bg-light">
 <div className="container mt-5">
   <div className="search-bar">
@@ -30,3 +32,5 @@
   </div>
 </div>
 </div>
+)
+}

@@ -1,3 +1,5 @@
+import SearchBar from "../components/SearchBar";
+
 import ImmobileCard from "../Components/ImmobileCard";
 
 // COMPONENTS IMPORT
@@ -20,6 +22,8 @@ export default function HomePage() {
     <>
       <h1>Home Page</h1>
 
+    <SearchBar/>
+    
       <CardProprietario
         id="1"
         email="esempio@esempio.it"
