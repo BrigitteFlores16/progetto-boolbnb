@@ -1,6 +1,6 @@
 // COMPONENT EXPORT
 
-export default function CardProprietario({ id, email, telefono, nome, cognome }) {
+export default function ComfortsImmobile({ id, email, telefono, nome, cognome }) {
     return <>
         <div key={id} className='cardProprietario scheda'>
 

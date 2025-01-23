@@ -2,9 +2,6 @@ import SearchBar from "../components/SearchBar";
 
 import ImmobileCard from "../Components/ImmobileCard";
 
-// COMPONENTS IMPORT
-import CardProprietario from "../components/CardProprietario";
-
 // COMPONENT EXPORT
 
 export default function HomePage() {
@@ -20,25 +17,19 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>Home Page</h1>
+      <div className="container">
+        <h1>Home Page</h1>
 
-    <SearchBar/>
-    
-      <CardProprietario
-        id="1"
-        email="esempio@esempio.it"
-        telefono="1234567890"
-        nome="Camillo"
-        cognome="Rosanio"
-      />
+        <SearchBar />
 
-      <div className="container-card-prova">
-        <ImmobileCard immobile={immobili} />
-        <ImmobileCard immobile={immobili} />
-        <ImmobileCard immobile={immobili} />
-        <ImmobileCard immobile={immobili} />
-        <ImmobileCard immobile={immobili} />
-        <ImmobileCard immobile={immobili} />
+        <div className="container-card-prova">
+          <ImmobileCard immobile={immobili} />
+          <ImmobileCard immobile={immobili} />
+          <ImmobileCard immobile={immobili} />
+          <ImmobileCard immobile={immobili} />
+          <ImmobileCard immobile={immobili} />
+          <ImmobileCard immobile={immobili} />
+        </div>
       </div>
     </>
   );

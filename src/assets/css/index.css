@@ -103,14 +103,15 @@ nav .nav-toggler:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  max-width: 800px;
-  margin: 0 auto;
+  margin-right: 30px;
+  width: 50rem;
 }
 
 .search-bar .form-group {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  
+  
 }
 
 .search-bar .form-label {
@@ -137,6 +138,82 @@ nav .nav-toggler:hover {
 .search-bar .btn-search:hover {
   background-color: #d32f2f;
 }
+
+
+
+/******************************************
+# CARD PROPRIETARIO
+******************************************/
+
+.cardProprietario.scheda {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  width: 30%;
+  border-radius: 15px;
+  border: 3px solid #DD0E63;
+  gap: 1rem;
+
+  /* RESET */
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.cardProprietario.profilo {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+}
+
+.cardProprietario.profiloIcona {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 35px;
+  aspect-ratio: 1;
+  background-color: #DD0E63;
+  border-radius: 100%;
+}
+
+.cardProprietario.circle {
+  font-weight: bold;
+  line-height: 15px;
+}
+
+.cardProprietario.profiloNome {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cardProprietario.recapiti {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: start;
+}
+
+.cardProprietario.recapitiDettagli {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardProprietario.contatti {
+  margin: 0;
+}
+
+.cardProprietario.contattiInfo {
+  color: #DD0E63;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: .5rem;
+}
+
+
+/******************************************
+# DEBUG
+******************************************/
 
 .debug {
   background-color: rgb(37, 37, 37);
