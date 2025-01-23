@@ -272,12 +272,6 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container {
-  max-height: 400px;
-  min-width: 100%;
-  overflow: hidden;
-}
-
-.image-container .img {
+.image-container > img {
   object-fit: cover;
 }
