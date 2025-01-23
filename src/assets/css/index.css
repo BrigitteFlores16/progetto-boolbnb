@@ -174,7 +174,7 @@ nav .nav-toggler:hover {
   color: white;
   width: 35px;
   aspect-ratio: 1;
-  background-color: rgb(0, 30, 199);
+  background-color: #DD0E63;
   border-radius: 100%;
 }
 
@@ -190,12 +190,11 @@ nav .nav-toggler:hover {
 
 .cardProprietario.contatti {
   margin: 0;
-  font-weight: bold;
+  margin-left: calc(35px + .5rem);
 }
 
 .cardProprietario.contattiInfo {
-  font-weight: normal;
-  color: rgb(0, 30, 199);
+  color: #DD0E63;
 }
 
 
