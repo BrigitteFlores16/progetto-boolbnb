@@ -2,7 +2,7 @@
 
 export default function CardProprietario({ id, email, telefono, nome, cognome }) {
     return <>
-        <div key={id} className='p-4 d-flex flex-column bg-light rounded-25 gap-3'>
+        <div key={id} className='p-4 d-flex flex-column bg-light rounded-25 gap-3 w-50'>
 
             {/* NOME PROFILO */}
             <div className='d-flex align-items-center gap-3'>

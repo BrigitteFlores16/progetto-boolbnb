@@ -10,7 +10,7 @@ export default function HomePage() {
 
     <CardProprietario
       id='1'
-      email='eempio@esemèio.it'
+      email='esempio@esempio.it'
       telefono='1234567890'
       nome='Camillo'
       cognome='Rosanio'
