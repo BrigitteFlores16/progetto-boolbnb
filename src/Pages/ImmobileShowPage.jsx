@@ -9,7 +9,7 @@ export default function ImmobileShowPage() {
       <div className="container">
         <h1 className="h3 mb-3">Titolo Immobile</h1>
         <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <div className="image-container d-flex justify-content-center">
               <img
                 className="image-fluid h-100 w-100 rounded-1"
@@ -18,7 +18,7 @@ export default function ImmobileShowPage() {
               />
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <ComfortsImmobile
               id="1"
               tipologia="Villetta"
