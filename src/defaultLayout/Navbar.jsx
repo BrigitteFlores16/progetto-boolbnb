@@ -37,7 +37,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link me-5" to="/">
+                <Link className="nav-link me-5" to="/new">
                   Inserisci immobile
                 </Link>
               </li>
