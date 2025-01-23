@@ -33,7 +33,7 @@ export default function Navbar() {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
-                  Ricerca
+                  Ricerca Immobile
                 </Link>
               </li>
               <li className="nav-item">
