@@ -16,9 +16,9 @@ export default function ImmobileCard({ immobile, refreshData }) {
       .then((data) => {
         console.log("like aggiunto");
       });
+    // colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
+    colorHeart == "" && setColorHeart("red-heart");
 
-    // const id = immobile.id;
-    colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
     refreshData();
   };
 
