@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: auto !important;
+}
+
 /* * IMMOBILE CARD CSS */
 .immobile-card-container {
   cursor: pointer;
