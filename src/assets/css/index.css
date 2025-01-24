@@ -276,7 +276,7 @@ nav .nav-toggler:hover {
   color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin: 0 .6rem;
+  margin: 0 0.6rem;
 }
 
 /******************************************
@@ -330,11 +330,27 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container>img {
+.image-container > img {
   object-fit: cover;
 }
 
 a {
   text-decoration: none;
   color: black !important;
+}
+
+/* FORM INSERIMENTO IMMOBILE */
+
+form .submitNewImmobileButton {
+  color: white;
+  background-color: #dd0e63;
+  border: none;
+}
+
+form .submitNewImmobileButton:hover {
+  color: white;
+
+  background-color: #dd0e63;
+  border: none;
+  box-shadow: 0px 3px 7px 0 #ababab;
 }

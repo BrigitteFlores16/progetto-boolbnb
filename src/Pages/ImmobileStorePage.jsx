@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { data } from "react-router-dom";
 
 const defaultFormFields = {
   titolo: "",
@@ -6,6 +7,7 @@ const defaultFormFields = {
   num_letti: "",
   num_bagni: "",
   mq: "",
+  tipologia: "",
   indirizzo: "",
   città: "",
   email: "",
@@ -25,7 +27,17 @@ export default function ImmobileStorePage() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    fetch();
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formFields, id_proprietario: 1 }),
+    };
+
+    fetch("http://localhost:3000/api/immobili", options)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
 
     setFormFields(defaultFormFields);
   };
@@ -35,9 +47,9 @@ export default function ImmobileStorePage() {
       <div className="container">
         <h1 className="h3 mb-5">Inserisci un nuovo immobile da affittare</h1>
 
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div className="row">
-            <div className="col-8">
+            <div className="col-12 col-sm-6 col-md-8">
               <div className="mb-3">
                 <label htmlFor="titoloInput" className="form-label">
                   Nome immobile
@@ -49,13 +61,14 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="titoloInput"
                   name="titolo"
+                  required
                 />
                 <div id="titleHelp" className="form-text">
                   Inserisci un titolo riepilogativo che descriva l'immobile
                 </div>
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-12 col-sm-6 col-md-4">
               <div className="mb-3">
                 <label htmlFor="tipologiaSelect" className="form-label">
                   Tipologia
@@ -67,18 +80,20 @@ export default function ImmobileStorePage() {
                   className="form-select"
                   aria-label="Default select example"
                   name="tipologia"
+                  required
                 >
                   <option value="">Seleziona una categoria</option>
-                  {/* TODO SISTEMA TIPOLOGIE DISPONIBILI */}
-                  <option value="Villetta">Villetta</option>
                   <option value="Appartamento">Appartamento</option>
+                  <option value="Villetta">Villetta</option>
+                  <option value="Monolocale">Monolocale</option>
+                  <option value="Attico">Attico</option>
                   <option value="Loft">Loft</option>
                 </select>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
+            <div className="col-6 col-md-3">
               <div className="mb-3">
                 <label htmlFor="stanzeInput" className="form-label">
                   Stanze
@@ -90,10 +105,11 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="stanzeInput"
                   name="num_stanze"
+                  required
                 />
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-6 col-md-3">
               <div className="mb-3">
                 <label htmlFor="lettiInput" className="form-label">
                   Posti letto
@@ -105,10 +121,11 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="lettiInput"
                   name="num_letti"
+                  required
                 />
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-6 col-md-3">
               <div className="mb-3">
                 <label htmlFor="bagniInput" className="form-label">
                   Bagni
@@ -120,11 +137,12 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="bagniInput"
                   name="num_bagni"
+                  required
                 />
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-6 col-md-3">
               <div className="mb-3">
                 <label htmlFor="mqInput" className="form-label">
                   Superficie (mq)
@@ -136,13 +154,14 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="mqInput"
                   name="mq"
+                  required
                 />
               </div>
             </div>
           </div>
 
           <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-sm-6">
               <div className="mb-3">
                 <label htmlFor="indirizzoInput" className="form-label">
                   Indirizzo
@@ -154,10 +173,11 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="indirizzoInput"
                   name="indirizzo"
+                  required
                 />
               </div>
             </div>
-            <div className="col-3">
+            <div className="col-12 col-sm-6 col-md-3">
               <div className="mb-3">
                 <label htmlFor="cittaInput" className="form-label">
                   Città
@@ -169,11 +189,12 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="cittaInput"
                   name="città"
+                  required
                 />
               </div>
             </div>
 
-            <div className="col-3">
+            <div className="col-12 col-md-3">
               <div className="mb-3">
                 <label htmlFor="emailInput" className="form-label">
                   Email di contatto
@@ -185,6 +206,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="emailInput"
                   name="email"
+                  required
                 />
               </div>
             </div>
@@ -206,11 +228,7 @@ export default function ImmobileStorePage() {
             </div>
           </div>
 
-          <button
-            onSubmit={handleFormSubmit}
-            type="submit"
-            className="btn btn-primary"
-          >
+          <button type="submit" className="submitNewImmobileButton btn my-5">
             Pubblica
           </button>
         </form>
