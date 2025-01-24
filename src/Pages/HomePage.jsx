@@ -17,9 +17,7 @@ export default function HomePage() {
     await fetch("http://localhost:3000/api/immobili")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setFetchDataImmobili(data.immobili);
-        console.log(fetchDataImmobili);
       });
   };
 
@@ -36,9 +34,11 @@ export default function HomePage() {
             fetchDataImmobili.map((el) => {
               return (
                 <>
-                  <Link key={el.id} to={`/${el.id}`}>
-                    <ImmobileCard key={el.id} immobile={el} />
-                  </Link>
+                  <ImmobileCard
+                    key={el.id}
+                    immobile={el}
+                    refreshData={handleFetchImmobili}
+                  />
                 </>
               );
             })}
