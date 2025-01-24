@@ -2,18 +2,14 @@ import { useState } from "react";
 import CuoreLike from "./CuoreLike";
 import { Link } from "react-router-dom";
 
-export default function ImmobileCard({ immobile }) {
+export default function ImmobileCard({ immobile, refreshData }) {
   // ? debug
   const [colorHeart, setColorHeart] = useState("");
 
-  const idCard = () => {
-    const id = immobile.id;
-    colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
-    console.log(id);
-  };
+  // const idCard = () => {};
 
   const handleButtonLike = (id) => {
-    fetch(`http://localhost:3000/api/immobili/${useId}`, {
+    fetch(`http://localhost:3000/api/immobili/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -21,12 +17,17 @@ export default function ImmobileCard({ immobile }) {
         console.log("like aggiunto");
       });
 
-    hadleFetch();
+    // const id = immobile.id;
+    colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
+    refreshData();
   };
 
   return (
     <div className="wrap-immobile-card-container">
-      <CuoreLike functionLike={idCard} colorHeart={colorHeart} />
+      <CuoreLike
+        functionLike={() => handleButtonLike(immobile.id)}
+        colorHeart={colorHeart}
+      />
 
       <Link
         key={immobile.id}

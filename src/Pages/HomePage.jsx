@@ -37,7 +37,11 @@ export default function HomePage() {
               return (
                 <>
                   {/* <Link key={el.id} to={`/${el.id}`}> */}
-                  <ImmobileCard key={el.id} immobile={el} />
+                  <ImmobileCard
+                    key={el.id}
+                    immobile={el}
+                    refreshData={handleFetchImmobili}
+                  />
                   {/* </Link> */}
                 </>
               );
