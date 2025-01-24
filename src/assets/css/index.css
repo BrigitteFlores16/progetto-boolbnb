@@ -4,7 +4,7 @@ html {
 
 /* * IMMOBILE CARD CSS */
 .immobile-card-container {
-  cursor: pointer;
+  /* cursor: pointer;
 
   display: inline-block;
   margin: 0.5rem;
@@ -12,12 +12,13 @@ html {
 
   padding: 1rem;
   width: 12rem;
-  transition: padding 0.5s;
+  transition: padding 0.5s; */
+  text-decoration: none;
 }
 
-.immobile-card-container:hover {
+/* .immobile-card-container:hover {
   padding: 0;
-}
+} */
 
 /* card immobile header */
 .img-immobile-container {
@@ -29,12 +30,36 @@ html {
   background-color: lightgray;
 }
 
+.wrap-immobile-card-container {
+  position: relative;
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 0.5rem;
+  border-radius: 12px;
+
+  padding: 1rem;
+  width: 12rem;
+  transition: padding 0.5s;
+}
+
+.wrap-immobile-card-container:hover {
+  padding: 0;
+}
+
 .cuore-like-container {
   position: absolute;
-  top: 0.4rem;
-  right: 0.6rem;
+  top: 1.7rem;
+  right: 2rem;
+  z-index: 2;
+  transition: top 0.5s, right 0.5s;
 
   color: gray;
+}
+
+.wrap-immobile-card-container:hover .cuore-like-container {
+  top: 0.5rem;
+  right: 0.7rem;
 }
 
 /* card immobile body */
@@ -63,6 +88,12 @@ html {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.cuore-like-container:hover {
+  color: red;
+}
+
+/* ? ------------------------- */
 
 .header-space {
   height: 125px;

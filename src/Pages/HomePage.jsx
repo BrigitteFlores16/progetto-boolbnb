@@ -36,9 +36,9 @@ export default function HomePage() {
             fetchDataImmobili.map((el) => {
               return (
                 <>
-                  <Link key={el.id} to={`/${el.id}`}>
-                    <ImmobileCard key={el.id} immobile={el} />
-                  </Link>
+                  {/* <Link key={el.id} to={`/${el.id}`}> */}
+                  <ImmobileCard key={el.id} immobile={el} />
+                  {/* </Link> */}
                 </>
               );
             })}
