@@ -3,10 +3,15 @@ import CardProprietario from "../Components/CardProprietario";
 import ComfortsImmobile from "../Components/ComfortsImmobile";
 import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
 import recensioniArray from "../array_recensioni";
+import { useEffect } from "react";
 
 // COMPONENT EXPORT
 export default function ImmobileShowPage() {
   const averageRating = getAverageRating(recensioniArray);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   let title;
   if (averageRating > 4) {
