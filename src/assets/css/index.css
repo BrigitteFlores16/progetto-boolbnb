@@ -194,6 +194,10 @@ nav .nav-toggler:hover {
   width: 45px;
   height: 45px;
 }
+.btn-danger{
+  margin-left: 10px;
+  margin-top:15px
+}
 
 .search-bar .btn-search:hover {
   background-color: #d32f2f;

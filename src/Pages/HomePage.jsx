@@ -61,10 +61,84 @@ export default function HomePage() {
   return (
     <>
       <div className="container">
-        <h1>Home Page</h1>
-        
 {/* SEARCHBAR */}
-        <div>
+<div className="bg-light">
+      <div className="container mt-5">
+        <div className="search-bar">
+          <div className="form-group">
+            <label htmlFor="search" className="form-label text-muted small">Dove</label>
+            <input 
+            type="text" 
+            className="form-control" 
+            id="search" 
+            placeholder="Cerca destinazioni"  
+            value={filterCity}
+            onChange={onChangeCity}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="rooms" className="form-label text-muted small">Numero stanze</label>
+            <input
+             type="number" 
+             className="form-control" 
+             id="rooms" 
+             placeholder="Numero minimo stanze"
+             value={filterRooms}
+             onChange={onChangeRooms}
+             />
+          </div>
+          <div className="form-group">
+            <label htmlFor="beds" className="form-label text-muted small">Numero letti</label>
+            <input 
+            type="number" 
+            className="form-control" 
+            id="beds" 
+            placeholder="Numero minimo letti"
+            value={filterBeds}
+            onChange={onChangeBeds}
+            />
+          </div>
+          <div className="form-group">
+            <label 
+            htmlFor="type" 
+            className="form-label
+             text-muted 
+             small"
+             value={filterType}
+             onChange={onChangeType}
+             >Tipologia</label>
+            <select className="form-select" id="type">
+              <option value="appartamento">Appartamento</option>
+              <option value="villa">Villa</option>
+              <option value="casa indipendente">Casa indipendente</option>
+              <option value="villetta a schiera">Villetta a schiera</option>
+              <option value="chalet">Chalet</option>
+              <option value="baita">Baita</option>
+              <option value="stanza">Stanza</option>
+            </select>
+          </div>
+          <button className='btn btn-danger' onClick={filterResults}>
+           cerca
+          </button>
+          <button  className="btn btn-danger"  onClick={clearFilters}> 
+           azzero filtri
+          </button>
+        </div>
+      </div>
+    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        {/* <div>
         <input 
         type="text" 
         placeholder="città"
@@ -89,6 +163,7 @@ export default function HomePage() {
         value={filterType}
         onChange={onChangeType}
         />
+
         <button onClick={filterResults}
         > 
          cerca
@@ -96,7 +171,7 @@ export default function HomePage() {
         <button onClick={clearFilters}>
           azzera filtri
         </button>
-        </div>
+        </div> */}
 
 
 
