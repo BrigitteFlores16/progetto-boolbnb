@@ -28,11 +28,11 @@ export default function CardProprietario({
         <div className="cardProprietario recapiti">
           <div className="cardProprietario recapitiDettagli">
             <p className="cardProprietario contatti">
-              <i class="fa-solid fa-phone cardProprietario contattiInfo"></i>{" "}
+              <i className="fa-solid fa-phone cardProprietario contattiInfo"></i>{" "}
               Chiama
             </p>
             <p className="cardProprietario contatti">
-              <i class="fa-solid fa-envelope cardProprietario contattiInfo"></i>{" "}
+              <i className="fa-solid fa-envelope cardProprietario contattiInfo"></i>{" "}
               Scrivi
             </p>
           </div>
