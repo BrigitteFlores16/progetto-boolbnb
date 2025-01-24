@@ -36,7 +36,7 @@ export default function ImmobileCard({ immobile, refreshData }) {
       >
         {/* header */}
         <div className="img-immobile-container">
-          <img src="" alt="" />
+          <img className="img-immobile" src={immobile.immagine} alt="" />
         </div>
 
         {/* body */}

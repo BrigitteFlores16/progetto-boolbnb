@@ -30,6 +30,12 @@ html {
   background-color: lightgray;
 }
 
+.img-immobile {
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+}
+
 .wrap-immobile-card-container {
   position: relative;
   cursor: pointer;
