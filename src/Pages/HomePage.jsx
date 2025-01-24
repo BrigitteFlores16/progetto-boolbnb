@@ -1,5 +1,6 @@
 import SearchBar from "../components/SearchBar";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import ImmobileCard from "../Components/ImmobileCard";
 
@@ -33,7 +34,13 @@ export default function HomePage() {
         <div className="main-container-card">
           {fetchDataImmobili?.length &&
             fetchDataImmobili.map((el) => {
-              return <ImmobileCard key={el.id} immobile={el} />;
+              return (
+                <>
+                  <Link key={el.id} to={`/${el.id}`}>
+                    <ImmobileCard key={el.id} immobile={el} />
+                  </Link>
+                </>
+              );
             })}
         </div>
       </div>

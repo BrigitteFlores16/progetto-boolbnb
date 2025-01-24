@@ -283,3 +283,8 @@ nav .nav-toggler:hover {
 .image-container > img {
   object-fit: cover;
 }
+
+a {
+  text-decoration: none;
+  color: black !important;
+}
