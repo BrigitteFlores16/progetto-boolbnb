@@ -28,7 +28,7 @@ export default function ImmobileCard({ immobile }) {
             <i class="fa-solid fa-ruler"></i> {immobile.mq}
           </span>
           <span className="immobile-content-star">
-            <i class="fa-solid fa-star"></i> {immobile.voto}
+            <i class="fa-solid fa-star"></i> {parseFloat(immobile.voto)}
           </span>
         </div>
       </div>
