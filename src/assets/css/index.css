@@ -57,6 +57,10 @@ html {
   color: gray;
 }
 
+.red-heart {
+  color: red;
+}
+
 .wrap-immobile-card-container:hover .cuore-like-container {
   top: 0.5rem;
   right: 0.7rem;
@@ -90,7 +94,7 @@ html {
 }
 
 .cuore-like-container:hover {
-  color: red;
+  color: white;
 }
 
 /* ? ------------------------- */

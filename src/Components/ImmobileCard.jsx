@@ -1,9 +1,14 @@
+import { useState } from "react";
 import CuoreLike from "./CuoreLike";
 import { Link } from "react-router-dom";
 
 export default function ImmobileCard({ immobile }) {
-  const proca = () => {
+  // ? debug
+  const [colorHeart, setColorHeart] = useState("");
+
+  const idCard = () => {
     const id = immobile.id;
+    colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
     console.log(id);
   };
 
@@ -21,7 +26,7 @@ export default function ImmobileCard({ immobile }) {
 
   return (
     <div className="wrap-immobile-card-container">
-      <CuoreLike functionLike={proca} />
+      <CuoreLike functionLike={idCard} colorHeart={colorHeart} />
 
       <Link
         key={immobile.id}
