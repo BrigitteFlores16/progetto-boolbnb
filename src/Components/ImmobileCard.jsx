@@ -1,10 +1,12 @@
+import CuoreLike from "./CuoreLike";
+
 export default function ImmobileCard({ immobile }) {
   return (
     <div className="immobile-card-container">
       {/* header */}
       <div className="img-immobile-container">
         <img src="" alt="" />
-        <i className="fa-solid fa-heart immobile-img-heart"></i>
+        <CuoreLike />
       </div>
 
       {/* body */}
@@ -28,7 +30,7 @@ export default function ImmobileCard({ immobile }) {
             <i class="fa-solid fa-ruler"></i> {immobile.mq}
           </span>
           <span className="immobile-content-star">
-            <i class="fa-solid fa-star"></i>{" "}
+            <i class="fa-solid fa-star"></i>
             {parseFloat(immobile.voto).toFixed(1)}
           </span>
         </div>
