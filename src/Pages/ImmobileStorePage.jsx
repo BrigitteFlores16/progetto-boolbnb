@@ -61,6 +61,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="titoloInput"
                   name="titolo"
+                  required
                 />
                 <div id="titleHelp" className="form-text">
                   Inserisci un titolo riepilogativo che descriva l'immobile
@@ -79,6 +80,7 @@ export default function ImmobileStorePage() {
                   className="form-select"
                   aria-label="Default select example"
                   name="tipologia"
+                  required
                 >
                   <option value="">Seleziona una categoria</option>
                   <option value="Appartamento">Appartamento</option>
@@ -103,6 +105,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="stanzeInput"
                   name="num_stanze"
+                  required
                 />
               </div>
             </div>
@@ -118,6 +121,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="lettiInput"
                   name="num_letti"
+                  required
                 />
               </div>
             </div>
@@ -133,6 +137,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="bagniInput"
                   name="num_bagni"
+                  required
                 />
               </div>
             </div>
@@ -149,6 +154,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="mqInput"
                   name="mq"
+                  required
                 />
               </div>
             </div>
@@ -167,6 +173,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="indirizzoInput"
                   name="indirizzo"
+                  required
                 />
               </div>
             </div>
@@ -182,6 +189,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="cittaInput"
                   name="città"
+                  required
                 />
               </div>
             </div>
@@ -198,6 +206,7 @@ export default function ImmobileStorePage() {
                   className="form-control"
                   id="emailInput"
                   name="email"
+                  required
                 />
               </div>
             </div>
