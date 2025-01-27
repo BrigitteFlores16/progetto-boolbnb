@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage";
 import ImmobileShowPage from "./Pages/ImmobileShowPage";
 import ImmobileStorePage from "./Pages/ImmobileStorePage";
 import NotFound from "./Pages/NotFound";
+import SearchPage from "./Pages/SearchPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route Component={DefaultLayout}>
           <Route index Component={HomePage} />
+          <Route path="/search" Component={SearchPage} />
           <Route path="/:id" Component={ImmobileShowPage} />
           <Route path="/new" Component={ImmobileStorePage} />
 

@@ -1,48 +1,53 @@
-
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import ImmobileCard from "../Components/ImmobileCard";
 
 // COMPONENT EXPORT
 
 export default function HomePage() {
+  let navigate = useNavigate();
   //FILTERS
-  const [filterCity, setFilterCity]= useState("");
-  const [filterRooms, setFilterRooms]= useState("");
-  const [filterBeds, setFilterBeds]= useState("");
-  const [filterType, setFilterType]= useState("");
+  const [filterCity, setFilterCity] = useState("");
+  const [filterRooms, setFilterRooms] = useState("");
+  const [filterBeds, setFilterBeds] = useState("");
+  const [filterType, setFilterType] = useState("");
 
-
-  const onChangeCity=(e)=>{
+  const onChangeCity = (e) => {
     setFilterCity(e.target.value);
-    console.log(filterCity); }
+    console.log(filterCity);
+  };
 
-
-  const onChangeRooms=(e)=>{
+  const onChangeRooms = (e) => {
     setFilterRooms(e.target.value);
-    console.log(filterRooms); }
+    console.log(filterRooms);
+  };
 
-
-  const onChangeBeds=(e)=>{
+  const onChangeBeds = (e) => {
     setFilterBeds(e.target.value);
-    console.log(filterBeds); }
+    console.log(filterBeds);
+  };
 
-
-  const onChangeType=(e)=>{
+  const onChangeType = (e) => {
     setFilterType(e.target.value);
-    console.log(filterType); }
-    
-  const filterResults=()=>{
-    handleFetchImmobili();
-  }
+    console.log(filterType);
+  };
 
-  const clearFilters=()=>{
+  const filterResults = () => {
+    handleFetchImmobili();
+    navigate("/search", {
+      state: {
+        parametro: "sono un parametro passato dal click della barra di ricerca",
+      },
+    });
+  };
+
+  const clearFilters = () => {
     setFilterCity("");
     setFilterRooms("");
     setFilterBeds("");
     setFilterType("");
-  }
+  };
   //FETCH
   const [fetchDataImmobili, setFetchDataImmobili] = useState();
 
@@ -51,7 +56,9 @@ export default function HomePage() {
   }, []);
 
   const handleFetchImmobili = async () => {
-    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`)
+    await fetch(
+      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setFetchDataImmobili(data.immobili);
@@ -62,44 +69,36 @@ export default function HomePage() {
     <>
       <div className="container">
         <h1>Home Page</h1>
-        
-{/* SEARCHBAR */}
+
+        {/* SEARCHBAR */}
         <div>
-        <input 
-        type="text" 
-        placeholder="città"
-        value={filterCity}
-        onChange={onChangeCity}
-        />
-        <input 
-        type="text" 
-        placeholder="stanze"
-        value={filterRooms}
-        onChange={onChangeRooms}
-        />
-        <input 
-        type="text" 
-        placeholder="letti"
-        value={filterBeds}
-        onChange={onChangeBeds}
-        />
-        <input 
-        type="text" 
-        placeholder="tipologia"
-        value={filterType}
-        onChange={onChangeType}
-        />
-        <button onClick={filterResults}
-        > 
-         cerca
-        </button>
-        <button onClick={clearFilters}>
-          azzera filtri
-        </button>
+          <input
+            type="text"
+            placeholder="città"
+            value={filterCity}
+            onChange={onChangeCity}
+          />
+          <input
+            type="text"
+            placeholder="stanze"
+            value={filterRooms}
+            onChange={onChangeRooms}
+          />
+          <input
+            type="text"
+            placeholder="letti"
+            value={filterBeds}
+            onChange={onChangeBeds}
+          />
+          <input
+            type="text"
+            placeholder="tipologia"
+            value={filterType}
+            onChange={onChangeType}
+          />
+          <button onClick={filterResults}>cerca</button>
+          <button onClick={clearFilters}>azzera filtri</button>
         </div>
-
-
-
 
         {/* Card Immpbili */}
         <div className="main-container-card">
