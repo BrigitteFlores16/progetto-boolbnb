@@ -37,7 +37,7 @@ export default function HomePage() {
     handleFetchImmobili();
     navigate("/search", {
       state: {
-        parametro: "sono un parametro passato dal click della barra di ricerca",
+        filter: filterCity,
       },
     });
   };
