@@ -118,10 +118,10 @@ export default function HomePage() {
               <option value="stanza">Stanza</option>
             </select>
           </div>
-          <button className='btn btn-danger' onClick={filterResults}>
+          <button className='btn btn-outline-danger' onClick={filterResults}>
             cerca
           </button>
-          <button   className="btn btn-danger"onClick={clearFilters}>azzera filtri</button>
+          <button   className="btn btn-outline-danger "onClick={clearFilters}>azzera filtri</button>
         </div>
       </div>
     </div> 
