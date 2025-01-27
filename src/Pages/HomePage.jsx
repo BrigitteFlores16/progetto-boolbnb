@@ -1,143 +1,163 @@
 
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import Searchbar from "../components/Searchbar";
 import ImmobileCard from "../Components/ImmobileCard";
 
 // COMPONENT EXPORT
 
 export default function HomePage() {
-  //FILTERS
-  const [filterCity, setFilterCity]= useState("");
-  const [filterRooms, setFilterRooms]= useState("");
-  const [filterBeds, setFilterBeds]= useState("");
-  const [filterType, setFilterType]= useState("");
 
-
-  const onChangeCity=(e)=>{
-    setFilterCity(e.target.value);
-    console.log(filterCity); }
-
-
-  const onChangeRooms=(e)=>{
-    setFilterRooms(e.target.value);
-    console.log(filterRooms); }
-
-
-  const onChangeBeds=(e)=>{
-    setFilterBeds(e.target.value);
-    console.log(filterBeds); }
-
-
-  const onChangeType=(e)=>{
-    setFilterType(e.target.value);
-    console.log(filterType); }
-    
-  const filterResults=()=>{
-    handleFetchImmobili();
-  }
-
-  const clearFilters=()=>{
-    setFilterCity("");
-    setFilterRooms("");
-    setFilterBeds("");
-    setFilterType("");
-  }
-  //FETCH
+  //USE-STATE
   const [fetchDataImmobili, setFetchDataImmobili] = useState();
 
+  // FILTERS
+  // const [tipologieImmobile, setTipologieImmobile] = useState([]);
+  const [filterCity, setFilterCity] = useState("");
+  // const [filterRooms, setFilterRooms] = useState("");
+  // const [filterBeds, setFilterBeds] = useState("");
+  // const [filterType, setFilterType] = useState("");
+
+  // const onChangeCity = (e) => {
+  //   setFilterCity(e.target.value);
+  //   console.log(filterCity);
+  // }
+
+
+  // const onChangeRooms = (e) => {
+  //   setFilterRooms(e.target.value);
+  //   console.log(filterRooms);
+  // }
+
+
+  // const onChangeBeds = (e) => {
+  //   setFilterBeds(e.target.value);
+  //   console.log(filterBeds);
+  // }
+
+
+  // const onChangeType = (e) => {
+  //   setFilterType(e.target.value);
+  // }
+
+  // const filterResults = () => {
+  //   handleFetchImmobili();
+  // }
+
+  // const clearFilters = () => {
+  //   setFilterCity("");
+  //   setFilterRooms("");
+  //   setFilterBeds("");
+  //   setFilterType("");
+  // }
+
+  // INIT USE EFFECT
   useEffect(() => {
     handleFetchImmobili();
+    // handleFetchTipologieImmobile();
   }, []);
 
+  //FETCH IMMOBILI
   const handleFetchImmobili = async () => {
-    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`)
+    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity}`)
+      // FILTERS
+      // ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
       .then((res) => res.json())
       .then((data) => {
         setFetchDataImmobili(data.immobili);
       });
   };
 
+  // //FETCH TIPOLOGIE IMMOBILE
+  // const handleFetchTipologieImmobile = async () => {
+  //   await fetch(`http://localhost:3000/api/tipologie-immobile/`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setTipologieImmobile(data.tipologieImmobile);
+  //     });
+  // };
+
   return (
     <>
       <div className="container">
         <h1>Home Page</h1>
-        
-{/* SEARCHBAR */}
-<div className="bg-light">
-      <div className="container mt-5">
-        <div className="search-bar">
-          <div className="form-group">
-            <label htmlFor="search" className="form-label text-muted small">Dove</label>
-            <input
-             type="text" 
-             className="form-control" 
-             id="search" 
-             placeholder="Cerca destinazioni"
-             value={filterCity}
-        onChange={onChangeCity}
-             />
+
+        {/* SEARCHBAR */}
+        <div className="bg-light">
+          <div className="container mt-5">
+            <div className="search-bar">
+              <div className="form-group">
+                <label htmlFor="search" className="form-label text-muted small">Dove</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="search"
+                  placeholder="Cerca destinazioni"
+                  value={filterCity}
+                  onChange={onChangeCity}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="rooms" className="form-label text-muted small">Numero stanze</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="rooms"
+                  placeholder="Numero minimo stanze"
+                  value={filterRooms}
+                  onChange={onChangeRooms}
+                />
+
+              </div>
+              <div className="form-group">
+                <label htmlFor="beds" className="form-label text-muted small">Numero letti</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  id="beds"
+                  placeholder="Numero minimo letti"
+                  value={filterBeds}
+                  onChange={onChangeBeds}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="type" className="form-label text-muted small">Tipologia</label>
+                <select
+                  className="form-select"
+                  id="type"
+                  value={filterType}
+                  onChange={onChangeType}
+                >
+                  <option value="appartamento">Appartamento</option>
+                  <option value="villa">Villa</option>
+                  <option value="casa indipendente">Casa indipendente</option>
+                  <option value="villetta a schiera">Villetta a schiera</option>
+                  <option value="chalet">Chalet</option>
+                  <option value="baita">Baita</option>
+                  <option value="stanza">Stanza</option>
+                </select>
+              </div>
+              <button className='btn btn-outline-danger' onClick={filterResults}>
+                cerca
+              </button>
+              <button className="btn btn-outline-danger " onClick={clearFilters}>azzera filtri</button>
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="rooms" className="form-label text-muted small">Numero stanze</label>
-            <input 
-            type="number" 
-            className="form-control" 
-            id="rooms" 
-            placeholder="Numero minimo stanze"
-            value={filterRooms}
-            onChange={onChangeRooms}
-            />
-            
-          </div>
-          <div className="form-group">
-            <label htmlFor="beds" className="form-label text-muted small">Numero letti</label>
-            <input 
-            type="number" 
-            className="form-control" 
-            id="beds" 
-            placeholder="Numero minimo letti"
-            value={filterBeds}
-            onChange={onChangeBeds}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="type" className="form-label text-muted small">Tipologia</label>
-            <select 
-            className="form-select" 
-            id="type"
-            value={filterType}
-        onChange={onChangeType}
-            >
-              <option value="appartamento">Appartamento</option>
-              <option value="villa">Villa</option>
-              <option value="casa indipendente">Casa indipendente</option>
-              <option value="villetta a schiera">Villetta a schiera</option>
-              <option value="chalet">Chalet</option>
-              <option value="baita">Baita</option>
-              <option value="stanza">Stanza</option>
-            </select>
-          </div>
-          <button className='btn btn-outline-danger' onClick={filterResults}>
-            cerca
-          </button>
-          <button   className="btn btn-outline-danger "onClick={clearFilters}>azzera filtri</button>
         </div>
-      </div>
-    </div> 
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-{/*        
+
+
+
+
+
+
+
+
+
+
+
+
+        {/*        
        
         
         
@@ -151,23 +171,25 @@ export default function HomePage() {
         </button>
         </div> */}
 
+        {/* SEARCHBAR */}
+        <Searchbar
+          isHidden={true}
+          fetchImmobili={handleFetchImmobili}
+          filterCity={filterCity}
+          setFilterCity={setFilterCity}
+        />
 
 
-
-        {/* Card Immpbili */}
+        {/* Card Immobili */}
         <div className="main-container-card">
           {fetchDataImmobili?.length &&
-            fetchDataImmobili.map((el) => {
-              return (
-                <>
-                  <ImmobileCard
-                    key={el.id}
-                    immobile={el}
-                    refreshData={handleFetchImmobili}
-                  />
-                </>
-              );
-            })}
+            fetchDataImmobili.map((el) =>
+              <ImmobileCard
+                key={el.id}
+                immobile={el}
+                refreshData={handleFetchImmobili}
+              />
+            )}
         </div>
       </div>
     </>

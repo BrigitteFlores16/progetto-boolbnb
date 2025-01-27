@@ -48,19 +48,19 @@ export default function ImmobileCard({ immobile, refreshData }) {
               <i className="fa-solid fa-heart"></i> {immobile.num_likes}
             </span>
             <span className="immobile-content-adress">
-              <i class="fa-solid fa-map-pin"></i> {immobile.indirizzo}
+              <i className="fa-solid fa-map-pin"></i> {immobile.indirizzo}
             </span>
             <span className="immobile-content-room">
-              <i class="fa-solid fa-user"></i> {immobile.num_letti}
+              <i className="fa-solid fa-user"></i> {immobile.num_letti}
             </span>
             <span className="immobile-content-bathroom">
-              <i class="fa-solid fa-shower"></i> {immobile.num_bagni}
+              <i className="fa-solid fa-shower"></i> {immobile.num_bagni}
             </span>
             <span className="immobile-content-meters">
-              <i class="fa-solid fa-ruler"></i> {immobile.mq}
+              <i className="fa-solid fa-ruler"></i> {immobile.mq}
             </span>
             <span className="immobile-content-star">
-              <i class="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star"></i>
               {parseFloat(immobile.voto).toFixed(1)}
             </span>
           </div>
