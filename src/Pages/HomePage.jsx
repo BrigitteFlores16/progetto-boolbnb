@@ -161,7 +161,7 @@ export default function HomePage() {
           setFilterCity={setFilterCity}
         />
 
-        {/* Card Immobili */}
+        {/* Card Immobili
         <div className="main-container-card">
           {fetchDataImmobili?.length &&
             fetchDataImmobili.map((el) => (
@@ -171,7 +171,7 @@ export default function HomePage() {
                 refreshData={handleFetchImmobili}
               />
             ))}
-        </div>
+        </div> */}
       </div>
     </>
   );

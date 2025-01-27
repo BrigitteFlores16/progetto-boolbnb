@@ -10,34 +10,11 @@ export default function Searchbar({
   filterCity,
   setFilterCity,
 }) {
+  const navigate = useNavigate();
   // INIT USE EFFECT
-  useEffect(() => {
-    handleFetchTipologieImmobile();
-  }, []);
-
-  // FILTERS
-  const [searchFilters, setSearchFilter] = useState({
-    city: "",
-    rooms: "",
-    beds: "",
-    type: "",
-  });
-
-  const onChangeSearchFilters = (e) => {
-    console.log({
-      ...searchFilters,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const clearSearchFilters = () => {
-    setFilterCity({
-      city: "",
-      rooms: "",
-      beds: "",
-      type: "",
-    });
-  };
+  // useEffect(() => {
+  //   handleFetchTipologieImmobile();
+  // }, []);
 
   const [tipologieImmobile, setTipologieImmobile] = useState([]);
   // const [filterCity, setFilterCity] = useState("");
@@ -65,12 +42,13 @@ export default function Searchbar({
   };
 
   const filterResults = () => {
-    navigate("/search", {
-      state: {
-        filter: filterCity,
-      },
-    });
-    fetchImmobili();
+    isHidden
+      ? navigate("/search", {
+          state: {
+            filter: filterCity,
+          },
+        })
+      : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
 
   const clearFilters = () => {
