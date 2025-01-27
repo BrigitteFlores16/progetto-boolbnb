@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/Searchbar";
@@ -7,7 +6,6 @@ import ImmobileCard from "../Components/ImmobileCard";
 // COMPONENT EXPORT
 
 export default function HomePage() {
-
   //USE-STATE
   const [fetchDataImmobili, setFetchDataImmobili] = useState();
 
@@ -23,18 +21,15 @@ export default function HomePage() {
   //   console.log(filterCity);
   // }
 
-
   // const onChangeRooms = (e) => {
   //   setFilterRooms(e.target.value);
   //   console.log(filterRooms);
   // }
 
-
   // const onChangeBeds = (e) => {
   //   setFilterBeds(e.target.value);
   //   console.log(filterBeds);
   // }
-
 
   // const onChangeType = (e) => {
   //   setFilterType(e.target.value);
@@ -81,10 +76,8 @@ export default function HomePage() {
   return (
     <>
       <div className="container">
-        <h1>Home Page</h1>
-
         {/* SEARCHBAR */}
-        <div className="bg-light">
+        {/* <div className="bg-light">
           <div className="container mt-5">
             <div className="search-bar">
               <div className="form-group">
@@ -144,18 +137,7 @@ export default function HomePage() {
               <button className="btn btn-outline-danger " onClick={clearFilters}>azzera filtri</button>
             </div>
           </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
+        </div> */}
 
         {/*        
        
@@ -179,17 +161,16 @@ export default function HomePage() {
           setFilterCity={setFilterCity}
         />
 
-
         {/* Card Immobili */}
         <div className="main-container-card">
           {fetchDataImmobili?.length &&
-            fetchDataImmobili.map((el) =>
+            fetchDataImmobili.map((el) => (
               <ImmobileCard
                 key={el.id}
                 immobile={el}
                 refreshData={handleFetchImmobili}
               />
-            )}
+            ))}
         </div>
       </div>
     </>

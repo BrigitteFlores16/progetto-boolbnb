@@ -1,12 +1,14 @@
-
 // UTILITY
 import { useState, useEffect } from "react";
 
-
 // EXPORT COMPONENT
 
-export default function Searchbar({ isHidden, fetchImmobili, filterCity, setFilterCity }) {
-
+export default function Searchbar({
+  isHidden,
+  fetchImmobili,
+  filterCity,
+  setFilterCity,
+}) {
   // INIT USE EFFECT
   useEffect(() => {
     handleFetchTipologieImmobile();
@@ -14,28 +16,27 @@ export default function Searchbar({ isHidden, fetchImmobili, filterCity, setFilt
 
   // FILTERS
   const [searchFilters, setSearchFilter] = useState({
-    city: '',
-    rooms: '',
-    beds: '',
-    type: ''
+    city: "",
+    rooms: "",
+    beds: "",
+    type: "",
   });
 
   const onChangeSearchFilters = (e) => {
     console.log({
       ...searchFilters,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const clearSearchFilters = () => {
     setFilterCity({
-      city: '',
-      rooms: '',
-      beds: '',
-      type: ''
+      city: "",
+      rooms: "",
+      beds: "",
+      type: "",
     });
   };
-
 
   const [tipologieImmobile, setTipologieImmobile] = useState([]);
   // const [filterCity, setFilterCity] = useState("");
@@ -46,33 +47,32 @@ export default function Searchbar({ isHidden, fetchImmobili, filterCity, setFilt
   const onChangeCity = (e) => {
     setFilterCity(e.target.value);
     console.log(filterCity);
-  }
+  };
 
   const onChangeRooms = (e) => {
     setFilterRooms(e.target.value);
     console.log(filterRooms);
-  }
+  };
 
   const onChangeBeds = (e) => {
     setFilterBeds(e.target.value);
     console.log(filterBeds);
-  }
+  };
 
   const onChangeType = (e) => {
     setFilterType(e.target.value);
-  }
+  };
 
   const filterResults = () => {
     fetchImmobili();
-  }
+  };
 
   const clearFilters = () => {
     setFilterCity("");
     setFilterRooms("");
     setFilterBeds("");
     setFilterType("");
-  }
-
+  };
 
   //FETCH TIPOLOGIE IMMOBILE
   const handleFetchTipologieImmobile = async () => {
@@ -84,50 +84,66 @@ export default function Searchbar({ isHidden, fetchImmobili, filterCity, setFilt
       });
   };
 
-
   // RETURN COMPONENT
-  return (<>
-    <div>
-      <input
-        type="text"
-        placeholder="città"
-        value={filterCity}
-        onChange={onChangeCity}
-      />
-      <input
-        type="text"
-        placeholder="stanze"
-        value={filterRooms}
-        onChange={onChangeRooms}
-        className={isHidden ? 'd-none' : ''}
-      />
-      <input
-        type="text"
-        placeholder="letti"
-        value={filterBeds}
-        onChange={onChangeBeds}
-        className={isHidden ? 'd-none' : ''}
-      />
-
-      {/* SELECT TIPOLOGIA */}
-      <select placeholder="tipologia"
-        value={filterType}
-        onChange={onChangeType}
-        className={isHidden ? 'd-none' : ''}
-      >
-        <option value=''>Tipologia</option>
-        {tipologieImmobile.lenght == 0 ? '' :
-          tipologieImmobile.map(tipologia => <option key={tipologia.nome} value={tipologia.nome}>{tipologia.nome}</option>)}
-      </select>
-
-      <button onClick={filterResults}
-      >
-        cerca
-      </button>
-      <button onClick={clearFilters}>
-        azzera filtri
-      </button>
-    </div>
-  </>
-  )
-};
+  return (
+    <>
+      <div className="container mt-5">
+        <div className="search-bar">
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              id="search"
+              placeholder="Destinazione"
+              value={filterCity}
+              onChange={onChangeCity}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              id="rooms"
+              placeholder="Numero minimo stanze"
+              value={filterRooms}
+              onChange={onChangeRooms}
+              className={isHidden ? "d-none" : "form-control"}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              id="beds"
+              placeholder="Numero minimo letti"
+              value={filterBeds}
+              onChange={onChangeBeds}
+              className={isHidden ? "d-none" : "form-control"}
+            />
+          </div>
+          <div className="form-group">
+            <select
+              className={isHidden ? "d-none" : "form-select"}
+              id="type"
+              value={filterType}
+              onChange={onChangeType}
+            >
+              <option value="">Tipologia</option>
+              {tipologieImmobile.lenght == 0
+                ? ""
+                : tipologieImmobile.map((tipologia) => (
+                    <option key={tipologia.nome} value={tipologia.nome}>
+                      {tipologia.nome}
+                    </option>
+                  ))}
+            </select>
+          </div>
+          <button className="btn btn-outline-danger" onClick={filterResults}>
+            cerca
+          </button>
+          <button className="btn btn-outline-danger " onClick={clearFilters}>
+            azzera filtri
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
