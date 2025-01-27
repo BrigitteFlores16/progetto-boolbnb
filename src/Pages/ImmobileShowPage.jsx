@@ -15,6 +15,13 @@ export default function ImmobileShowPage() {
 
   // USE-STATE DATA
   const [immobile, setImmobile] = useState({ immobile: [] });
+  const [newReview, setNewReview] = useState({
+    nome: "",
+    titolo: "",
+    testo: "",
+    voto: "",
+    num_giorni_di_permanenza: "",
+  });
 
   // INIT USE-EFFECT
   useEffect(() => {
@@ -35,6 +42,44 @@ export default function ImmobileShowPage() {
       })
       .catch((error) => {
         console.log("Error while fetching content");
+      });
+  };
+
+  const handleReviewChange = (e) => {
+    setNewReview({
+      ...newReview,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleReviewSubmit = (e) => {
+    e.preventDefault();
+    const reviewData = {
+      nome: newReview.nome,
+      id_immobile: id,
+      titolo: newReview.titolo,
+      testo: newReview.testo,
+      voto: parseInt(newReview.voto),
+      num_giorni_di_permanenza: parseInt(newReview.num_giorni_di_permanenza),
+    };
+
+    fetch("http://localhost:3000/api/recensioni", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewData),
+    })
+      .then((res) => {
+        if (res.status === 201) {
+          return res.json();
+        } else {
+          console.log("Failed to create review");
+        }
+      })
+      .then((data) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log("Error while submitting review:", error);
       });
   };
 
@@ -130,6 +175,85 @@ export default function ImmobileShowPage() {
                 </div>
               ))
             : ""}
+        </div>
+        <div className="container mt-5">
+          <h2 className="h3 mb-3">Aggiungi una recensione</h2>
+          <form onSubmit={handleReviewSubmit}>
+            <div className="mb-3">
+              <label htmlFor="nomeInput" className="form-label">
+                Nome
+              </label>
+              <input
+                value={newReview.nome}
+                onChange={handleReviewChange}
+                type="text"
+                className="form-control"
+                id="nomeInput"
+                name="nome"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="titoloInput" className="form-label">
+                Titolo
+              </label>
+              <input
+                value={newReview.titolo}
+                onChange={handleReviewChange}
+                type="text"
+                className="form-control"
+                id="titoloInput"
+                name="titolo"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="testoInput" className="form-label">
+                Testo
+              </label>
+              <textarea
+                value={newReview.testo}
+                onChange={handleReviewChange}
+                className="form-control"
+                id="testoInput"
+                name="testo"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="votoInput" className="form-label">
+                Voto
+              </label>
+              <input
+                value={newReview.voto}
+                onChange={handleReviewChange}
+                type="number"
+                className="form-control"
+                id="votoInput"
+                name="voto"
+                min="1"
+                max="5"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="numGiorniInput" className="form-label">
+                Numero di giorni di permanenza
+              </label>
+              <input
+                value={newReview.num_giorni_di_permanenza}
+                onChange={handleReviewChange}
+                type="number"
+                className="form-control"
+                id="numGiorniInput"
+                name="num_giorni_di_permanenza"
+                required
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Invia Recensione
+            </button>
+          </form>
         </div>
       </div>
     </>
