@@ -1,5 +1,6 @@
 // UTILITY
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // EXPORT COMPONENT
 
@@ -64,6 +65,11 @@ export default function Searchbar({
   };
 
   const filterResults = () => {
+    navigate("/search", {
+      state: {
+        filter: filterCity,
+      },
+    });
     fetchImmobili();
   };
 
