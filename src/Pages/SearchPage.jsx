@@ -7,24 +7,24 @@ export default function SearchPage() {
   const location = useLocation();
   const filter = location.state?.filter;
   const [fetchDataImmobili, setFetchDataImmobili] = useState([]);
-  const [filterCity, setFilterCity] = useState(filter);
+  //   const [filterCity, setFilterCity] = useState(filter);
 
   useEffect(() => {
     handleFetchImmobili(filter, "", "", "");
   }, []);
 
   const handleFetchImmobili = async (
-    filter,
+    filterCity,
     filterRooms,
     filterBeds,
     filterType
   ) => {
     console.log(
-      `http://localhost:3000/api/immobili/?city=${filter}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
     );
 
     await fetch(
-      `http://localhost:3000/api/immobili/?city=${filter}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
     )
       // FILTERS
       //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
@@ -41,8 +41,8 @@ export default function SearchPage() {
         <Searchbar
           isHidden={false}
           fetchImmobili={handleFetchImmobili}
-          filterCity={filterCity}
-          setFilterCity={setFilterCity}
+          initialFilter={filter}
+          //   setFilterCity={setFilterCity}
         />
 
         {/* Card Immobili */}

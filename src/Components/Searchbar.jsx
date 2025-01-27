@@ -7,17 +7,17 @@ import { useNavigate } from "react-router-dom";
 export default function Searchbar({
   isHidden,
   fetchImmobili,
-  filterCity,
-  setFilterCity,
+  initialFilter,
+  // setFilterCity,
 }) {
   const navigate = useNavigate();
   // INIT USE EFFECT
-  // useEffect(() => {
-  //   handleFetchTipologieImmobile();
-  // }, []);
+  useEffect(() => {
+    handleFetchTipologieImmobile();
+  }, []);
 
   const [tipologieImmobile, setTipologieImmobile] = useState([]);
-  // const [filterCity, setFilterCity] = useState("");
+  const [filterCity, setFilterCity] = useState(initialFilter || "");
   const [filterRooms, setFilterRooms] = useState("");
   const [filterBeds, setFilterBeds] = useState("");
   const [filterType, setFilterType] = useState("");
@@ -56,6 +56,7 @@ export default function Searchbar({
     setFilterRooms("");
     setFilterBeds("");
     setFilterType("");
+    fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
 
   //FETCH TIPOLOGIE IMMOBILE
