@@ -4,21 +4,8 @@ html {
 
 /* * IMMOBILE CARD CSS */
 .immobile-card-container {
-  /* cursor: pointer;
-
-  display: inline-block;
-  margin: 0.5rem;
-  border-radius: 12px;
-
-  padding: 1rem;
-  width: 12rem;
-  transition: padding 0.5s; */
   text-decoration: none;
 }
-
-/* .immobile-card-container:hover {
-  padding: 0;
-} */
 
 /* card immobile header */
 .img-immobile-container {
@@ -90,6 +77,15 @@ html {
   .immobile-card-container {
     width: 80%;
   }
+}
+
+/* * IMMOBILE SHOW PAGE STAR */
+.display-1 i {
+  color: gold;
+}
+
+.display-1 i:nth-child(2) {
+  transform: scaleX(-1);
 }
 
 /* ? debug */
