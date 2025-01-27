@@ -115,9 +115,9 @@ export default function ImmobileShowPage() {
         <div className="my-4"></div>
         <div className="text-center">
           <h2 className="display-1 fw-bold">
-            <i class="fa-solid fa-star-half"></i>
+            <i className="fa-solid fa-star-half"></i>
             {immobile.recensioni?.length > 0 ? averageRating.toFixed(1) : "0"}
-            <i class="fa-solid fa-star-half"></i>
+            <i className="fa-solid fa-star-half"></i>
           </h2>
           <p className="mb-4">{voteTitle}</p>
           <hr />
@@ -125,10 +125,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-                <div key={index} className="col-md-6 mb-4">
-                  <CardRecensione recensione={recensione} />
-                </div>
-              ))
+              <div key={index} className="col-md-6 mb-4">
+                <CardRecensione recensione={recensione} />
+              </div>
+            ))
             : ""}
         </div>
       </div>
