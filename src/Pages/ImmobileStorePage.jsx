@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { data } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const defaultFormFields = {
   titolo: "",
@@ -7,7 +6,7 @@ const defaultFormFields = {
   num_letti: "",
   num_bagni: "",
   mq: "",
-  tipologia: "",
+  id_tipologia_immobile: "",
   indirizzo: "",
   città: "",
   email: "",
@@ -16,6 +15,21 @@ const defaultFormFields = {
 
 export default function ImmobileStorePage() {
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const [tipologieImmobile, setTipologieImmobile] = useState([]);
+
+  //FETCH TIPOLOGIE IMMOBILE
+  const handleFetchTipologieImmobile = async () => {
+    await fetch(`http://localhost:3000/api/tipologie-immobile/`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTipologieImmobile(data.tipologieImmobile);
+      });
+  };
+
+  useEffect(() => {
+    handleFetchTipologieImmobile();
+  }, []);
 
   const handleFormChange = (e) => {
     setFormFields({
@@ -75,20 +89,22 @@ export default function ImmobileStorePage() {
                     Tipologia
                   </label>
                   <select
-                    value={formFields.tipologia}
+                    value={formFields.id_tipologia_immobile}
                     onChange={handleFormChange}
                     id="tipologiaSelect"
                     className="form-control"
                     aria-label="Default select example"
-                    name="tipologia"
+                    name="id_tipologia_immobile"
                     required
                   >
-                    <option value="">Seleziona una categoria</option>
-                    <option value="Appartamento">Appartamento</option>
-                    <option value="Villetta">Villetta</option>
-                    <option value="Monolocale">Monolocale</option>
-                    <option value="Attico">Attico</option>
-                    <option value="Loft">Loft</option>
+                    <option value="">Tipologia</option>
+                    {tipologieImmobile.lenght == 0
+                      ? ""
+                      : tipologieImmobile.map((tipologia) => (
+                          <option key={tipologia.nome} value={tipologia.id}>
+                            {tipologia.nome}
+                          </option>
+                        ))}
                   </select>
                 </div>
               </div>
@@ -234,7 +250,6 @@ export default function ImmobileStorePage() {
             </button>
           </form>
         </div>
-
       </div>
     </>
   );
