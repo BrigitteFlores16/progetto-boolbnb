@@ -116,8 +116,13 @@ export default function ImmobileShowPage() {
     <>
       <div className="container">
      
-        <h1 className="h3 mb-3">
+        <h1 className="h3 mb-3 titolo-heart">
           {immobile.titolo} 
+          <CuoreLike
+            functionLike={() => handleButtonLike(immobile.id)}
+            colorHeart={colorHeart}
+            className="ms-2"
+            />
           </h1> 
 
         <div className="row">
@@ -130,11 +135,7 @@ export default function ImmobileShowPage() {
               />
             </div>
           </div>
-          <div className="cuore-like">
-          <CuoreLike
-            functionLike={() => handleButtonLike(immobile.id)}
-            colorHeart={colorHeart}/>
-          </div>
+          
           
           <div className="col-12 col-md-6">
             <ComfortsImmobile

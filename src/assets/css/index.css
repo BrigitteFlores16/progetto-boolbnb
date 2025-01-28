@@ -42,12 +42,17 @@ html {
 
 .cuore-like-container {
   position: absolute;
-  top: 1.7rem;
+  left: 22rem;
+  bottom: 5px;
+  /* top: 1.7rem;
   right: 2rem;
   z-index: 2;
-  transition: top 0.5s, right 0.5s;
+  transition: top 0.5s, right 0.5s; */
 
   color: gray;
+}
+.titolo-heart{
+  position:relative;
 }
 
 .red-heart {
@@ -339,6 +344,8 @@ a {
   text-decoration: none;
   color: black !important;
 }
+
+
 
 /* FORM INSERIMENTO IMMOBILE */
 
