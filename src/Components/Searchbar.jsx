@@ -73,7 +73,7 @@ export default function Searchbar({
   // RETURN COMPONENT
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-5 d-flex justify-content-center">
         <div className="search-bar align-items-center justify-content-between row">
           <div
             className={
