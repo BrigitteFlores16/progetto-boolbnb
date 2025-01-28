@@ -7,6 +7,10 @@ html {
   text-decoration: none;
 }
 
+.immobile-card-container {
+  color: black !important;
+}
+
 /* card immobile header */
 .img-immobile-container {
   position: relative;
@@ -191,7 +195,7 @@ nav .nav-toggler:hover {
   height: 45px;
 }
 
-.btn-outline-danger{
+.btn-outline-danger {
   margin-left: 10px;
   margin-top: 25px;
 }
@@ -337,7 +341,6 @@ nav .nav-toggler:hover {
 
 a {
   text-decoration: none;
-  color: black !important;
 }
 
 /* FORM INSERIMENTO IMMOBILE */
