@@ -198,7 +198,7 @@ export default function ImmobileShowPage() {
             : ""}
         </div>
 
-        <div className="formRecensioni">
+        <div className="formStore">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
           <form onSubmit={handleReviewSubmit}>
             <div className="mb-3">
