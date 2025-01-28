@@ -18,7 +18,7 @@ const CardRecensione = ({ recensione }) => {
   };
 
   return (
-    <div className="card h-100">
+    <div className="card h-100 border border-light">
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <h5 className="card-title">

@@ -194,10 +194,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-              <div key={index} className="col-md-6 mb-4">
-                <CardRecensione recensione={recensione} />
-              </div>
-            ))
+                <div key={index} className="col-md-6 mb-4">
+                  <CardRecensione recensione={recensione} />
+                </div>
+              ))
             : ""}
         </div>
 
@@ -273,10 +273,13 @@ export default function ImmobileShowPage() {
                 className="form-control"
                 id="numGiorniInput"
                 name="num_giorni_di_permanenza"
+                min="1"
+                max="255"
                 required
               />
             </div>
             <button type="submit" className="btn btn-dark my-4">
+            <button type="submit" className="btn btn-primary mb-3">
               Invia Recensione
             </button>
           </form>
