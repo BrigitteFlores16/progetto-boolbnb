@@ -53,7 +53,6 @@ export default function ImmobileCard({ immobile, refreshData }) {
               <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
               {immobile && immobile.num_likes}
             </span>{" "}
-            <br />
             <span className="immobile-content-adress">
               <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
               {immobile && immobile.indirizzo}
