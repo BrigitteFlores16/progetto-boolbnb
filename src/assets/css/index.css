@@ -48,8 +48,7 @@ html {
   transition: top 0.5s, right 0.5s;
   color: gray;
 }
-
-.red-heart {
+*/ .red-heart {
   color: red;
 }
 
@@ -145,6 +144,7 @@ video {
   width: 30%;
   border-radius: 20px;
   margin: auto;
+  height: 14rem;
 }
 
 .row-one,

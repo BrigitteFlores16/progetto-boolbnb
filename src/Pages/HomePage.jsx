@@ -103,14 +103,11 @@ export default function HomePage() {
               <hr />
 
               <div className="row-one">
-                <video
-                  loop="true"
-                  autoplay="autoplay"
-                  muted
-                  src="video/video-presentazione.mp4"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                <img
+                  className="img-presentazione"
+                  src="img/nature.jpeg"
+                  alt=""
+                />
 
                 <div className="row-description">
                   <h2>La nostra compagnia</h2>
