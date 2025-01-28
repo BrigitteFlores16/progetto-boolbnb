@@ -93,13 +93,13 @@ html {
   }
 
   .top-5-title {
-    top: -30px !important;
-    left: 30px !important;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
-  /* .immobile-card-body-content {
-    display: block !important;
-  } */
+  .top-five-bnb-container {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 450px) {
@@ -110,6 +110,32 @@ html {
   .top-five-bnb {
     justify-content: center;
   }
+
+  .carousel-main-container {
+    display: none;
+  }
+}
+
+/* * CAROUSEL */
+.carousel-main-container {
+  margin: 5rem 0;
+  border-radius: 30px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.img-carousel-container {
+  height: 17rem !important;
+  /* width: 100%; */
+  text-align: center;
+}
+
+.img-carousel-container {
+  width: 100%;
+}
+
+.carousel-image {
+  max-width: 100%;
 }
 
 /* * HOMPAGE PRESENTATION LAYOUT*/
@@ -134,12 +160,6 @@ html {
   padding: 2rem 0;
   /* margin-top: 21.5rem; */
   margin-top: 10rem;
-}
-
-video {
-  width: 30%;
-  border-radius: 20px;
-  margin: auto;
 }
 
 .img-presentazione {
@@ -278,18 +298,19 @@ video {
   display: none !important;
 }
 
+.top-5-title-absolute {
+  position: absolute;
+  top: -2rem;
+  left: 5rem;
+
+  background-color: white;
+  padding: 1rem;
+  border-radius: 40px;
+}
+
 /* ? fix bug */
 .body-container {
   width: 160px;
-}
-
-.top-5-title {
-  position: absolute;
-  top: -15px;
-  left: 70px;
-
-  background-color: white;
-  padding: 0 1rem;
 }
 
 .top-5-title {
@@ -585,7 +606,7 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container>img {
+.image-container > img {
   object-fit: cover;
 }
 
@@ -614,7 +635,6 @@ form .submitNewImmobileButton:hover {
 .starsVoteIcons {
   color: gold;
 }
-
 
 .formStore {
   padding: 2rem;

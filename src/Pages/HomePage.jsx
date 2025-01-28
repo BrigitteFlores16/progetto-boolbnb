@@ -3,9 +3,34 @@ import { Link } from "react-router-dom";
 import Searchbar from "../components/Searchbar";
 import ImmobileCard from "../Components/ImmobileCard";
 
+// import carousel
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 // COMPONENT EXPORT
 
 export default function HomePage() {
+  // RESPONSIVE CAROUSEL
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   //USE-STATE
   const [fetchDataImmobili, setFetchDataImmobili] = useState([]);
 
@@ -92,7 +117,66 @@ export default function HomePage() {
                 return <ImmobileCard key={i} immobile={el} section={"top-5"} />;
               })}
           </div>
+          <h3 className="top-5-title-absolute">Top 5 B&B</h3>
+        </div>
+
+        {/* carousel */}
+        <div className="carousel-main-container">
           <h3 className="top-5-title">Top 5 B&B</h3>
+          <Carousel
+            responsive={responsive}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            customTransition="all .5"
+            transitionDuration={1000}
+            containerClass="carousel-container"
+            itemClass="carousel-item-padding-40-px"
+          >
+            {topFiveBnB?.length &&
+              topFiveBnB.map((el, id) => {
+                return (
+                  <div key={id} className="">
+                    <div className="img-carousel-container">
+                      <img
+                        src={el && el.immagine}
+                        className="h-100 carousel-image"
+                        alt=""
+                      />
+                    </div>
+                    <h2 className="text-center py-4">{el && el.titolo}</h2>
+
+                    <div className="immobile-card-body-content d-flex justify-content-between px-2">
+                      <span className="immobile-content-like">
+                        <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
+                        {el && el.num_likes}
+                      </span>{" "}
+                      <br />
+                      <span className="immobile-content-adress">
+                        <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
+                        {el && el.indirizzo}
+                      </span>
+                      <span className="immobile-content-room">
+                        <i className="fa-solid fa-door-open cardComforts icona"></i>{" "}
+                        {el && el.num_stanze}
+                      </span>
+                      <span className="immobile-content-bathroom">
+                        <i className="fa-solid fa-shower cardComforts icona"></i>{" "}
+                        {el && el.num_bagni}
+                      </span>
+                      <span className="immobile-content-meters">
+                        <i className="fa-solid fa-ruler cardComforts icona"></i>{" "}
+                        {el && el.mq}
+                      </span>
+                      <span className="immobile-content-star">
+                        <i className="fa-solid fa-star cardComforts icona"></i>
+                        {parseFloat(el && el.voto).toFixed(1)}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+          </Carousel>
         </div>
 
         {/* ! PRESENTATION */}
