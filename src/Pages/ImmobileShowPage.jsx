@@ -1,5 +1,3 @@
-
-
 // UTILITY
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -8,7 +6,6 @@ import { useParams } from "react-router";
 import CardProprietario from "../Components/CardProprietario";
 import ComfortsImmobile from "../Components/ComfortsImmobile";
 import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
-import recensioniArray from "../array_recensioni";
 import CuoreLike from "../Components/CuoreLike";
 
 // COMPONENT EXPORT
@@ -59,7 +56,6 @@ export default function ImmobileShowPage() {
       });
     colorHeart == "" && setColorHeart("red-heart");
   };
-
 
   const handleReviewChange = (e) => {
     setNewReview({
@@ -121,7 +117,8 @@ export default function ImmobileShowPage() {
             functionLike={() => handleButtonLike(immobile.id)}
             colorHeart={colorHeart}
             className="ms-2"
-          /></h1>
+          />
+        </h1>
 
         <div className="row">
           <div className="col-lg-9 col-sm-12 mb-4">
@@ -141,7 +138,6 @@ export default function ImmobileShowPage() {
               num_letti={immobile.num_letti}
               num_bagni={immobile.num_bagni}
               mq={immobile.mq}
-
             />
           </div>
         </div>
@@ -200,7 +196,6 @@ export default function ImmobileShowPage() {
               ))
             : ""}
         </div>
-
 
         <div className="container my-4 p-4 formRecensioni">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
@@ -278,7 +273,6 @@ export default function ImmobileShowPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-dark my-4">
             <button type="submit" className="btn btn-primary mb-3">
               Invia Recensione
             </button>
