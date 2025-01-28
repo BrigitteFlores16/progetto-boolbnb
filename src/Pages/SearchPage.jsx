@@ -56,7 +56,7 @@ export default function SearchPage() {
               />
             ))
           ) : (
-            <p>Nessun risultato trovato. Prova a modificare i filtri di ricerca!</p>
+            <p className="mt-5">Nessun risultato trovato. Prova a modificare i filtri di ricerca!</p>
           )
             }
         </div>
