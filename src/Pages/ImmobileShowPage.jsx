@@ -99,7 +99,7 @@ export default function ImmobileShowPage() {
   return (
     <>
       <div className="container">
-        <h1 className="h3 mb-3">{immobile.titolo}</h1>
+        <h1 className="h3 my-4">{immobile.titolo}</h1>
         <div className="row">
           <div className="col-lg-9 col-sm-12 mb-4">
             <div className="image-container d-flex justify-content-center">
@@ -126,7 +126,7 @@ export default function ImmobileShowPage() {
           {immobile.città}, {immobile.indirizzo}
         </h2>
         <div className="row">
-          <div className="col-lg-8 col-md-12 col-sm-12 mb-4">
+          <div className="col-lg-7 col-md-6 col-sm-12 mb-4">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
               quaerat, neque consectetur cumque fugit eius pariatur quod nobis
@@ -141,7 +141,7 @@ export default function ImmobileShowPage() {
               fuga voluptate praesentium ipsum?
             </p>
           </div>
-          <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
+          <div className="col-lg-5 col-md-6 col-sm-12 mb-4">
             {immobile.id_proprietario ? (
               <CardProprietario
                 id={immobile.id_proprietario}
@@ -178,7 +178,7 @@ export default function ImmobileShowPage() {
         </div>
 
 
-        <div className="container my-4 p-2 formRecensione">
+        <div className="container my-4 p-4 formRecensioni">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
           <form onSubmit={handleReviewSubmit}>
             <div className="mb-3">
@@ -252,7 +252,7 @@ export default function ImmobileShowPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark my-4">
               Invia Recensione
             </button>
           </form>

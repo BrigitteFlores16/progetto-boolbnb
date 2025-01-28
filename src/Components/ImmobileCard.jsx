@@ -43,23 +43,23 @@ export default function ImmobileCard({ immobile, refreshData }) {
         <div className="body-container">
           <h2>{immobile.titolo}</h2>
 
-          <div className="immobile-card-body-content">
+          <div className="immobile-card-body-content cardComforts icona">
             <span className="immobile-content-like">
               <i className="fa-solid fa-heart"></i> {immobile.num_likes}
             </span>
-            <span className="immobile-content-adress">
+            <span className="immobile-content-adress cardComforts icona">
               <i className="fa-solid fa-map-pin"></i> {immobile.indirizzo}
             </span>
-            <span className="immobile-content-room">
+            <span className="immobile-content-room cardComforts icona">
               <i className="fa-solid fa-user"></i> {immobile.num_letti}
             </span>
-            <span className="immobile-content-bathroom">
+            <span className="immobile-content-bathroom cardComforts icona">
               <i className="fa-solid fa-shower"></i> {immobile.num_bagni}
             </span>
-            <span className="immobile-content-meters">
+            <span className="immobile-content-meters cardComforts icona">
               <i className="fa-solid fa-ruler"></i> {immobile.mq}
             </span>
-            <span className="immobile-content-star">
+            <span className="immobile-content-star cardComforts icona">
               <i className="fa-solid fa-star"></i>
               {parseFloat(immobile.voto).toFixed(1)}
             </span>

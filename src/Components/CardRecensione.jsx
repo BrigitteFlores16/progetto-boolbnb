@@ -12,7 +12,7 @@ const CardRecensione = ({ recensione }) => {
     return Array.from({ length: 5 }, (_, index) => (
       <i
         key={index}
-        className={`fa ${index < rating ? "fa-star" : "fa-star fa-regular"}`}
+        className={`fa ${index < rating ? "fa-star voteStar" : "fa-star fa-regular voteStar"}`}
       ></i>
     ));
   };
