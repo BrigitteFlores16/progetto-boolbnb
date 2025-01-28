@@ -374,6 +374,7 @@ nav .nav-toggler:hover {
 .search-bar .form-group {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .search-bar .form-label {
