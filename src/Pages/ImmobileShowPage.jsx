@@ -274,7 +274,7 @@ export default function ImmobileShowPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-dark my-4">
+            <button type="submit" className="btn submitNewImmobileButton my-4">
               Invia Recensione
             </button>
           </form>
