@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -32,19 +32,24 @@ export default function Navbar() {
           >
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/search">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/search">
                   Ricerca
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link me-5" to="/new">
+                <NavLink className="nav-link me-5" to="/new">
                   Inserisci immobile
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " to="/">
+                <NavLink className="nav-link " to="/">
                   Login
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>
