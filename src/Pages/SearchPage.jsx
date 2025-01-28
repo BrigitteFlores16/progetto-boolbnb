@@ -45,16 +45,20 @@ export default function SearchPage() {
           //   setFilterCity={setFilterCity}
         />
 
-        {/* Card Immobili */}
-        <div className="main-container-card">
-          {fetchDataImmobili?.length &&
+             {/* Card Immobili */}
+             <div className="main-container-card">
+          {fetchDataImmobili?.length > 0 ?( 
             fetchDataImmobili.map((el) => (
               <ImmobileCard
                 key={el.id}
                 immobile={el}
                 refreshData={handleFetchImmobili}
               />
-            ))}
+            ))
+          ) : (
+            <p>Nessun risultato trovato. Prova a modificare i filtri di ricerca!</p>
+          )
+            }
         </div>
       </div>
     </>
