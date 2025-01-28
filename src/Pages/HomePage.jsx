@@ -7,7 +7,7 @@ import ImmobileCard from "../Components/ImmobileCard";
 
 export default function HomePage() {
   //USE-STATE
-  const [fetchDataImmobili, setFetchDataImmobili] = useState();
+  const [fetchDataImmobili, setFetchDataImmobili] = useState([]);
 
   // FILTERS
   const [filterCity, setFilterCity] = useState("");
@@ -37,8 +37,9 @@ export default function HomePage() {
   // top 5 B&B
 
   const handleFindTopFiveImmobili = (data) => {
-    const copyFetchDataImmobili = data;
+    let copyFetchDataImmobili = [...data];
     const newTopFiveBnB = [];
+    console.log(fetchDataImmobili);
 
     for (let i = 0; i < 5; i++) {
       let maxVoto = 0;
@@ -61,7 +62,7 @@ export default function HomePage() {
       copyFetchDataImmobili?.length &&
         copyFetchDataImmobili.splice(indexImmobileToDelete, 1);
     }
-    console.log(newTopFiveBnB);
+    // console.log(newTopFiveBnB);
 
     return newTopFiveBnB;
   };
