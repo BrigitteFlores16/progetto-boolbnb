@@ -1,3 +1,5 @@
+
+
 // UTILITY
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
@@ -7,6 +9,7 @@ import CardProprietario from "../Components/CardProprietario";
 import ComfortsImmobile from "../Components/ComfortsImmobile";
 import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
 import recensioniArray from "../array_recensioni";
+import CuoreLike from "../Components/CuoreLike";
 
 // COMPONENT EXPORT
 export default function ImmobileShowPage() {
@@ -22,6 +25,8 @@ export default function ImmobileShowPage() {
     voto: "",
     num_giorni_di_permanenza: "",
   });
+  
+  const [colorHeart, setColorHeart]= useState("");
 
   // INIT USE-EFFECT
   useEffect(() => {
@@ -44,6 +49,17 @@ export default function ImmobileShowPage() {
         console.log("Error while fetching content");
       });
   };
+  const handleButtonLike = (id) => {
+    fetch(`http://localhost:3000/api/immobili/${id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("like aggiunto");
+      });
+    colorHeart == "" && setColorHeart("red-heart");
+  };
+  
 
   const handleReviewChange = (e) => {
     setNewReview({
@@ -99,7 +115,11 @@ export default function ImmobileShowPage() {
   return (
     <>
       <div className="container">
-        <h1 className="h3 mb-3">{immobile.titolo}</h1>
+     
+        <h1 className="h3 mb-3">
+          {immobile.titolo} 
+          </h1> 
+
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="image-container d-flex justify-content-center">
@@ -110,6 +130,12 @@ export default function ImmobileShowPage() {
               />
             </div>
           </div>
+          <div className="cuore-like">
+          <CuoreLike
+            functionLike={() => handleButtonLike(immobile.id)}
+            colorHeart={colorHeart}/>
+          </div>
+          
           <div className="col-12 col-md-6">
             <ComfortsImmobile
               id={id}
@@ -118,6 +144,7 @@ export default function ImmobileShowPage() {
               num_letti={immobile.num_letti}
               num_bagni={immobile.num_bagni}
               mq={immobile.mq}
+              
             />
           </div>
         </div>
