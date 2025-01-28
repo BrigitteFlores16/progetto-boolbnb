@@ -37,15 +37,15 @@ html {
   padding: 0;
 }
 
-.cuore-like-container {
+/* .cuore-like-container {
   position: absolute;
-  left: 27rem;
-  bottom: 42.5rem;
-  color: gray;
-}
-.titolo-heart {
-  position: relative;
-}
+  top: 1.7rem;
+  right: 2rem;
+  z-index: 2;
+  transition: top 0.5s, right 0.5s;
+  color: gray; 
+} */
+
 
 .red-heart {
   color: red;
