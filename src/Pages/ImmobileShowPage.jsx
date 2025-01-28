@@ -6,7 +6,7 @@ import { useParams } from "react-router";
 import CardProprietario from "../Components/CardProprietario";
 import ComfortsImmobile from "../Components/ComfortsImmobile";
 import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
-import recensioniArray from "../array_recensioni";
+
 
 // COMPONENT EXPORT
 export default function ImmobileShowPage() {
@@ -101,7 +101,7 @@ export default function ImmobileShowPage() {
       <div className="container">
         <h1 className="h3 mb-3">{immobile.titolo}</h1>
         <div className="row">
-          <div className="col-12 col-md-6">
+          <div className="col-lg-9 col-sm-12 mb-4">
             <div className="image-container d-flex justify-content-center">
               <img
                 className="image-fluid h-100 w-100 rounded-1"
@@ -110,7 +110,7 @@ export default function ImmobileShowPage() {
               />
             </div>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-lg-3 col-sm-12">
             <ComfortsImmobile
               id={id}
               tipologia={immobile.tipologia}
@@ -126,7 +126,7 @@ export default function ImmobileShowPage() {
           {immobile.città}, {immobile.indirizzo}
         </h2>
         <div className="row">
-          <div className="col-12 col-md-7">
+          <div className="col-lg-8 col-md-12 col-sm-12 mb-4">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
               quaerat, neque consectetur cumque fugit eius pariatur quod nobis
@@ -141,7 +141,7 @@ export default function ImmobileShowPage() {
               fuga voluptate praesentium ipsum?
             </p>
           </div>
-          <div className="col-12 col-md-5">
+          <div className="col-lg-4 col-md-12 col-sm-12 mb-4">
             {immobile.id_proprietario ? (
               <CardProprietario
                 id={immobile.id_proprietario}
@@ -176,7 +176,9 @@ export default function ImmobileShowPage() {
             ))
             : ""}
         </div>
-        <div className="container mt-5">
+
+
+        <div className="container my-4 p-2 formRecensione">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
           <form onSubmit={handleReviewSubmit}>
             <div className="mb-3">
