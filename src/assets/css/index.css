@@ -39,13 +39,8 @@ html {
 
 .cuore-like-container {
   position: absolute;
-  left: 22rem;
-  bottom: 5px;
-  /* top: 1.7rem;
-  right: 2rem;
-  z-index: 2;
-  transition: top 0.5s, right 0.5s; */
-
+   left: 27rem;
+   bottom:42.5rem;
   color: gray;
 }
 .titolo-heart{
