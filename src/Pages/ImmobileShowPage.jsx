@@ -191,14 +191,14 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-                <div key={index} className="col-md-6 mb-4">
-                  <CardRecensione recensione={recensione} />
-                </div>
-              ))
+              <div key={index} className="col-md-6 mb-4">
+                <CardRecensione recensione={recensione} />
+              </div>
+            ))
             : ""}
         </div>
 
-        <div className="container my-4 p-4 formRecensioni">
+        <div className="formRecensioni">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
           <form onSubmit={handleReviewSubmit}>
             <div className="mb-3">
@@ -274,7 +274,7 @@ export default function ImmobileShowPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary mb-3">
+            <button type="submit" className="btn btn-dark my-4">
               Invia Recensione
             </button>
           </form>
