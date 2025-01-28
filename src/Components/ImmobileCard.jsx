@@ -30,38 +30,47 @@ export default function ImmobileCard({ immobile, refreshData }) {
       />
 
       <Link
-        key={immobile.id}
-        to={`/${immobile.id}`}
+        key={immobile && immobile.id}
+        to={`/${immobile && immobile.id}`}
         className="immobile-card-container"
       >
         {/* header */}
         <div className="img-immobile-container">
-          <img className="img-immobile" src={immobile.immagine} alt="" />
+          <img
+            className="img-immobile"
+            src={immobile && immobile.immagine}
+            alt=""
+          />
         </div>
 
         {/* body */}
         <div className="body-container">
-          <h2>{immobile.titolo}</h2>
+          <h2>{immobile && immobile.titolo}</h2>
 
           <div className="immobile-card-body-content">
             <span className="immobile-content-like">
-              <i className="fa-solid fa-heart"></i> {immobile.num_likes}
-            </span>
+              <i className="fa-solid fa-heart"></i>{" "}
+              {immobile && immobile.num_likes}
+            </span>{" "}
+            <br />
             <span className="immobile-content-adress">
-              <i className="fa-solid fa-map-pin"></i> {immobile.indirizzo}
+              <i className="fa-solid fa-map-pin"></i>{" "}
+              {immobile && immobile.indirizzo}
             </span>
             <span className="immobile-content-room">
-              <i className="fa-solid fa-user"></i> {immobile.num_letti}
+              <i className="fa-solid fa-user"></i>{" "}
+              {immobile && immobile.num_letti}
             </span>
             <span className="immobile-content-bathroom">
-              <i className="fa-solid fa-shower"></i> {immobile.num_bagni}
+              <i className="fa-solid fa-shower"></i>{" "}
+              {immobile && immobile.num_bagni}
             </span>
             <span className="immobile-content-meters">
-              <i className="fa-solid fa-ruler"></i> {immobile.mq}
+              <i className="fa-solid fa-ruler"></i> {immobile && immobile.mq}
             </span>
             <span className="immobile-content-star">
               <i className="fa-solid fa-star"></i>
-              {parseFloat(immobile.voto).toFixed(1)}
+              {parseFloat(immobile && immobile.voto).toFixed(1)}
             </span>
           </div>
         </div>

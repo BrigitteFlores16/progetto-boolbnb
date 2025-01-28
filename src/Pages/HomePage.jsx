@@ -10,46 +10,11 @@ export default function HomePage() {
   const [fetchDataImmobili, setFetchDataImmobili] = useState();
 
   // FILTERS
-  // const [tipologieImmobile, setTipologieImmobile] = useState([]);
   const [filterCity, setFilterCity] = useState("");
-  // const [filterRooms, setFilterRooms] = useState("");
-  // const [filterBeds, setFilterBeds] = useState("");
-  // const [filterType, setFilterType] = useState("");
-
-  // const onChangeCity = (e) => {
-  //   setFilterCity(e.target.value);
-  //   console.log(filterCity);
-  // }
-
-  // const onChangeRooms = (e) => {
-  //   setFilterRooms(e.target.value);
-  //   console.log(filterRooms);
-  // }
-
-  // const onChangeBeds = (e) => {
-  //   setFilterBeds(e.target.value);
-  //   console.log(filterBeds);
-  // }
-
-  // const onChangeType = (e) => {
-  //   setFilterType(e.target.value);
-  // }
-
-  // const filterResults = () => {
-  //   handleFetchImmobili();
-  // }
-
-  // const clearFilters = () => {
-  //   setFilterCity("");
-  //   setFilterRooms("");
-  //   setFilterBeds("");
-  //   setFilterType("");
-  // }
 
   // INIT USE EFFECT
   useEffect(() => {
     handleFetchImmobili();
-    // handleFetchTipologieImmobile();
   }, []);
 
   //FETCH IMMOBILI
@@ -63,96 +28,50 @@ export default function HomePage() {
       });
   };
 
-  // //FETCH TIPOLOGIE IMMOBILE
-  // const handleFetchTipologieImmobile = async () => {
-  //   await fetch(`http://localhost:3000/api/tipologie-immobile/`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setTipologieImmobile(data.tipologieImmobile);
-  //     });
-  // };
+  // * TOP 5 B&B
+  // transform string in number
+  const stringInNumber = (string) => {
+    return parseFloat(string);
+  };
+
+  // top 5 B&B
+
+  const handleFindTopFiveImmobili = (data) => {
+    const copyFetchDataImmobili = data;
+    const newTopFiveBnB = [];
+
+    for (let i = 0; i < 5; i++) {
+      let maxVoto = 0;
+      let immobileMaxVoto;
+
+      const immobiliMaxVoto =
+        copyFetchDataImmobili?.length &&
+        copyFetchDataImmobili.map((el) => {
+          const votoNumber = stringInNumber(el.voto);
+
+          if (votoNumber > maxVoto) {
+            maxVoto = votoNumber;
+            immobileMaxVoto = el;
+          }
+        });
+      newTopFiveBnB.push(immobileMaxVoto);
+      const indexImmobileToDelete =
+        copyFetchDataImmobili?.length &&
+        copyFetchDataImmobili.findIndex((el) => el.id == immobileMaxVoto.id);
+      copyFetchDataImmobili?.length &&
+        copyFetchDataImmobili.splice(indexImmobileToDelete, 1);
+    }
+    console.log(newTopFiveBnB);
+
+    return newTopFiveBnB;
+  };
+
+  const topFiveBnB = handleFindTopFiveImmobili(fetchDataImmobili);
+  // console.log(topFiveBnB);
 
   return (
     <>
       <div className="container">
-        {/* SEARCHBAR */}
-        {/* <div className="bg-light">
-          <div className="container mt-5">
-            <div className="search-bar">
-              <div className="form-group">
-                <label htmlFor="search" className="form-label text-muted small">Dove</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="search"
-                  placeholder="Cerca destinazioni"
-                  value={filterCity}
-                  onChange={onChangeCity}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="rooms" className="form-label text-muted small">Numero stanze</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="rooms"
-                  placeholder="Numero minimo stanze"
-                  value={filterRooms}
-                  onChange={onChangeRooms}
-                />
-
-              </div>
-              <div className="form-group">
-                <label htmlFor="beds" className="form-label text-muted small">Numero letti</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="beds"
-                  placeholder="Numero minimo letti"
-                  value={filterBeds}
-                  onChange={onChangeBeds}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="type" className="form-label text-muted small">Tipologia</label>
-                <select
-                  className="form-select"
-                  id="type"
-                  value={filterType}
-                  onChange={onChangeType}
-                >
-                  <option value="appartamento">Appartamento</option>
-                  <option value="villa">Villa</option>
-                  <option value="casa indipendente">Casa indipendente</option>
-                  <option value="villetta a schiera">Villetta a schiera</option>
-                  <option value="chalet">Chalet</option>
-                  <option value="baita">Baita</option>
-                  <option value="stanza">Stanza</option>
-                </select>
-              </div>
-              <button className='btn btn-outline-danger' onClick={filterResults}>
-                cerca
-              </button>
-              <button className="btn btn-outline-danger " onClick={clearFilters}>azzera filtri</button>
-            </div>
-          </div>
-        </div> */}
-
-        {/*        
-       
-        
-        
-       
-        <button onClick={filterResults}
-        > 
-         cerca
-        </button>
-        <button onClick={clearFilters}>
-          azzera filtri
-        </button>
-        </div> */}
-
         {/* SEARCHBAR */}
         <Searchbar
           isHidden={true}
@@ -160,6 +79,18 @@ export default function HomePage() {
           filterCity={filterCity}
           setFilterCity={setFilterCity}
         />
+
+        {/* top 5 b&b */}
+        <div className="top-five-bnb-container">
+          <div className="top-five-bnb">
+            {topFiveBnB?.length &&
+              topFiveBnB.map((el, i) => {
+                console.log(topFiveBnB);
+                return <ImmobileCard key={i} immobile={el} section={"top-5"} />;
+              })}
+          </div>
+          <h3 className="top-5-title">Top 5 B&B</h3>
+        </div>
 
         {/* Card Immobili
         <div className="main-container-card">

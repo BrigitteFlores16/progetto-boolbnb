@@ -77,6 +77,35 @@ html {
   .immobile-card-container {
     width: 80%;
   }
+
+  .top-five-bnb-container {
+    margin: 100px 0 !important;
+  }
+
+  .top-five-bnb {
+    flex-direction: column;
+    align-items: center;
+    height: 30rem;
+  }
+
+  .top-five-bnb .body-container h2 {
+    min-height: none !important;
+  }
+
+  .top-5-title {
+    top: -30px !important;
+    left: 30px !important;
+  }
+
+  /* .immobile-card-body-content {
+    display: block !important;
+  } */
+}
+
+@media screen and (min-width: 450px) {
+  .top-five-bnb .body-container h2 {
+    height: 78px;
+  }
 }
 
 /* * IMMOBILE SHOW PAGE STAR */
@@ -88,7 +117,61 @@ html {
   transform: scaleX(-1);
 }
 
-/* ? debug */
+/* * TOP 5 B&B */
+.top-five-bnb-container {
+  width: 100% !important;
+}
+
+.top-five-bnb {
+  display: flex;
+  /* justify-content: center; */
+  overflow-y: auto;
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+  max-width: 936px;
+  /* height: calc(321px + 2rem); */
+  margin: 3rem auto;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: 2px solid gray;
+  border-radius: 30px;
+}
+
+.top-5 {
+  display: none !important;
+}
+
+.top-five-bnb-container {
+  position: relative;
+  max-width: 932px;
+  margin: auto;
+}
+
+/* ? fix bug */
+.body-container {
+  width: 160px;
+}
+
+.top-5-title {
+  position: absolute;
+  top: -15px;
+  left: 70px;
+
+  background-color: white;
+  padding: 0 1rem;
+}
+
+/* .top-five-bnb .body-container h2 {
+  height: 78px;
+} */
+
+.top-five-bnb .body-container span {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
 .main-container-card {
   display: flex;
   justify-content: center;
@@ -191,7 +274,7 @@ nav .nav-toggler:hover {
   height: 45px;
 }
 
-.btn-outline-danger{
+.btn-outline-danger {
   margin-left: 10px;
   margin-top: 25px;
 }
