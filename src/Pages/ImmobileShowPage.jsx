@@ -121,7 +121,7 @@ export default function ImmobileShowPage() {
             className="cuore"
             />
         </div>
-        </div>
+       
 
         <div className="row">
           <div className="col-lg-9 col-sm-12 mb-4">
@@ -280,6 +280,7 @@ export default function ImmobileShowPage() {
               Invia Recensione
             </button>
           </form>
+        </div>
         </div>
     </>
   );
