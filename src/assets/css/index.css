@@ -614,8 +614,9 @@ form .submitNewImmobileButton:hover {
 }
 
 
-.formRecensioni {
+.formStore {
   padding: 2rem;
   border-radius: 15px;
   border: 2px solid #dd0e63;
+  margin: 2rem 0;
 }
