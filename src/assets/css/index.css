@@ -12,6 +12,9 @@ html {
   position: relative;
   border-radius: 10px;
   aspect-ratio: 1;
+
+  /* debug */
+  background-color: lightgray;
 }
 
 .img-immobile {
@@ -39,12 +42,12 @@ html {
 
 .cuore-like-container {
   position: absolute;
-  left: 27rem;
-  bottom: 42.5rem;
+  top: 1.7rem;
+  right: 2rem;
+  z-index: 2;
+  transition: top 0.5s, right 0.5s;
+
   color: gray;
-}
-.titolo-heart {
-  position: relative;
 }
 
 .red-heart {
@@ -74,6 +77,166 @@ html {
   .immobile-card-container {
     width: 80%;
   }
+
+  .top-five-bnb-container {
+    margin: 100px 0 !important;
+  }
+
+  .top-five-bnb {
+    flex-direction: column;
+
+    align-items: center;
+    height: 30rem;
+  }
+
+  .top-five-bnb .body-container h2 {
+    min-height: none !important;
+  }
+
+  .top-5-title {
+    top: -30px !important;
+    left: 30px !important;
+  }
+
+  /* .immobile-card-body-content {
+    display: block !important;
+  } */
+}
+
+@media screen and (min-width: 450px) {
+  .top-five-bnb .body-container h2 {
+    height: 78px;
+  }
+
+  .top-five-bnb {
+    justify-content: center;
+  }
+}
+
+/* * HOMPAGE PRESENTATION LAYOUT*/
+.background-container {
+  background-color: white;
+  border-radius: 30px;
+}
+
+.img-backgrounfd {
+  position: fixed;
+  width: 100%;
+  z-index: -1 !important;
+}
+
+.prova-cont {
+  /* margin: 5rem 0; */
+  padding-bottom: 3rem;
+}
+
+.presentation-container {
+  padding: 2rem 0;
+  /* margin-top: 21.5rem; */
+  margin-top: 10rem;
+}
+
+video {
+  width: 30%;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.img-presentazione {
+  width: 30%;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.row-one,
+.row-two,
+.row-tre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+.row-description {
+  width: 60%;
+  padding-left: 5rem;
+}
+
+.row-descriprion-right {
+  text-align: right;
+  padding-right: 5rem;
+}
+
+.end-description-container {
+  text-align: center;
+}
+
+.btn-end-page {
+  background-color: white !important;
+  border: 1px solid gray !important;
+}
+
+.btn-end-page:hover {
+  background-color: lightgray !important;
+}
+
+@media screen and (max-width: 450px) {
+  .img-backgrounfd {
+    display: block;
+    position: relative;
+  }
+
+  .top-five-bnb-container {
+    margin-bottom: 0 !important;
+  }
+
+  .presentation-container {
+    margin-top: 0 !important;
+  }
+
+  .row-one,
+  .row-two,
+  .row-tre {
+    flex-direction: column;
+
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+  }
+
+  .row-description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .row-descriprion-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .row-two {
+    flex-direction: column-reverse;
+  }
+
+  video {
+    width: 100%;
+  }
+
+  .img-presentazione {
+    width: 100%;
+  }
+
+  .row-description {
+    padding: 2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .presentation-container {
+    margin-top: 15rem;
+    margin-bottom: 5rem;
+  }
 }
 
 /* * IMMOBILE SHOW PAGE STAR */
@@ -85,7 +248,60 @@ html {
   transform: scaleX(-1);
 }
 
-/* ? debug */
+/* * TOP 5 B&B */
+.top-five-bnb-container {
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  /* max-width: 932px; */
+  margin: auto;
+}
+
+.top-five-bnb {
+  display: flex;
+  overflow-y: auto;
+
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+  /* max-width: 936px; */
+  /* height: calc(321px + 2rem); */
+  margin: 3rem auto;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border: 1px solid gray;
+  border-radius: 30px;
+}
+
+.top-5 {
+  display: none !important;
+}
+
+/* ? fix bug */
+.body-container {
+  width: 160px;
+}
+
+.top-5-title {
+  position: absolute;
+  top: -15px;
+  left: 70px;
+
+  background-color: white;
+  padding: 0 1rem;
+}
+
+.top-5-title {
+  border-radius: 20px;
+}
+
+.top-five-bnb .body-container span {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* -------------- */
+
 .main-container-card {
   display: flex;
   justify-content: center;
@@ -99,6 +315,7 @@ html {
 /* ? ------------------------- */
 
 .header-space {
+  /* height: 125px; */
   height: 90px;
 }
 
@@ -147,8 +364,8 @@ nav .nav-toggler:hover {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
   padding: 10px 20px;
   display: flex;
-  /* align-items: flex-start; */
-  /* justify-content: center; */
+  align-items: flex-start;
+  justify-content: center;
   margin-right: 30px;
   width: 100%;
   max-width: 100%;
@@ -173,70 +390,31 @@ nav .nav-toggler:hover {
   box-shadow: none;
 }
 
-/* .search-bar .btn-search {
+.search-bar .btn-search {
   background-color: #f44336;
   color: white;
   border-radius: 50%;
   padding: 10px;
-} */
+}
 
-/* .btn-search {
+.btn-search {
   margin-top: 10px;
   margin-left: 10px;
   line-height: 1;
   width: 45px;
   height: 45px;
-} */
+}
 
-/* .btn-outline-danger {
+.btn-outline-danger {
   margin-left: 10px;
   margin-top: 25px;
-} */
+}
 
-/* .search-bar .btn-search:hover {
+.search-bar .btn-search:hover {
   background-color: #d32f2f;
-} */
-
-.search-icon {
-  color: white;
-  background-color: #dd0e63;
-  width: 35px;
-  height: 35px;
-  border-radius: 50px;
 }
 
-.clear-filters-button-small {
-  color: white;
-  background-color: #dd0e63;
-  width: 35px;
-  height: 35px;
-  border-radius: 50px;
-}
-
-.search-icon:hover {
-  color: #dd0e63;
-  background-color: transparent;
-}
-
-.clear-filters-button {
-  height: 35px;
-  border-radius: 50px !important;
-  color: white !important;
-  background-color: #dd0e63 !important;
-  border: none !important;
-}
-
-.clear-filters-button:hover {
-  color: #dd0e63 !important;
-  background-color: transparent !important;
-  border: none !important;
-}
-
-.form-select {
-  border: none !important;
-}
-
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .search-bar .form-group {
     display: none;
   }
@@ -245,7 +423,7 @@ nav .nav-toggler:hover {
     display: block;
     width: 100%;
   }
-} */
+}
 
 /******************************************
 # CARD PROPRIETARIO
@@ -313,6 +491,7 @@ nav .nav-toggler:hover {
   color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
+  margin: 0 0.6rem;
 }
 
 /******************************************
@@ -350,7 +529,7 @@ nav .nav-toggler:hover {
   color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin-right: 0.8rem;
+  margin-right: 0.5rem;
 }
 
 /******************************************
@@ -372,6 +551,7 @@ nav .nav-toggler:hover {
 
 a {
   text-decoration: none;
+  color: black !important;
 }
 
 /* FORM INSERIMENTO IMMOBILE */
@@ -388,17 +568,4 @@ form .submitNewImmobileButton:hover {
   background-color: #dd0e63;
   border: none;
   box-shadow: 0px 3px 7px 0 #ababab;
-}
-
-/******************************************
-# FORM INSERISCI RECENSIONE
-******************************************/
-
-.formRecensioni {
-  border-radius: 15px;
-  border: 2px solid #dd0e63;
-}
-
-.voteStar {
-  color: gold;
 }
