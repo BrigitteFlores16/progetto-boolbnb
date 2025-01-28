@@ -49,7 +49,6 @@ html {
   color: gray; 
 } */
 
-
 .red-heart {
   color: red;
 }
@@ -146,6 +145,7 @@ video {
   width: 30%;
   border-radius: 20px;
   margin: auto;
+  height: 14rem;
 }
 
 .row-one,
