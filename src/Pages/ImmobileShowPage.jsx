@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 import CardProprietario from "../Components/CardProprietario";
 import ComfortsImmobile from "../Components/ComfortsImmobile";
 import CardRecensione, { getAverageRating } from "../Components/CardRecensione";
-import recensioniArray from "../array_recensioni";
 
 // COMPONENT EXPORT
 export default function ImmobileShowPage() {
