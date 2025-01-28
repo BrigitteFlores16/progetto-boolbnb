@@ -40,15 +40,14 @@ html {
   padding: 0;
 }
 
-/* .cuore-like-container {
-  position: absolute;
+.cuore-like-container {
+  /* position: absolute; */
   top: 1.7rem;
   right: 2rem;
   z-index: 2;
   transition: top 0.5s, right 0.5s;
-  color: gray; 
-} */
-
+  color: gray;
+}
 
 .red-heart {
   color: red;

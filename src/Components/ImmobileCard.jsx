@@ -27,6 +27,7 @@ export default function ImmobileCard({ immobile, refreshData }) {
       <CuoreLike
         functionLike={() => handleButtonLike(immobile.id)}
         colorHeart={colorHeart}
+        isAbsolute={true}
       />
 
       <Link

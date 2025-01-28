@@ -1,6 +1,13 @@
-export default function CuoreLike({ functionLike, colorHeart }) {
+export default function CuoreLike({ functionLike, colorHeart, isAbsolute }) {
   return (
-    <div onClick={functionLike} className="cuore-like-container">
+    <div
+      onClick={functionLike}
+      className={
+        isAbsolute
+          ? "cuore-like-container position-absolute"
+          : "cuore-like-container"
+      }
+    >
       <i className={`fa-solid fa-heart immobile-img-heart ${colorHeart}`}></i>
     </div>
   );
