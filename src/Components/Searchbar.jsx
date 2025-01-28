@@ -11,6 +11,7 @@ export default function Searchbar({
   // setFilterCity,
 }) {
   const navigate = useNavigate();
+
   // INIT USE EFFECT
   useEffect(() => {
     handleFetchTipologieImmobile();
@@ -50,13 +51,13 @@ export default function Searchbar({
         })
       : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
-
   const clearFilters = () => {
     setFilterCity("");
     setFilterRooms("");
     setFilterBeds("");
     setFilterType("");
-    fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
+    console.log(filterCity, filterRooms, filterBeds, filterType);
+    fetchImmobili("", "", "", "");
   };
 
   //FETCH TIPOLOGIE IMMOBILE
@@ -73,7 +74,7 @@ export default function Searchbar({
   return (
     <>
       <div className="container mt-5">
-        <div className="search-bar">
+        <div className="search-bar align-items-center justify-content-between">
           <div className="form-group">
             <input
               type="text"
@@ -121,12 +122,27 @@ export default function Searchbar({
                   ))}
             </select>
           </div>
-          <button className="btn btn-outline-danger" onClick={filterResults}>
-            cerca
-          </button>
-          <button className="btn btn-outline-danger " onClick={clearFilters}>
-            azzera filtri
-          </button>
+          <div className="searchbar-buttons d-flex">
+            <button className="btn pe-0" onClick={filterResults}>
+              <div className="search-icon d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+            </button>
+            <button
+              className="btn ms-3 clear-filters-button d-none d-lg-inline-block"
+              onClick={clearFilters}
+            >
+              cancella filtri
+            </button>
+            <button
+              className="btn ps-1 d-flex d-lg-none justify-content-center align-items-center "
+              onClick={clearFilters}
+            >
+              <div className=" clear-filters-button-small search-icon d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-trash-can"></i>
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </>
