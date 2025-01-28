@@ -12,9 +12,6 @@ html {
   position: relative;
   border-radius: 10px;
   aspect-ratio: 1;
-
-  /* debug */
-  background-color: lightgray;
 }
 
 .img-immobile {
@@ -107,7 +104,7 @@ html {
 /* ? ------------------------- */
 
 .header-space {
-  height: 125px;
+  height: 90px;
 }
 
 nav .logo {
@@ -150,21 +147,34 @@ nav .nav-toggler:hover {
 }
 
 .search-bar {
+  flex-wrap: wrap;
   background: #fff;
-  border-radius: 50px;
+  border-radius: 25px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-  padding: 10px 20px;
+  padding: 1.2rem;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin-right: 30px;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 100%;
+  margin-bottom: 2rem;
+  gap: 1rem;
 }
 
-.search-bar .form-group {
+.searchBarInputsContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchField {
+  color: rgb(128, 128, 128);
+  border-radius: 5px;
+  border: 1px solid rgb(173, 173, 173);
+  padding: .2rem .5rem;
+  margin: .5rem;
+  flex-grow: 1;
 }
 
 .search-bar .form-label {
@@ -196,7 +206,7 @@ nav .nav-toggler:hover {
   height: 45px;
 }
 
-.btn-outline-danger{
+.btn-outline-danger {
   margin-left: 10px;
   margin-top: 25px;
 }
@@ -214,6 +224,13 @@ nav .nav-toggler:hover {
     display: block;
     width: 100%;
   }
+}
+
+.searchBarButtonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 /******************************************
@@ -282,7 +299,6 @@ nav .nav-toggler:hover {
   color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin: 0 0.6rem;
 }
 
 /******************************************
@@ -320,7 +336,7 @@ nav .nav-toggler:hover {
   color: #dd0e63;
   cursor: pointer;
   text-decoration: none;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
 }
 
 /******************************************
@@ -336,7 +352,7 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container > img {
+.image-container>img {
   object-fit: cover;
 }
 
@@ -361,4 +377,19 @@ form .submitNewImmobileButton:hover {
   background-color: #dd0e63;
   border: none;
   box-shadow: 0px 3px 7px 0 #ababab;
+}
+
+
+/******************************************
+# FORM INSERISCI RECENSIONE
+******************************************/
+
+.formRecensioni {
+  border-radius: 15px;
+  border: 2px solid #dd0e63;
+}
+
+
+.voteStar {
+  color: gold;
 }

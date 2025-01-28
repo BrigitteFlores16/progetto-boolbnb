@@ -25,8 +25,8 @@ export default function ImmobileShowPage() {
     voto: "",
     num_giorni_di_permanenza: "",
   });
-  
-  const [colorHeart, setColorHeart]= useState("");
+
+  const [colorHeart, setColorHeart] = useState("");
 
   // INIT USE-EFFECT
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function ImmobileShowPage() {
       });
     colorHeart == "" && setColorHeart("red-heart");
   };
-  
+
 
   const handleReviewChange = (e) => {
     setNewReview({
@@ -115,18 +115,16 @@ export default function ImmobileShowPage() {
   return (
     <>
       <div className="container">
-     
-        <h1 className="h3 mb-3 titolo-heart">
-          {immobile.titolo} 
+        <h1 className="h3 my-4">
+          {immobile.titolo}
           <CuoreLike
             functionLike={() => handleButtonLike(immobile.id)}
             colorHeart={colorHeart}
             className="ms-2"
-            />
-          </h1> 
+          /></h1>
 
         <div className="row">
-          <div className="col-12 col-md-6">
+          <div className="col-lg-9 col-sm-12 mb-4">
             <div className="image-container d-flex justify-content-center">
               <img
                 className="image-fluid h-100 w-100 rounded-1"
@@ -135,9 +133,7 @@ export default function ImmobileShowPage() {
               />
             </div>
           </div>
-          
-          
-          <div className="col-12 col-md-6">
+          <div className="col-lg-3 col-sm-12">
             <ComfortsImmobile
               id={id}
               tipologia={immobile.tipologia}
@@ -145,7 +141,7 @@ export default function ImmobileShowPage() {
               num_letti={immobile.num_letti}
               num_bagni={immobile.num_bagni}
               mq={immobile.mq}
-              
+
             />
           </div>
         </div>
@@ -154,7 +150,7 @@ export default function ImmobileShowPage() {
           {immobile.città}, {immobile.indirizzo}
         </h2>
         <div className="row">
-          <div className="col-12 col-md-7">
+          <div className="col-lg-7 col-md-6 col-sm-12 mb-4">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
               quaerat, neque consectetur cumque fugit eius pariatur quod nobis
@@ -169,7 +165,7 @@ export default function ImmobileShowPage() {
               fuga voluptate praesentium ipsum?
             </p>
           </div>
-          <div className="col-12 col-md-5">
+          <div className="col-lg-5 col-md-6 col-sm-12 mb-4">
             {immobile.id_proprietario ? (
               <CardProprietario
                 id={immobile.id_proprietario}
@@ -204,7 +200,9 @@ export default function ImmobileShowPage() {
             ))
             : ""}
         </div>
-        <div className="container mt-5">
+
+
+        <div className="container my-4 p-4 formRecensioni">
           <h2 className="h3 mb-3">Aggiungi una recensione</h2>
           <form onSubmit={handleReviewSubmit}>
             <div className="mb-3">
@@ -278,7 +276,7 @@ export default function ImmobileShowPage() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark my-4">
               Invia Recensione
             </button>
           </form>
