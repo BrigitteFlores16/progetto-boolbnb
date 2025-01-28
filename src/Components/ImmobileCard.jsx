@@ -51,13 +51,18 @@ export default function ImmobileCard({ immobile, refreshData }) {
               <i className="fa-solid fa-map-pin"></i> {immobile.indirizzo}
             </span>
             <span className="immobile-content-room">
-              <i className="fa-solid fa-user"></i> {immobile.num_letti}
+              <i className="fa-solid fa-door-open"></i> Stanze:{" "}
+              {immobile.num_stanze}
+            </span>
+            <span className="immobile-content-bed">
+              <i className="fa-solid fa-bed"></i> Posti letto:{" "}
+              {immobile.num_letti}
             </span>
             <span className="immobile-content-bathroom">
-              <i className="fa-solid fa-shower"></i> {immobile.num_bagni}
+              <i className="fa-solid fa-shower"></i> Bagni: {immobile.num_bagni}
             </span>
             <span className="immobile-content-meters">
-              <i className="fa-solid fa-ruler"></i> {immobile.mq}
+              <i className="fa-solid fa-ruler"></i> Metri quadri: {immobile.mq}
             </span>
             <span className="immobile-content-star">
               <i className="fa-solid fa-star"></i>
