@@ -74,8 +74,12 @@ export default function Searchbar({
   return (
     <>
       <div className="container mt-5">
-        <div className="search-bar align-items-center justify-content-between">
-          <div className="form-group">
+        <div className="search-bar align-items-center justify-content-between row">
+          <div
+            className={
+              isHidden ? "form-group col" : "form-group col-12 col-lg-3"
+            }
+          >
             <input
               type="text"
               className="form-control"
@@ -85,27 +89,39 @@ export default function Searchbar({
               onChange={onChangeCity}
             />
           </div>
-          <div className="form-group">
+          <div
+            className={
+              isHidden
+                ? "d-none"
+                : "form-group col-12 col-sm-6 col-md-4 col-lg-2"
+            }
+          >
             <input
               type="number"
               id="rooms"
-              placeholder="Minimo stanze"
+              placeholder="Stanze"
               value={filterRooms}
               onChange={onChangeRooms}
               className={isHidden ? "d-none" : "form-control"}
             />
           </div>
-          <div className="form-group">
+          <div
+            className={
+              isHidden
+                ? "d-none"
+                : "form-group col-12 col-sm-6 col-md-4 col-lg-2"
+            }
+          >
             <input
               type="number"
               id="beds"
-              placeholder="Minimo letti"
+              placeholder="Letti"
               value={filterBeds}
               onChange={onChangeBeds}
               className={isHidden ? "d-none" : "form-control"}
             />
           </div>
-          <div className="form-group">
+          <div className={isHidden ? "d-none" : "form-group col-12 col-lg-2"}>
             <select
               className={isHidden ? "d-none" : "form-select"}
               id="type"
@@ -122,10 +138,16 @@ export default function Searchbar({
                   ))}
             </select>
           </div>
-          <div className="searchbar-buttons d-flex">
+          <div
+            className={
+              isHidden
+                ? "searchbar-buttons d-flex justify-content-end col-3"
+                : "searchbar-buttons d-flex justify-content-center justify-content-lg-end col-12 col-lg-3"
+            }
+          >
             <button className="btn pe-0" onClick={filterResults}>
               <div className="search-icon d-flex justify-content-center align-items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i className="fa-solid fa-magnifying-glass"></i>
               </div>
             </button>
             <div className="button-container d-none d-lg-flex justify-content-center align-items-center">
@@ -141,7 +163,7 @@ export default function Searchbar({
               onClick={clearFilters}
             >
               <div className=" clear-filters-button-small search-icon d-flex justify-content-center align-items-center">
-                <i class="fa-solid fa-trash-can"></i>
+                <i className="fa-solid fa-trash-can"></i>
               </div>
             </button>
           </div>

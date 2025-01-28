@@ -47,7 +47,11 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link " to="/">
+                <NavLink
+                  className="nav-link disabled"
+                  to="/"
+                  aria-disabled="true"
+                >
                   Login
                 </NavLink>
               </li>
