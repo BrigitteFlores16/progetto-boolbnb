@@ -111,7 +111,7 @@ export default function ImmobileShowPage() {
   return (
     <>
       <div className="container ">
-        <div className=" d-flex  align-items-center ">
+        <div className=" d-flex justify-content-between align-items-center ">
           <h1 className="h3 my-4">{immobile.titolo}</h1>
           <CuoreLike
             functionLike={() => handleButtonLike(immobile.id)}
