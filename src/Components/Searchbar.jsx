@@ -89,7 +89,7 @@ export default function Searchbar({
             <input
               type="number"
               id="rooms"
-              placeholder="Numero minimo stanze"
+              placeholder="Minimo stanze"
               value={filterRooms}
               onChange={onChangeRooms}
               className={isHidden ? "d-none" : "form-control"}
@@ -99,7 +99,7 @@ export default function Searchbar({
             <input
               type="number"
               id="beds"
-              placeholder="Numero minimo letti"
+              placeholder="Minimo letti"
               value={filterBeds}
               onChange={onChangeBeds}
               className={isHidden ? "d-none" : "form-control"}
@@ -128,14 +128,16 @@ export default function Searchbar({
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </button>
+            <div className="button-container d-none d-lg-flex justify-content-center align-items-center">
+              <button
+                className="btn ms-3 clear-filters-button d-none d-lg-flex"
+                onClick={clearFilters}
+              >
+                cancella filtri
+              </button>
+            </div>
             <button
-              className="btn ms-3 clear-filters-button d-none d-lg-inline-block"
-              onClick={clearFilters}
-            >
-              cancella filtri
-            </button>
-            <button
-              className="btn ps-1 d-flex d-lg-none justify-content-center align-items-center "
+              className="btn ps-2 d-flex d-lg-none justify-content-center align-items-center "
               onClick={clearFilters}
             >
               <div className=" clear-filters-button-small search-icon d-flex justify-content-center align-items-center">
