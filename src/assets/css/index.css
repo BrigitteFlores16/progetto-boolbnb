@@ -122,6 +122,7 @@ html {
   border-radius: 30px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
   padding: 1rem;
+  background-color: white;
 }
 
 .img-carousel-container {
@@ -150,6 +151,8 @@ html {
   position: fixed;
   width: 100%;
   z-index: -1 !important;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .prova-cont {
@@ -209,10 +212,10 @@ html {
 }
 
 @media screen and (max-width: 450px) {
-  .img-backgrounfd {
+  /* .img-backgrounfd {
     display: block;
     position: relative;
-  }
+  } */
 
   .top-five-bnb-container {
     margin-bottom: 0 !important;
