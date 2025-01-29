@@ -186,53 +186,62 @@ export default function HomePage() {
               <h1 className="text-center mb-5">Chi siamo</h1>
 
               <hr />
+              <div className="p-3 p-md-5">
+                <div className="row g-5">
+                  <div className="col-12 col-sm-6">
+                    <img
+                      className="img-fluid rounded-4
+                    "
+                      src="img/nature.jpeg"
+                      alt=""
+                    />
+                  </div>
 
-              <div className="row-one">
-                <img
-                  className="img-presentazione"
-                  src="img/nature.jpeg"
-                  alt=""
-                />
+                  <div className="col-12 col-sm-5 order-1">
+                    <div className="">
+                      <h2>La nostra compagnia</h2>
+                      <span>
+                        Siamo i numeri uno nel settore, affidati alle nostre
+                        strutture e vivi esperienze da SOGNO!
+                      </span>
+                    </div>
+                  </div>
 
-                <div className="row-description">
-                  <h2>La nostra compagnia</h2>
-                  <span>
-                    Siamo i numeri uno nel settore, affidati alle nostre
-                    strutture e vivi esperienze da SOGNO!
-                  </span>
+                  <div className="col-12 col-sm-6 order-3 order-sm-2">
+                    <h2>I nostri affittuari</h2>
+                    <span className="text-end">
+                      Viaggia senza preoccupazioni grazie alle abitazioni ed ai
+                      loro affittuari verificati, in modo da avere sempre il
+                      miglio servizio garantito.
+                    </span>
+                  </div>
+
+                  <div className="col-12 col-sm-6 order-2 order-sm-3">
+                    <img
+                      className="img-fluid rounded-4"
+                      src="img/image-presentazione.jpg"
+                    />
+                  </div>
+
+                  <div className="col-12 col-sm-6 order-4">
+                    <img
+                      className="img-fluid rounded-4"
+                      src="img/payment.jpg"
+                    />
+                  </div>
+
+                  <div className="col-12 col-sm-6 order-5">
+                    <h2>Pagamenti sicuri</h2>
+                    <span>
+                      Paga senza pensieri grazie al circuito MasterCard e alla
+                      possibilita di pagare con PayPall, e da ora anche con la
+                      possibilità di pagare a rate.
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              <div className="row-two">
-                <div className="row-description row-descriprion-right">
-                  <h2>I nostri affittuari</h2>
-                  <span className="text-end">
-                    Viaggia senza preoccupazioni grazie alle abitazioni ed ai
-                    loro affittuari verificati, in modo da avere sempre il
-                    miglio servizio garantito.
-                  </span>
-                </div>
-
-                <img
-                  className="img-presentazione"
-                  src="img/image-presentazione.jpg"
-                />
-              </div>
-
-              <div className="row-tre">
-                <img className="img-presentazione" src="img/payment.jpg" />
-
-                <div className="row-description">
-                  <h2>Pagamenti sicuri</h2>s
-                  <span>
-                    Paga senza pensieri grazie al circuito MasterCard e alla
-                    possibilita di pagare con PayPall, e da ora anche con la
-                    possibilità di pagare a rate.
-                  </span>
-                </div>
-              </div>
-
-              <div className="end-description-container">
+              <div className="end-description-container mt-5">
                 <h2>Cosa aspetti, prenota subito!</h2>
                 <Link to="/search">
                   <button className="btn mt-5 mb-5 btn-end-page">
