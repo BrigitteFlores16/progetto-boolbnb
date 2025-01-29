@@ -332,7 +332,17 @@ html {
 }
 
 .cuore-like-container:hover {
+  cursor: pointer;
   color: white;
+}
+
+.red-heart {
+  color: red;
+}
+
+.show-page-container .cuore-like-container:hover .immobile-img-heart {
+  cursor: pointer;
+  text-shadow: 0px 0px 20px red;
 }
 
 /* ? ------------------------- */
