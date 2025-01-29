@@ -10,7 +10,7 @@ export default function SearchPage() {
   //   const [filterCity, setFilterCity] = useState(filter);
 
   useEffect(() => {
-    handleFetchImmobili(filter, "", "", "");
+    handleFetchImmobili(filter || "", "", "", "");
   }, []);
 
   const handleFetchImmobili = async (
@@ -45,9 +45,9 @@ export default function SearchPage() {
           //   setFilterCity={setFilterCity}
         />
 
-             {/* Card Immobili */}
-             <div className="main-container-card">
-          {fetchDataImmobili?.length > 0 ?( 
+        {/* Card Immobili */}
+        <div className="main-container-card">
+          {fetchDataImmobili?.length > 0 ? (
             fetchDataImmobili.map((el) => (
               <ImmobileCard
                 key={el.id}
@@ -56,9 +56,10 @@ export default function SearchPage() {
               />
             ))
           ) : (
-            <p className="mt-5">Nessun risultato trovato. Prova a modificare i filtri di ricerca!</p>
-          )
-            }
+            <p className="mt-5">
+              Nessun risultato trovato. Prova a modificare i filtri di ricerca!
+            </p>
+          )}
         </div>
       </div>
     </>
