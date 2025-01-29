@@ -97,7 +97,16 @@ export default function HomePage() {
 
   return (
     <>
-      <img src="/immobili-default.jpg" alt="" className="img-backgrounfd" />
+      <img
+        src="/immobili-default.jpg"
+        alt=""
+        className="img-backgrounfd desktop-bg"
+      />
+      <img
+        src="/background-mobile.jpg"
+        alt=""
+        className="img-backgrounfd mobile-bg"
+      />
 
       <div className="container mb-5 mb-sm-5">
         {/* SEARCHBAR */}
