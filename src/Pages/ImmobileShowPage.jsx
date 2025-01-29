@@ -125,7 +125,7 @@ export default function ImmobileShowPage() {
           <div className="col-lg-9 col-sm-12 mb-4">
             <div className="image-container d-flex justify-content-center">
               <img
-                className="image-fluid h-100 w-100 rounded-1"
+                className="image-fluid h-100 w-100 rounded-1 img-show-page"
                 src={immobile.immagine ? immobile.immagine : ""}
                 alt=""
               />
