@@ -197,7 +197,7 @@ export default function HomePage() {
                     />
                   </div>
 
-                  <div className="col-12 col-sm-5 order-1">
+                  <div className="col-12 col-sm-5 order-1 d-flex align-items-center">
                     <div className="">
                       <h2>La nostra compagnia</h2>
                       <span>
@@ -207,7 +207,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="col-12 col-sm-6 order-3 order-sm-2">
+                  <div className="col-12 col-sm-6 order-3 order-sm-2 d-sm-flex flex-column align-items-end justify-content-center">
                     <h2>I nostri affittuari</h2>
                     <span className="text-end">
                       Viaggia senza preoccupazioni grazie alle abitazioni ed ai
@@ -230,7 +230,7 @@ export default function HomePage() {
                     />
                   </div>
 
-                  <div className="col-12 col-sm-6 order-5">
+                  <div className="col-12 col-sm-6 order-5 d-flex flex-column align-items-start justify-content-center">
                     <h2>Pagamenti sicuri</h2>
                     <span>
                       Paga senza pensieri grazie al circuito MasterCard e alla
