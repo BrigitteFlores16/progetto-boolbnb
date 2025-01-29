@@ -110,7 +110,7 @@ export default function ImmobileShowPage() {
 
   return (
     <>
-      <div className="container ">
+      <div className="container show-page-container">
         <div className=" d-flex justify-content-between align-items-center ">
           <h1 className="h3 my-4">{immobile.titolo}</h1>
           <CuoreLike
@@ -191,10 +191,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-              <div key={index} className="col-md-6 mb-4">
-                <CardRecensione recensione={recensione} />
-              </div>
-            ))
+                <div key={index} className="col-md-6 mb-4">
+                  <CardRecensione recensione={recensione} />
+                </div>
+              ))
             : ""}
         </div>
 

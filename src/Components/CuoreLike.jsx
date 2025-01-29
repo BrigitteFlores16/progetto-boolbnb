@@ -1,4 +1,5 @@
 export default function CuoreLike({ functionLike, colorHeart, isAbsolute }) {
+  console.log(colorHeart);
   return (
     <div
       onClick={functionLike}
