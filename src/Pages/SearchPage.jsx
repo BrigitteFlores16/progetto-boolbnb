@@ -24,7 +24,7 @@ export default function SearchPage() {
     );
 
     await fetch(
-      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+      `http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ''}&rooms=${filterRooms ? filterRooms : ''}&beds=${filterBeds ? filterBeds : ''}&type=${filterType ? filterType : ''}`
     )
       // FILTERS
       //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
@@ -42,7 +42,7 @@ export default function SearchPage() {
           isHidden={false}
           fetchImmobili={handleFetchImmobili}
           initialFilter={filter}
-          //   setFilterCity={setFilterCity}
+        //   setFilterCity={setFilterCity}
         />
 
         {/* Card Immobili */}
