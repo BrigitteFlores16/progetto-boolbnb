@@ -99,7 +99,7 @@ export default function HomePage() {
     <>
       <img src="/immobili-default.jpg" alt="" className="img-backgrounfd" />
 
-      <div className="container">
+      <div className="container mb-5 mb-sm-5">
         {/* SEARCHBAR */}
         <Searchbar
           isHidden={true}
@@ -223,7 +223,7 @@ export default function HomePage() {
                 <img className="img-presentazione" src="img/payment.jpg" />
 
                 <div className="row-description">
-                  <h2>Pagamenti sicuri</h2>s
+                  <h2>Pagamenti sicuri</h2>
                   <span>
                     Paga senza pensieri grazie al circuito MasterCard e alla
                     possibilita di pagare con PayPall, e da ora anche con la
