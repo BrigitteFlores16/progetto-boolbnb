@@ -6,8 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 export default function Searchbar({
   isHidden,
+  filterCity,
+  filterRooms,
+  filterBeds,
+  filterType,
   fetchImmobili,
-  initialFilter,
+  setFilterCity,
+  setFilterRooms,
+  setFilterBeds,
+  setFilterType,
+  // initialFilter,
   // setFilterCity,
 }) {
   const navigate = useNavigate();
@@ -18,10 +26,10 @@ export default function Searchbar({
   }, []);
 
   const [tipologieImmobile, setTipologieImmobile] = useState([]);
-  const [filterCity, setFilterCity] = useState(initialFilter || "");
-  const [filterRooms, setFilterRooms] = useState("");
-  const [filterBeds, setFilterBeds] = useState("");
-  const [filterType, setFilterType] = useState("");
+  // const [filterCity, setFilterCity] = useState(initialFilter || "");
+  // const [filterRooms, setFilterRooms] = useState("");
+  // const [filterBeds, setFilterBeds] = useState("");
+  // const [filterType, setFilterType] = useState("");
 
   const onChangeCity = (e) => {
     setFilterCity(e.target.value);

@@ -43,12 +43,29 @@ export default function HomePage() {
   }, []);
 
   //FETCH IMMOBILI
-  const handleFetchImmobili = async () => {
-    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ''}`)
+  const handleFetchImmobili = async (
+    filterCity,
+    filterRooms,
+    filterBeds,
+    filterType
+  ) => {
+    console.log(
+      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+    );
+
+    await fetch(
+      `http://localhost:3000/api/immobili/?city=${
+        filterCity ? filterCity : ""
+      }&rooms=${filterRooms ? filterRooms : ""}&beds=${
+        filterBeds ? filterBeds : ""
+      }&type=${filterType ? filterType : ""}`
+    )
       // FILTERS
-      // ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
+      //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
+
         setFetchDataImmobili(data.immobili);
       });
   };
@@ -123,12 +140,14 @@ export default function HomePage() {
             {topFiveBnB?.length &&
               topFiveBnB.map((el, i) => {
                 console.log(topFiveBnB);
-                return <ImmobileCard
-                  key={i}
-                  immobile={el}
-                  section={"top-5"}
-                  refreshData={handleFetchImmobili}
-                />;
+                return (
+                  <ImmobileCard
+                    key={i}
+                    immobile={el}
+                    section={"top-5"}
+                    refreshData={() => handleFetchImmobili("", "", "", "")}
+                  />
+                );
               })}
           </div>
           <h3 className="top-5-title-absolute">Top 5 B&B</h3>
