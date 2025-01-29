@@ -196,12 +196,16 @@ html {
 }
 
 .btn-end-page {
-  background-color: white !important;
-  border: 1px solid gray !important;
+  border-radius: 10px !important;
+  color: white !important;
+  background-color: #dd0e63 !important;
+  border: none !important;
 }
 
 .btn-end-page:hover {
-  background-color: lightgray !important;
+  color: #dd0e63 !important;
+  background-color: transparent !important;
+  border: none !important;
 }
 
 @media screen and (max-width: 450px) {

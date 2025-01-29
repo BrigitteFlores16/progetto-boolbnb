@@ -223,7 +223,7 @@ export default function HomePage() {
                 <img className="img-presentazione" src="img/payment.jpg" />
 
                 <div className="row-description">
-                  <h2>Pagamenti sicuri</h2>
+                  <h2>Pagamenti sicuri</h2>s
                   <span>
                     Paga senza pensieri grazie al circuito MasterCard e alla
                     possibilita di pagare con PayPall, e da ora anche con la
@@ -234,9 +234,11 @@ export default function HomePage() {
 
               <div className="end-description-container">
                 <h2>Cosa aspetti, prenota subito!</h2>
-                <button className="btn mt-5 mb-5 btn-end-page">
-                  Ricerca un alloggio
-                </button>
+                <Link to="/search">
+                  <button className="btn mt-5 mb-5 btn-end-page">
+                    Ricerca un alloggio
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
