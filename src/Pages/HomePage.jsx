@@ -44,7 +44,7 @@ export default function HomePage() {
 
   //FETCH IMMOBILI
   const handleFetchImmobili = async () => {
-    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity}`)
+    await fetch(`http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ''}`)
       // FILTERS
       // ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
       .then((res) => res.json())
@@ -114,7 +114,12 @@ export default function HomePage() {
             {topFiveBnB?.length &&
               topFiveBnB.map((el, i) => {
                 console.log(topFiveBnB);
-                return <ImmobileCard key={i} immobile={el} section={"top-5"} />;
+                return <ImmobileCard
+                  key={i}
+                  immobile={el}
+                  section={"top-5"}
+                  refreshData={handleFetchImmobili}
+                />;
               })}
           </div>
           <h3 className="top-5-title-absolute">Top 5 B&B</h3>
