@@ -7,6 +7,10 @@ export default function SearchPage() {
   const location = useLocation();
   const filter = location.state?.filter;
   const [fetchDataImmobili, setFetchDataImmobili] = useState([]);
+  const [filterCity, setFilterCity] = useState(filter || "");
+  const [filterRooms, setFilterRooms] = useState("");
+  const [filterBeds, setFilterBeds] = useState("");
+  const [filterType, setFilterType] = useState("");
   //   const [filterCity, setFilterCity] = useState(filter);
 
   useEffect(() => {
@@ -24,7 +28,11 @@ export default function SearchPage() {
     );
 
     await fetch(
-      `http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ''}&rooms=${filterRooms ? filterRooms : ''}&beds=${filterBeds ? filterBeds : ''}&type=${filterType ? filterType : ''}`
+      `http://localhost:3000/api/immobili/?city=${
+        filterCity ? filterCity : ""
+      }&rooms=${filterRooms ? filterRooms : ""}&beds=${
+        filterBeds ? filterBeds : ""
+      }&type=${filterType ? filterType : ""}`
     )
       // FILTERS
       //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
@@ -39,10 +47,18 @@ export default function SearchPage() {
     <>
       <div className="container">
         <Searchbar
+          filterCity={filterCity}
+          filterRooms={filterRooms}
+          filterBeds={filterBeds}
+          filterType={filterType}
+          setFilterCity={setFilterCity}
+          setFilterRooms={setFilterRooms}
+          setFilterBeds={setFilterBeds}
+          setFilterType={setFilterType}
           isHidden={false}
           fetchImmobili={handleFetchImmobili}
           initialFilter={filter}
-        //   setFilterCity={setFilterCity}
+          //   setFilterCity={setFilterCity}
         />
 
         {/* Card Immobili */}
@@ -52,7 +68,14 @@ export default function SearchPage() {
               <ImmobileCard
                 key={el.id}
                 immobile={el}
-                refreshData={handleFetchImmobili}
+                refreshData={() =>
+                  handleFetchImmobili(
+                    filterCity,
+                    filterRooms,
+                    filterBeds,
+                    filterType
+                  )
+                }
               />
             ))
           ) : (
