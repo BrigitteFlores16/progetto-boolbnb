@@ -373,7 +373,7 @@ html {
 .main-container-card {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
+  justify-content: space-between;
 }
 
 .main-container-card .wrap-immobile-card-container {
