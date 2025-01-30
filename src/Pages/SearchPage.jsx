@@ -61,6 +61,10 @@ export default function SearchPage() {
           //   setFilterCity={setFilterCity}
         />
 
+        <h2 className="h6 fw-lighter mt-4 ms-5">
+          {fetchDataImmobili?.length} alloggi trovati
+        </h2>
+
         {/* Card Immobili */}
         <div className="main-container-card">
           {fetchDataImmobili?.length > 0 ? (
