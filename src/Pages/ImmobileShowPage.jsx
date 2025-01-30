@@ -55,6 +55,8 @@ export default function ImmobileShowPage() {
         console.log("like aggiunto");
       });
     colorHeart == "" && setColorHeart("red-heart");
+
+    ajaxShow();
   };
 
   const handleReviewChange = (e) => {
@@ -113,12 +115,16 @@ export default function ImmobileShowPage() {
       <div className="container show-page-container">
         <div className=" d-flex justify-content-between align-items-center ">
           <h1 className="h3 my-4">{immobile.titolo}</h1>
-          <CuoreLike
-            functionLike={() => handleButtonLike(immobile.id)}
-            colorHeart={colorHeart}
-            isAbsolute={false}
-            className="cuore"
-          />
+          <div className="like-show-page-container">
+            {/* <span>{immobile && immobile.num_likes}</span> */}
+            <CuoreLike
+              functionLike={() => handleButtonLike(immobile.id)}
+              colorHeart={colorHeart}
+              isAbsolute={false}
+              numLike={immobile && immobile.num_likes}
+              className="cuore"
+            />
+          </div>
         </div>
 
         <div className="row">

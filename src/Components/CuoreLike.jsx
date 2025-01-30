@@ -1,4 +1,9 @@
-export default function CuoreLike({ functionLike, colorHeart, isAbsolute }) {
+export default function CuoreLike({
+  functionLike,
+  colorHeart,
+  isAbsolute,
+  numLike,
+}) {
   console.log(colorHeart);
   return (
     <div
@@ -9,7 +14,10 @@ export default function CuoreLike({ functionLike, colorHeart, isAbsolute }) {
           : "cuore-like-container"
       }
     >
-      <i className={`fa-solid fa-heart immobile-img-heart ${colorHeart}`}></i>
+      <div className="heart-container">
+        <span className="num-like-container">{numLike && numLike}</span>
+        <i className={`fa-solid fa-heart immobile-img-heart ${colorHeart}`}></i>
+      </div>
     </div>
   );
 }

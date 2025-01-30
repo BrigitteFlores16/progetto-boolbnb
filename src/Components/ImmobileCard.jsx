@@ -28,6 +28,7 @@ export default function ImmobileCard({ immobile, refreshData }) {
         functionLike={() => handleButtonLike(immobile.id)}
         colorHeart={colorHeart}
         isAbsolute={true}
+        numLike={immobile && immobile.num_likes}
       />
 
       <Link
@@ -49,10 +50,10 @@ export default function ImmobileCard({ immobile, refreshData }) {
           <h2>{immobile && immobile.titolo}</h2>
 
           <div className="immobile-card-body-content">
-            <span className="immobile-content-like">
+            {/* <span className="immobile-content-like">
               <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
               {immobile && immobile.num_likes}
-            </span>{" "}
+            </span> */}
             <span className="immobile-content-adress">
               <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
               {immobile && immobile.indirizzo}
