@@ -63,32 +63,28 @@ export default function SearchPage() {
           //   setFilterCity={setFilterCity}
         />
 
-        <h2 className="h6 fw-lighter mt-4 ms-5">
-          {fetchDataImmobili?.length} alloggi trovati
+        <h2 className="h6 fw-lighter mt-4 ms-4">
+          {fetchDataImmobili?.length == 0
+            ? "Nessun risultato trovato. Prova a modificare i filtri di ricerca!"
+            : fetchDataImmobili.length + " alloggi trovati"}
         </h2>
 
         {/* Card Immobili */}
         <div className="main-container-card">
-          {fetchDataImmobili?.length > 0 ? (
-            fetchDataImmobili.map((el) => (
-              <ImmobileCard
-                key={el.id}
-                immobile={el}
-                refreshData={() =>
-                  handleFetchImmobili(
-                    filterCity,
-                    filterRooms,
-                    filterBeds,
-                    filterType
-                  )
-                }
-              />
-            ))
-          ) : (
-            <p className="mt-5">
-              Nessun risultato trovato. Prova a modificare i filtri di ricerca!
-            </p>
-          )}
+          {fetchDataImmobili.map((el) => (
+            <ImmobileCard
+              key={el.id}
+              immobile={el}
+              refreshData={() =>
+                handleFetchImmobili(
+                  filterCity,
+                  filterRooms,
+                  filterBeds,
+                  filterType
+                )
+              }
+            />
+          ))}
         </div>
       </div>
     </>
