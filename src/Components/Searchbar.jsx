@@ -65,7 +65,7 @@ export default function Searchbar({
     setFilterBeds("");
     setFilterType("");
     console.log(filterCity, filterRooms, filterBeds, filterType);
-    fetchImmobili("", "", "", "");
+    fetchImmobili(filterCity, "", "", "");
   };
 
   //FETCH TIPOLOGIE IMMOBILE
