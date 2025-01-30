@@ -111,6 +111,8 @@ export default function Searchbar({
               value={filterRooms}
               onChange={onChangeRooms}
               className={isHidden ? "d-none" : "form-control"}
+              min="0"
+              max="255"
             />
           </div>
           <div
@@ -127,6 +129,8 @@ export default function Searchbar({
               value={filterBeds}
               onChange={onChangeBeds}
               className={isHidden ? "d-none" : "form-control"}
+              min="0"
+              max="255"
             />
           </div>
           <div className={isHidden ? "d-none" : "form-group col-12 col-lg-2"}>
