@@ -170,7 +170,7 @@ export default function HomePage() {
             {topFiveBnB?.length &&
               topFiveBnB.map((el, id) => {
                 return (
-                  <div key={id} className="">
+                  <Link to={`/${el && el.id}`} key={id} className="">
                     <div className="img-carousel-container">
                       <img
                         src={el && el.immagine}
@@ -207,7 +207,7 @@ export default function HomePage() {
                         {parseFloat(el && el.voto).toFixed(1)}
                       </span>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
           </Carousel>
