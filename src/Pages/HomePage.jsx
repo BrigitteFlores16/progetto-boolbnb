@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../components/Searchbar";
 import ImmobileCard from "../Components/ImmobileCard";
+import CuoreLike from "../Components/CuoreLike";
 
 // import carousel
 import Carousel from "react-multi-carousel";
@@ -114,6 +115,22 @@ export default function HomePage() {
   const topFiveBnB = handleFindTopFiveImmobili(fetchDataImmobili);
   // console.log(topFiveBnB);
 
+  // * FUNCTION FOR LIKE
+  const [colorHeart, setColorHeart] = useState("");
+
+  const handleButtonLike = (id) => {
+    fetch(`http://localhost:3000/api/immobili/${id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("like aggiunto");
+      });
+    colorHeart == "" && setColorHeart("red-heart");
+
+    handleFetchImmobili();
+  };
+
   return (
     <>
       <img
@@ -175,44 +192,53 @@ export default function HomePage() {
             {topFiveBnB?.length &&
               topFiveBnB.map((el, id) => {
                 return (
-                  <Link to={`/${el && el.id}`} key={id} className="">
-                    <div className="img-carousel-container">
-                      <img
-                        src={el && el.immagine}
-                        className="h-100 carousel-image"
-                        alt=""
-                      />
-                    </div>
-                    <h2 className="text-center py-4">{el && el.titolo}</h2>
+                  <>
+                    <CuoreLike
+                      functionLike={() => handleButtonLike(el.id)}
+                      colorHeart={colorHeart}
+                      isAbsolute={true}
+                      numLike={el && el.num_likes}
+                      className="cuore"
+                    />
+                    <Link to={`/${el && el.id}`} key={id} className="">
+                      <div className="img-carousel-container">
+                        <img
+                          src={el && el.immagine}
+                          className="h-100 carousel-image"
+                          alt=""
+                        />
+                      </div>
+                      <h2 className="text-center py-4">{el && el.titolo}</h2>
 
-                    <div className="immobile-card-body-content d-flex justify-content-between px-2">
-                      <span className="immobile-content-like">
-                        <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
-                        {el && el.num_likes}
-                      </span>{" "}
-                      <br />
-                      <span className="immobile-content-adress">
-                        <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
-                        {el && el.indirizzo}
-                      </span>
-                      <span className="immobile-content-room">
-                        <i className="fa-solid fa-door-open cardComforts icona"></i>{" "}
-                        {el && el.num_stanze}
-                      </span>
-                      <span className="immobile-content-bathroom">
-                        <i className="fa-solid fa-shower cardComforts icona"></i>{" "}
-                        {el && el.num_bagni}
-                      </span>
-                      <span className="immobile-content-meters">
-                        <i className="fa-solid fa-ruler cardComforts icona"></i>{" "}
-                        {el && el.mq}
-                      </span>
-                      <span className="immobile-content-star">
-                        <i className="fa-solid fa-star cardComforts icona"></i>
-                        {parseFloat(el && el.voto).toFixed(1)}
-                      </span>
-                    </div>
-                  </Link>
+                      <div className="immobile-card-body-content d-flex justify-content-between px-2">
+                        <span className="immobile-content-like">
+                          <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
+                          {el && el.num_likes}
+                        </span>{" "}
+                        <br />
+                        <span className="immobile-content-adress">
+                          <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
+                          {el && el.indirizzo}
+                        </span>
+                        <span className="immobile-content-room">
+                          <i className="fa-solid fa-door-open cardComforts icona"></i>{" "}
+                          {el && el.num_stanze}
+                        </span>
+                        <span className="immobile-content-bathroom">
+                          <i className="fa-solid fa-shower cardComforts icona"></i>{" "}
+                          {el && el.num_bagni}
+                        </span>
+                        <span className="immobile-content-meters">
+                          <i className="fa-solid fa-ruler cardComforts icona"></i>{" "}
+                          {el && el.mq}
+                        </span>
+                        <span className="immobile-content-star">
+                          <i className="fa-solid fa-star cardComforts icona"></i>
+                          {parseFloat(el && el.voto).toFixed(1)}
+                        </span>
+                      </div>
+                    </Link>
+                  </>
                 );
               })}
           </Carousel>
