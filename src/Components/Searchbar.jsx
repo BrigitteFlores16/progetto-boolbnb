@@ -53,14 +53,14 @@ export default function Searchbar({
   const filterResults = () => {
     isHidden
       ? navigate("/search", {
-          state: {
-            filter: filterCity,
-          },
-        })
+        state: {
+          filter: filterCity,
+        },
+      })
       : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
   const clearFilters = () => {
-    setFilterCity("");
+    // setFilterCity("");
     setFilterRooms("");
     setFilterBeds("");
     setFilterType("");
@@ -144,10 +144,10 @@ export default function Searchbar({
               {tipologieImmobile.lenght == 0
                 ? ""
                 : tipologieImmobile.map((tipologia) => (
-                    <option key={tipologia.nome} value={tipologia.nome}>
-                      {tipologia.nome}
-                    </option>
-                  ))}
+                  <option key={tipologia.nome} value={tipologia.nome}>
+                    {tipologia.nome}
+                  </option>
+                ))}
             </select>
           </div>
           <div
