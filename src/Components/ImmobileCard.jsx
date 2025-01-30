@@ -57,21 +57,24 @@ export default function ImmobileCard({ immobile, refreshData }) {
               <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
               {immobile && immobile.indirizzo}
             </span>
-            <span className="immobile-content-room">
-              <i className="fa-solid fa-door-open cardComforts icona"></i>{" "}
-              {immobile && immobile.num_stanze}
-            </span>
-            <span className="immobile-content-bathroom">
-              <i className="fa-solid fa-shower cardComforts icona"></i>{" "}
-              {immobile && immobile.num_bagni}
-            </span>
-            <span className="immobile-content-meters">
-              <i className="fa-solid fa-ruler cardComforts icona"></i> {immobile && immobile.mq}
-            </span>
-            <span className="immobile-content-star">
-              <i className="fa-solid fa-star cardComforts icona"></i>
-              {parseFloat(immobile && immobile.voto).toFixed(1)}
-            </span>
+            <div className="sub-container-card-body">
+              <span className="immobile-content-room">
+                <i className="fa-solid fa-door-open cardComforts icona"></i>{" "}
+                {immobile && immobile.num_stanze}
+              </span>
+              <span className="immobile-content-bathroom">
+                <i className="fa-solid fa-shower cardComforts icona"></i>{" "}
+                {immobile && immobile.num_bagni}
+              </span>
+              <span className="immobile-content-meters">
+                <i className="fa-solid fa-ruler cardComforts icona"></i>{" "}
+                {immobile && immobile.mq}
+              </span>
+              <span className="immobile-content-star">
+                <i className="fa-solid fa-star cardComforts icona"></i>
+                {parseFloat(immobile && immobile.voto).toFixed(1)}
+              </span>
+            </div>
           </div>
         </div>
       </Link>

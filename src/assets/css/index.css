@@ -48,7 +48,6 @@ html {
   transition: top 0.5s, right 0.5s;
   color: gray;
 }
-
 */ .red-heart {
   color: red;
 }
@@ -58,9 +57,15 @@ html {
   right: 0.7rem;
 }
 
+.wrap-immobile-card-container:hover .immobile-content-like {
+  top: 0.5rem;
+  left: 1rem;
+}
+
 /* card immobile body */
 .body-container {
   padding: 0.5rem;
+  width: 100% !important;
 }
 
 .body-container h2 {
@@ -68,8 +73,27 @@ html {
 }
 
 .immobile-card-body-content span {
-  display: block;
+  /* display: block; */
   font-size: 0.7rem;
+}
+
+/* ! qui */
+.immobile-content-like {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 2;
+  transition: left 0.5s, top 0.5s;
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+}
+
+.sub-container-card-body {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 450px) {
