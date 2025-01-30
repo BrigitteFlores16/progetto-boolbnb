@@ -32,7 +32,7 @@ html {
   border-radius: 12px;
 
   padding: 1rem;
-  width: 12rem;
+  width: 15rem;
   transition: padding 0.5s;
 }
 
@@ -348,8 +348,8 @@ html {
 
 .main-container-card {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  /* justify-content: center; */
 }
 
 .cuore-like-container:hover {
