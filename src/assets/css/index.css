@@ -376,6 +376,12 @@ html {
   justify-content: space-between;
 }
 
+.main-container-card::after {
+  content: "";
+  width: 12rem;
+  flex-grow: 1;
+}
+
 .main-container-card .wrap-immobile-card-container {
   width: 15rem;
 }
