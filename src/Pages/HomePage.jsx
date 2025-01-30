@@ -128,7 +128,7 @@ export default function HomePage() {
       });
     colorHeart == "" && setColorHeart("red-heart");
 
-    ajaxShow();
+    handleFetchImmobili();
   };
 
   return (
