@@ -154,6 +154,7 @@ export default function HomePage() {
         </div>
 
         {/* carousel */}
+        <Link></Link>
         <div className="carousel-main-container">
           <h3 className="top-5-title">Top 5 B&B</h3>
           <Carousel

@@ -247,10 +247,6 @@ html {
     display: none;
   }
 
-  .top-five-bnb {
-    justify-content: center;
-  }
-
   .carousel-main-container {
     display: none;
   }
@@ -264,6 +260,12 @@ html {
 
   .mobile-bg {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .top-five-bnb {
+    justify-content: center;
   }
 }
 
