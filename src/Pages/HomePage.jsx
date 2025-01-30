@@ -50,15 +50,17 @@ export default function HomePage() {
     filterType
   ) => {
     console.log(
-      `http://localhost:3000/api/immobili/?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
+      `http://localhost:3000/api/immobili/?city=${filterCity}&address=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}`
     );
 
     await fetch(
       `http://localhost:3000/api/immobili/?city=${
         filterCity ? filterCity : ""
-      }&rooms=${filterRooms ? filterRooms : ""}&beds=${
-        filterBeds ? filterBeds : ""
-      }&type=${filterType ? filterType : ""}`
+      }&address=${filterCity ? filterCity : ""}&rooms=${
+        filterRooms ? filterRooms : ""
+      }&beds=${filterBeds ? filterBeds : ""}&type=${
+        filterType ? filterType : ""
+      }`
     )
       // FILTERS
       //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
@@ -238,13 +240,16 @@ export default function HomePage() {
                     <div className="">
                       <h2>La nostra compagnia</h2>
                       <span>
-                      Siamo un team appassionato che mette al centro la qualità e la soddisfazione dei nostri clienti. 
-                      Il nostro obiettivo è offrirti un’esperienza di soggiorno unica, 
-                      con una selezione di case vacanze curate nei minimi dettagli. 
-                      Grazie alla nostra esperienza nel settore, garantiamo un servizio affidabile, 
-                      trasparente e sempre disponibile per rispondere a ogni tua esigenza. 
-                      Che tu stia cercando un rifugio in montagna, una villa sul mare o un appartamento in città, 
-                      troverai la soluzione perfetta per te!
+                        Siamo un team appassionato che mette al centro la
+                        qualità e la soddisfazione dei nostri clienti. Il nostro
+                        obiettivo è offrirti un’esperienza di soggiorno unica,
+                        con una selezione di case vacanze curate nei minimi
+                        dettagli. Grazie alla nostra esperienza nel settore,
+                        garantiamo un servizio affidabile, trasparente e sempre
+                        disponibile per rispondere a ogni tua esigenza. Che tu
+                        stia cercando un rifugio in montagna, una villa sul mare
+                        o un appartamento in città, troverai la soluzione
+                        perfetta per te!
                       </span>
                     </div>
                   </div>
@@ -252,12 +257,15 @@ export default function HomePage() {
                   <div className="col-12 col-sm-6 order-3 order-sm-2 d-sm-flex flex-column align-items-end justify-content-center">
                     <h2>I nostri affittuari</h2>
                     <span className="text-end">
-                    Collaboriamo con proprietari affidabili e professionali per offrirti solo le migliori strutture. 
-                    Ogni casa è attentamente selezionata e verificata per garantire comfort, 
-                    pulizia e sicurezza. Inoltre, i nostri affittuari si impegnano a fornire un'accoglienza calorosa e un servizio attento, 
-                    così potrai sentirti a casa anche lontano da casa. 
-                    Leggi le recensioni di altri ospiti e prenota in totale serenità, 
-                    sapendo di scegliere una struttura di qualità con un host fidato.
+                      Collaboriamo con proprietari affidabili e professionali
+                      per offrirti solo le migliori strutture. Ogni casa è
+                      attentamente selezionata e verificata per garantire
+                      comfort, pulizia e sicurezza. Inoltre, i nostri affittuari
+                      si impegnano a fornire un'accoglienza calorosa e un
+                      servizio attento, così potrai sentirti a casa anche
+                      lontano da casa. Leggi le recensioni di altri ospiti e
+                      prenota in totale serenità, sapendo di scegliere una
+                      struttura di qualità con un host fidato.
                     </span>
                   </div>
 
@@ -278,11 +286,15 @@ export default function HomePage() {
                   <div className="col-12 col-sm-6 order-5 d-flex flex-column align-items-start justify-content-center">
                     <h2>Pagamenti sicuri</h2>
                     <span>
-                    La sicurezza nelle transazioni è una nostra priorità assoluta. 
-                    Offriamo metodi di pagamento protetti, con transazioni crittografate e sistemi antifrode, 
-                    così da garantire la massima tranquillità ai nostri clienti. 
-                    Inoltre, disponiamo di politiche di cancellazione flessibili e assistenza dedicata per risolvere qualsiasi problema legato ai pagamenti. 
-                    Prenota con fiducia, sapendo che ogni transazione è gestita con la massima sicurezza e trasparenza.
+                      La sicurezza nelle transazioni è una nostra priorità
+                      assoluta. Offriamo metodi di pagamento protetti, con
+                      transazioni crittografate e sistemi antifrode, così da
+                      garantire la massima tranquillità ai nostri clienti.
+                      Inoltre, disponiamo di politiche di cancellazione
+                      flessibili e assistenza dedicata per risolvere qualsiasi
+                      problema legato ai pagamenti. Prenota con fiducia, sapendo
+                      che ogni transazione è gestita con la massima sicurezza e
+                      trasparenza.
                     </span>
                   </div>
                 </div>
