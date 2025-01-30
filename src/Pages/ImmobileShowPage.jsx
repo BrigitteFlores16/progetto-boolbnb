@@ -55,6 +55,8 @@ export default function ImmobileShowPage() {
         console.log("like aggiunto");
       });
     colorHeart == "" && setColorHeart("red-heart");
+
+    ajaxShow();
   };
 
   const handleReviewChange = (e) => {
