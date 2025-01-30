@@ -150,7 +150,10 @@ export default function HomePage() {
                 );
               })}
           </div>
-          <h3 className="top-5-title-absolute">Top 5 B&B</h3>
+          <h3 className="top-5-title-absolute">
+            <i class="fa-solid fa-bolt"></i>Top 5 B&B
+            <i class="fa-solid fa-bolt"></i>
+          </h3>
         </div>
 
         {/* carousel */}
