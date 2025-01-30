@@ -24,6 +24,17 @@ export default function ImmobileShowPage() {
   });
 
   const [colorHeart, setColorHeart] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    window.location.reload();
+  };
+  const handleShowModal = () => setShowModal(true);
+
+  const handleCloseConfirmModal = () => setShowConfirmModal(false);
+  const handleShowConfirmModal = () => setShowConfirmModal(true);
 
   // INIT USE-EFFECT
   useEffect(() => {
@@ -66,6 +77,10 @@ export default function ImmobileShowPage() {
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();
+    handleShowConfirmModal();
+  };
+
+  const confirmReviewSubmit = () => {
     const reviewData = {
       nome: newReview.nome,
       id_immobile: id,
@@ -88,7 +103,8 @@ export default function ImmobileShowPage() {
         }
       })
       .then((data) => {
-        window.location.reload();
+        handleCloseConfirmModal();
+        handleShowModal();
       })
       .catch((error) => {
         console.log("Error while submitting review:", error);
@@ -282,6 +298,77 @@ export default function ImmobileShowPage() {
           </form>
         </div>
       </div>
+
+      {showConfirmModal && (
+        <div
+          className="modal fade show d-flex align-items-center justify-content-center"
+          tabIndex="-1"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content bg-light card-messaggio-border">
+              <div className="modal-header">
+                <h5 className="modal-title">Conferma invio recensione</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleCloseConfirmModal}
+                ></button>
+              </div>
+              <div className="modal-body text-dark">
+                <p>Sei sicuro di voler inviare questa recensione?</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={handleCloseConfirmModal}
+                >
+                  Annulla
+                </button>
+                <button
+                  type="button"
+                  className="btn card-messaggio-formrecensioni text-white"
+                  onClick={confirmReviewSubmit}
+                >
+                  Conferma
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showModal && (
+        <div
+          className="modal fade show d-flex align-items-center justify-content-center"
+          tabIndex="-1"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content bg-light card-messaggio-border">
+              <div className="modal-header">
+                <h5 className="modal-title">Recensione inviata</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleCloseModal}
+                ></button>
+              </div>
+              <div className="modal-body text-dark">
+                <p>La tua recensione è stata inviata con successo!</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn card-messaggio-formrecensioni text-white"
+                  onClick={handleCloseModal}
+                >
+                  Chiudi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
