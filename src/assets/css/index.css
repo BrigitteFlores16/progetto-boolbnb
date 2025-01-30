@@ -1,6 +1,7 @@
 html {
   scroll-behavior: auto !important;
 }
+cuore-like-container immobile-img-heart
 
 /* * IMMOBILE CARD CSS */
 .immobile-card-container {
@@ -52,6 +53,20 @@ html {
   color: red;
 }
 
+.heart-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+}
+
+.heart-container:hover .immobile-img-heart {
+  cursor: pointer;
+  color: white;
+  text-shadow: 0px 0px 20px red;
+}
+
 .wrap-immobile-card-container:hover .cuore-like-container {
   top: 0.5rem;
   right: 0.7rem;
@@ -60,6 +75,25 @@ html {
 .wrap-immobile-card-container:hover .immobile-content-like {
   top: 0.5rem;
   left: 1rem;
+}
+
+.immobile-img-heart {
+  color: gray;
+}
+
+.num-like-container {
+  color: black;
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.red-heart {
+  color: red;
+}
+
+.img-show-page {
+  max-height: 650px;
+  object-fit: contain !important;
 }
 
 /* card immobile body */
@@ -75,20 +109,6 @@ html {
 .immobile-card-body-content span {
   /* display: block; */
   font-size: 0.7rem;
-}
-
-/* ! qui */
-.immobile-content-like {
-  position: absolute;
-  top: 1.5rem;
-  left: 2rem;
-  z-index: 2;
-  transition: left 0.5s, top 0.5s;
-
-  background-color: rgba(255, 255, 255, 0.6);
-
-  padding: 0.1rem 0.4rem;
-  border-radius: 10px;
 }
 
 .sub-container-card-body {
@@ -384,25 +404,6 @@ html {
 
 .main-container-card .wrap-immobile-card-container {
   width: 15rem;
-}
-
-.cuore-like-container:hover {
-  cursor: pointer;
-  color: white;
-}
-
-.red-heart {
-  color: red;
-}
-
-.show-page-container .cuore-like-container:hover .immobile-img-heart {
-  cursor: pointer;
-  text-shadow: 0px 0px 20px red;
-}
-
-.img-show-page {
-  max-height: 650px;
-  object-fit: contain !important;
 }
 
 /* ? ------------------------- */
