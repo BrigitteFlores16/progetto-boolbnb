@@ -748,3 +748,16 @@ form .submitNewImmobileButton:hover {
   border: 2px solid #dd0e63;
   margin: 2rem 0;
 }
+
+.card-messaggio-formrecensioni {
+  background-color: #dd0e63 !important;
+  border: 2px solid #dd0e63 !important;
+}
+
+.card-messaggio-text {
+  color: #dd0e63 !important;
+}
+
+.card-messaggio-border {
+  border: 2px solid #dd0e63 !important;
+}
