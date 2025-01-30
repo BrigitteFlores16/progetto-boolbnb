@@ -333,6 +333,12 @@ html {
   border-radius: 20px;
 }
 
+.top-5-title-absolute i {
+  margin: 1rem;
+  color: gold;
+  margin: 0 0.5rem;
+}
+
 .top-five-bnb .body-container span {
   display: inline-block;
   margin-right: 1rem;
