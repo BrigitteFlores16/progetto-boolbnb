@@ -21,10 +21,10 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i className="menu-icon fa-solid fa-bars me-2"></i>
-            <div className="user-icon d-flex justify-content-center align-items-center">
+            <i className="menu-icon fa-solid fa-bars"></i>
+            {/* <div className="user-icon d-flex justify-content-center align-items-center">
               <i className="fa-solid fa-user"></i>
-            </div>
+            </div> */}
           </button>
           <div
             className="collapse navbar-collapse justify-content-end "
@@ -42,11 +42,11 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link me-5" to="/new">
+                <NavLink className="nav-link" to="/new">
                   Inserisci immobile
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   className="nav-link disabled"
                   to="/"
@@ -54,7 +54,7 @@ export default function Navbar() {
                 >
                   Login
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
