@@ -55,9 +55,12 @@ export default function HomePage() {
     );
 
     await fetch(
-      `http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ""
-      }&address=${filterCity ? filterCity : ""}&rooms=${filterRooms ? filterRooms : ""
-      }&beds=${filterBeds ? filterBeds : ""}&type=${filterType ? filterType : ""
+      `http://localhost:3000/api/immobili/?city=${
+        filterCity ? filterCity : ""
+      }&address=${filterCity ? filterCity : ""}&rooms=${
+        filterRooms ? filterRooms : ""
+      }&beds=${filterBeds ? filterBeds : ""}&type=${
+        filterType ? filterType : ""
       }`
     )
       // FILTERS
@@ -120,8 +123,7 @@ export default function HomePage() {
       method: "PATCH",
     })
       .then((res) => res.json())
-      .then((data) => {
-      });
+      .then((data) => {});
     colorHeart == "" && setColorHeart("red-heart");
 
     handleFetchImmobili();
@@ -172,7 +174,6 @@ export default function HomePage() {
         </div>
 
         {/* carousel */}
-        <Link></Link>
         <div className="carousel-main-container">
           <h3 className="top-5-title">Top 5 B&B</h3>
           <Carousel
@@ -190,6 +191,7 @@ export default function HomePage() {
                 return (
                   <>
                     <CuoreLike
+                      key={el && el.id}
                       functionLike={() => handleButtonLike(el.id)}
                       colorHeart={colorHeart}
                       isAbsolute={true}
