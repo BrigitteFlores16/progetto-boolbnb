@@ -60,6 +60,7 @@ html {
   margin: 0.5rem;
   border-radius: 12px;
 
+  flex-grow: 1;
   padding: 1rem;
   width: 12rem;
   transition: padding 0.5s;
@@ -177,6 +178,12 @@ html {
 
   .top-five-bnb-container {
     display: none;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .wrap-immobile-card-container {
+    flex-grow: 1;
   }
 }
 
