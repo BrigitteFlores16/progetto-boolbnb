@@ -53,10 +53,10 @@ export default function Searchbar({
   const filterResults = () => {
     isHidden
       ? navigate("/search", {
-          state: {
-            filter: filterCity,
-          },
-        })
+        state: {
+          filter: filterCity,
+        },
+      })
       : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
   const clearFilters = () => {
@@ -73,7 +73,7 @@ export default function Searchbar({
     await fetch(`http://localhost:3000/api/tipologie-immobile/`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setTipologieImmobile(data.tipologieImmobile);
       });
   };
@@ -144,10 +144,10 @@ export default function Searchbar({
               {tipologieImmobile.lenght == 0
                 ? ""
                 : tipologieImmobile.map((tipologia) => (
-                    <option key={tipologia.nome} value={tipologia.nome}>
-                      {tipologia.nome}
-                    </option>
-                  ))}
+                  <option key={tipologia.nome} value={tipologia.nome}>
+                    {tipologia.nome}
+                  </option>
+                ))}
             </select>
           </div>
           <div

@@ -55,19 +55,16 @@ export default function HomePage() {
     );
 
     await fetch(
-      `http://localhost:3000/api/immobili/?city=${
-        filterCity ? filterCity : ""
-      }&address=${filterCity ? filterCity : ""}&rooms=${
-        filterRooms ? filterRooms : ""
-      }&beds=${filterBeds ? filterBeds : ""}&type=${
-        filterType ? filterType : ""
+      `http://localhost:3000/api/immobili/?city=${filterCity ? filterCity : ""
+      }&address=${filterCity ? filterCity : ""}&rooms=${filterRooms ? filterRooms : ""
+      }&beds=${filterBeds ? filterBeds : ""}&type=${filterType ? filterType : ""
       }`
     )
       // FILTERS
       //   ?city=${filterCity}&rooms=${filterRooms}&beds=${filterBeds}&type=${filterType}
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
 
         setFetchDataImmobili(data.immobili);
       });
@@ -84,7 +81,7 @@ export default function HomePage() {
   const handleFindTopFiveImmobili = (data) => {
     let copyFetchDataImmobili = [...data];
     const newTopFiveBnB = [];
-    console.log(fetchDataImmobili);
+    // console.log(fetchDataImmobili);
 
     for (let i = 0; i < 5; i++) {
       let maxVoto = 0;
@@ -124,7 +121,6 @@ export default function HomePage() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("like aggiunto");
       });
     colorHeart == "" && setColorHeart("red-heart");
 
@@ -158,7 +154,7 @@ export default function HomePage() {
           <div className="top-five-bnb">
             {topFiveBnB?.length &&
               topFiveBnB.map((el, i) => {
-                console.log(topFiveBnB);
+                // console.log(topFiveBnB);
                 return (
                   <ImmobileCard
                     key={i}

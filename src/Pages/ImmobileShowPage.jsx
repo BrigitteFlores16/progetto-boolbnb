@@ -51,7 +51,7 @@ export default function ImmobileShowPage() {
       .then((data) => {
         setImmobile(data);
         console.log("AJAX SHOW request: at http://localhost:3000/" + id);
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.log("Error while fetching content");
@@ -63,7 +63,7 @@ export default function ImmobileShowPage() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("like aggiunto");
+        // console.log("like aggiunto");
       });
     colorHeart == "" && setColorHeart("red-heart");
 
@@ -213,10 +213,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-                <div key={index} className="col-md-6 mb-4">
-                  <CardRecensione recensione={recensione} />
-                </div>
-              ))
+              <div key={index} className="col-md-6 mb-4">
+                <CardRecensione recensione={recensione} />
+              </div>
+            ))
             : ""}
         </div>
 

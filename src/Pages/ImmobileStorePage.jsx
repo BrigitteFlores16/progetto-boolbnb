@@ -22,7 +22,7 @@ export default function ImmobileStorePage() {
     await fetch(`http://localhost:3000/api/tipologie-immobile/`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setTipologieImmobile(data.tipologieImmobile);
       });
   };
@@ -101,10 +101,10 @@ export default function ImmobileStorePage() {
                     {tipologieImmobile.lenght == 0
                       ? ""
                       : tipologieImmobile.map((tipologia) => (
-                          <option key={tipologia.nome} value={tipologia.id}>
-                            {tipologia.nome}
-                          </option>
-                        ))}
+                        <option key={tipologia.nome} value={tipologia.id}>
+                          {tipologia.nome}
+                        </option>
+                      ))}
                   </select>
                 </div>
               </div>
