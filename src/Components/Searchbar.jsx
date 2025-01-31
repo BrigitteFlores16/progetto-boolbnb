@@ -53,10 +53,10 @@ export default function Searchbar({
   const filterResults = () => {
     isHidden
       ? navigate("/search", {
-        state: {
-          filter: filterCity,
-        },
-      })
+          state: {
+            filter: filterCity,
+          },
+        })
       : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
   const clearFilters = () => {
@@ -82,7 +82,13 @@ export default function Searchbar({
   return (
     <>
       <div className="container mt-5 d-flex justify-content-center">
-        <div className="search-bar align-items-center justify-content-between row">
+        <div
+          className={
+            isHidden
+              ? "search-bar align-items-center justify-content-between row"
+              : "search-bar align-items-center pt-4 pt-lg-2 justify-content-between row"
+          }
+        >
           <div
             className={
               isHidden ? "form-group col" : "form-group col-12 col-lg-3"
@@ -144,10 +150,10 @@ export default function Searchbar({
               {tipologieImmobile.lenght == 0
                 ? ""
                 : tipologieImmobile.map((tipologia) => (
-                  <option key={tipologia.nome} value={tipologia.nome}>
-                    {tipologia.nome}
-                  </option>
-                ))}
+                    <option key={tipologia.nome} value={tipologia.nome}>
+                      {tipologia.nome}
+                    </option>
+                  ))}
             </select>
           </div>
           <div
