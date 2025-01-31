@@ -166,8 +166,8 @@ export default function HomePage() {
               })}
           </div>
           <h3 className="top-5-title-absolute">
-            <i class="fa-solid fa-bolt"></i>Top 5 B&B
-            <i class="fa-solid fa-bolt"></i>
+            <i className="fa-solid fa-bolt"></i>Top 5 B&B
+            <i className="fa-solid fa-bolt"></i>
           </h3>
         </div>
 
