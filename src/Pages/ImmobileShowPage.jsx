@@ -213,10 +213,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-              <div key={index} className="col-md-6 mb-4">
-                <CardRecensione recensione={recensione} />
-              </div>
-            ))
+                <div key={index} className="col-md-6 mb-4">
+                  <CardRecensione recensione={recensione} />
+                </div>
+              ))
             : ""}
         </div>
 
@@ -238,7 +238,7 @@ export default function ImmobileShowPage() {
                   required
                 />
               </div>
-              <div className="col-4 mb-3">
+              <div className="col-12 col-md-4 mb-3">
                 <label htmlFor="votoInput" className="form-label">
                   Voto
                 </label>
@@ -254,7 +254,7 @@ export default function ImmobileShowPage() {
                   required
                 />
               </div>
-              <div className="col-4 mb-3">
+              <div className="col-12 col-md-4 mb-3">
                 <label htmlFor="nomeInput" className="form-label">
                   Nome
                 </label>
@@ -268,9 +268,9 @@ export default function ImmobileShowPage() {
                   required
                 />
               </div>
-              <div className="col-4 mb-3">
+              <div className="col-12 col-md-4 mb-3">
                 <label htmlFor="numGiorniInput" className="form-label">
-                  Numero di giorni di permanenza
+                  Giorni di permanenza
                 </label>
                 <input
                   value={newReview.num_giorni_di_permanenza}
