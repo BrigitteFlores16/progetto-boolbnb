@@ -165,7 +165,7 @@ export default function ImmobileShowPage() {
           </div>
         </div>
 
-        <h2 className="h5 mt-5">
+        <h2 className="h5 mt-2">
           {immobile.città}, {immobile.indirizzo}
         </h2>
         <div className="row">
@@ -213,10 +213,10 @@ export default function ImmobileShowPage() {
         <div className="row">
           {immobile.recensioni
             ? immobile.recensioni.map((recensione, index) => (
-              <div key={index} className="col-md-6 mb-4">
-                <CardRecensione recensione={recensione} />
-              </div>
-            ))
+                <div key={index} className="col-md-6 mb-4">
+                  <CardRecensione recensione={recensione} />
+                </div>
+              ))
             : ""}
         </div>
 
