@@ -16,6 +16,8 @@ const defaultFormFields = {
 export default function ImmobileStorePage() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const [tipologieImmobile, setTipologieImmobile] = useState([]);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   //FETCH TIPOLOGIE IMMOBILE
   const handleFetchTipologieImmobile = async () => {
@@ -40,7 +42,10 @@ export default function ImmobileStorePage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    handleShowConfirmModal();
+  };
 
+  const confirmFormSubmit = () => {
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -51,23 +56,34 @@ export default function ImmobileStorePage() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        handleCloseConfirmModal();
+        handleShowModal();
       });
 
     setFormFields(defaultFormFields);
   };
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+    window.location.reload();
+  };
+  const handleShowModal = () => setShowModal(true);
+
+  const handleCloseConfirmModal = () => setShowConfirmModal(false);
+  const handleShowConfirmModal = () => setShowConfirmModal(true);
+
   return (
     <>
       <div className="container">
         <div className="formStore">
-          <h1 className="h3 mb-5">Inserisci un nuovo immobile da affittare</h1>
+          <h1 className="h3 mb-5">Inserisci un nuovo alloggio da affittare</h1>
 
           <form onSubmit={handleFormSubmit}>
             <div className="row">
               <div className="col-12 col-sm-6 col-md-8">
                 <div className="mb-3">
                   <label htmlFor="titoloInput" className="form-label">
-                    Nome immobile
+                    Nome alloggio
                   </label>
                   <input
                     value={formFields.titolo}
@@ -79,7 +95,7 @@ export default function ImmobileStorePage() {
                     required
                   />
                   <div id="titleHelp" className="form-text">
-                    Inserisci un titolo riepilogativo che descriva l'immobile
+                    Inserisci un titolo riepilogativo che descriva l'alloggio
                   </div>
                 </div>
               </div>
@@ -101,10 +117,10 @@ export default function ImmobileStorePage() {
                     {tipologieImmobile.lenght == 0
                       ? ""
                       : tipologieImmobile.map((tipologia) => (
-                        <option key={tipologia.nome} value={tipologia.id}>
-                          {tipologia.nome}
-                        </option>
-                      ))}
+                          <option key={tipologia.nome} value={tipologia.id}>
+                            {tipologia.nome}
+                          </option>
+                        ))}
                   </select>
                 </div>
               </div>
@@ -251,6 +267,77 @@ export default function ImmobileStorePage() {
           </form>
         </div>
       </div>
+
+      {showConfirmModal && (
+        <div
+          className="modal fade show d-flex align-items-center justify-content-center"
+          tabIndex="-1"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content bg-light card-messaggio-border">
+              <div className="modal-header">
+                <h5 className="modal-title">Conferma invio alloggio</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleCloseConfirmModal}
+                ></button>
+              </div>
+              <div className="modal-body text-dark">
+                <p>Sei sicuro di voler pubblicare questo alloggio?</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={handleCloseConfirmModal}
+                >
+                  Annulla
+                </button>
+                <button
+                  type="button"
+                  className="btn card-messaggio-formrecensioni text-white"
+                  onClick={confirmFormSubmit}
+                >
+                  Conferma
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showModal && (
+        <div
+          className="modal fade show d-flex align-items-center justify-content-center"
+          tabIndex="-1"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content bg-light card-messaggio-border">
+              <div className="modal-header">
+                <h5 className="modal-title">Alloggio inviato</h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleCloseModal}
+                ></button>
+              </div>
+              <div className="modal-body text-dark">
+                <p>Il tuo alloggio è stato pubblicato con successo!</p>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn card-messaggio-formrecensioni text-white"
+                  onClick={handleCloseModal}
+                >
+                  Chiudi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

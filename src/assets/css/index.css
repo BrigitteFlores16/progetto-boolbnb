@@ -127,8 +127,8 @@ html {
 }
 
 .img-show-page {
-  max-height: 650px;
-  object-fit: contain !important;
+  max-height: 500px;
+  object-fit: cover !important;
 }
 
 /* card immobile body */

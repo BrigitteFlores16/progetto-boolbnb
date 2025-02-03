@@ -43,7 +43,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/new">
-                  Inserisci immobile
+                  Inserisci alloggio
                 </NavLink>
               </li>
               {/* <li className="nav-item">
