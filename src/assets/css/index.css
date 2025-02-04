@@ -384,6 +384,10 @@ html {
   margin-top: 6rem;
 }
 
+.top-five-bnb-container h2 {
+  margin-bottom: 1rem;
+}
+
 .top-five-bnb {
   display: flex;
   overflow-y: auto;
@@ -722,7 +726,7 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container>img {
+.image-container > img {
   object-fit: cover;
 }
 
@@ -885,15 +889,14 @@ form .submitNewImmobileButton:hover {
   }
 }
 
-
 @media screen and (max-width: 550px) {
   .cardProprietario.scheda {
-    padding: .7rem;
-    gap: .5rem;
+    padding: 0.7rem;
+    gap: 0.5rem;
   }
 
   .cardProprietario.recapiti {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 
   #iconeRecapitiDettagli {
@@ -901,6 +904,6 @@ form .submitNewImmobileButton:hover {
   }
 
   .cardProprietario.cardProprietario.recapitiDettagli {
-    gap: .5rem;
+    gap: 0.5rem;
   }
 }
