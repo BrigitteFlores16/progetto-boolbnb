@@ -209,11 +209,11 @@ export default function HomePage() {
                       <h2 className="text-center py-4">{el && el.titolo}</h2>
 
                       <div className="immobile-card-body-content d-flex justify-content-between px-2">
-                        <span className="immobile-content-like">
+                        {/* <span className="immobile-content-like">
                           <i className="fa-solid fa-heart cardComforts icona"></i>{" "}
                           {el && el.num_likes}
-                        </span>{" "}
-                        <br />
+                        </span>{" "} */}
+                        {/* <br /> */}
                         <span className="immobile-content-adress">
                           <i className="fa-solid fa-map-pin cardComforts icona"></i>{" "}
                           {el && el.indirizzo}
