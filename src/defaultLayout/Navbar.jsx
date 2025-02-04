@@ -73,7 +73,7 @@ export default function Navbar() {
               {isLogged == true && (
                 <li className="nav-item" onClick={handleClickUserMenu}>
                   <NavLink className={`nav-link`} to="#" aria-disabled="true">
-                    {loggedUser.name}
+                    <strong>{loggedUser.name}</strong>
                   </NavLink>
                 </li>
               )}
