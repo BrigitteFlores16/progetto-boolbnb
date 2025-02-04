@@ -853,3 +853,14 @@ form .submitNewImmobileButton:hover {
     right: 2rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .footer .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .d-flex > div {
+    margin-bottom: 1rem;
+  }
+}

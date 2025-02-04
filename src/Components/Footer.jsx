@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="bg-light py-4 border-top">
       <div className="container">
-        <div className="d-flex justify-content-between align-items-center text-black px-3">
-          <div>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center text-black px-3">
+          <div className="text-center text-md-start mb-3 mb-md-0">
             © 2025 Boolb&b, Inc.
             <a href="#" className="text-black text-decoration-none mx-2">
               Privacy
@@ -19,7 +19,7 @@ const Footer = () => {
               Dettagli dell'azienda
             </a>
           </div>
-          <div>
+          <div className="text-center text-md-end">
             <a href="#" className="mx-2 text-black text-decoration-none">
               <i className="fa-solid fa-globe"></i> Italiano (IT)
             </a>
