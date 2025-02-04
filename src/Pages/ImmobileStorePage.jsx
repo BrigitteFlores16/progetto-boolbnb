@@ -139,6 +139,8 @@ export default function ImmobileStorePage() {
                     id="stanzeInput"
                     name="num_stanze"
                     required
+                    min="1"
+                    max="50"
                   />
                 </div>
               </div>
@@ -155,6 +157,8 @@ export default function ImmobileStorePage() {
                     id="lettiInput"
                     name="num_letti"
                     required
+                    min="1"
+                    max="50"
                   />
                 </div>
               </div>
@@ -171,6 +175,8 @@ export default function ImmobileStorePage() {
                     id="bagniInput"
                     name="num_bagni"
                     required
+                    min="1"
+                    max="50"
                   />
                 </div>
               </div>
@@ -188,6 +194,8 @@ export default function ImmobileStorePage() {
                     id="mqInput"
                     name="mq"
                     required
+                    min="1"
+                    max="50000"
                   />
                 </div>
               </div>

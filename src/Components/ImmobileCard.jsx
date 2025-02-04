@@ -13,8 +13,7 @@ export default function ImmobileCard({ immobile, refreshData }) {
       method: "PATCH",
     })
       .then((res) => res.json())
-      .then((data) => {
-      });
+      .then((data) => {});
     // colorHeart == "" ? setColorHeart("red-heart") : setColorHeart("");
     colorHeart == "" && setColorHeart("red-heart");
 
@@ -46,7 +45,7 @@ export default function ImmobileCard({ immobile, refreshData }) {
 
         {/* body */}
         <div className="body-container">
-          <h2>{immobile && immobile.titolo}</h2>
+          <h2 className="immobile-card-title">{immobile && immobile.titolo}</h2>
 
           <div className="immobile-card-body-content">
             {/* <span className="immobile-content-like">

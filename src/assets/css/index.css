@@ -141,6 +141,10 @@ html {
   font-size: 1rem;
 }
 
+.immobile-card-title {
+  height: 39px;
+}
+
 .immobile-card-body-content span {
   /* display: block; */
   font-size: 0.7rem;
@@ -830,6 +834,17 @@ form .submitNewImmobileButton:hover {
 
 .logout {
   cursor: pointer;
+}
+
+.login-page-container .btn {
+  background-color: #dd0e63;
+  border: 1px solid transparent;
+}
+
+.login-page-container .btn:hover {
+  background-color: transparent;
+  color: #dd0e63;
+  border: 1px solid transparent;
 }
 
 @media screen and (max-width: 991px) {
