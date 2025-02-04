@@ -26,7 +26,7 @@ export default function CardProprietario({
 
         {/* CONTATTI */}
         <div className="cardProprietario recapiti">
-          <div className="cardProprietario recapitiDettagli">
+          <div className="cardProprietario recapitiDettagli" id='iconeRecapitiDettagli'>
             <p className="cardProprietario contatti">
               <i className="fa-solid fa-phone cardProprietario contattiInfo"></i>{" "}
               Chiama
@@ -38,10 +38,7 @@ export default function CardProprietario({
           </div>
 
           <div className="cardProprietario recapitiDettagli">
-            <a
-              className="cardProprietario contattiInfo"
-              href={`tel:${telefono}`}
-            >
+            <a className="cardProprietario contattiInfo" href={`tel:${telefono}`}>
               {telefono}
             </a>
             <a

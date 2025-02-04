@@ -32,6 +32,7 @@ html {
   background-color: white;
   font-size: 1.4rem;
 }
+
 .like-show-page-container span {
   font-size: 1rem;
 }
@@ -723,7 +724,7 @@ nav .nav-toggler:hover {
 
 /* DETTAGLIO IMMOBILE */
 
-.image-container > img {
+.image-container>img {
   object-fit: cover;
 }
 
@@ -854,13 +855,22 @@ form .submitNewImmobileButton:hover {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .footer .d-flex {
-    flex-direction: column;
-    align-items: center;
+
+@media screen and (max-width: 550px) {
+  .cardProprietario.scheda {
+    padding: .7rem;
+    gap: .5rem;
   }
 
-  .footer .d-flex > div {
-    margin-bottom: 1rem;
+  .cardProprietario.recapiti {
+    gap: .5rem;
+  }
+
+  #iconeRecapitiDettagli {
+    display: none;
+  }
+
+  .cardProprietario.cardProprietario.recapitiDettagli {
+    gap: .5rem;
   }
 }
