@@ -889,6 +889,12 @@ form .submitNewImmobileButton:hover {
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .main-container-card::after {
+    flex-grow: 1;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .cardProprietario.scheda {
     padding: 0.7rem;
