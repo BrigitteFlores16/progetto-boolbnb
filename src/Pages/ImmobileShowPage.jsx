@@ -165,7 +165,7 @@ export default function ImmobileShowPage() {
           </div>
         </div>
 
-        <h2 className="h5 mt-2">
+        <h2 className="h5 mt-5 mt-lg-2">
           {immobile.città}, {immobile.indirizzo}
         </h2>
         <div className="row">
