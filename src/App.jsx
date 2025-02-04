@@ -5,6 +5,7 @@ import ImmobileShowPage from "./Pages/ImmobileShowPage";
 import ImmobileStorePage from "./Pages/ImmobileStorePage";
 import SearchPage from "./Pages/SearchPage";
 import NotFound from "./Pages/NotFound";
+import LoginPage from "./Pages/LoginPage"; // importo la pagina di login
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/:id" Component={ImmobileShowPage} />
           <Route path="/search" Component={SearchPage} />
           <Route path="/new" Component={ImmobileStorePage} />
+          <Route path="/login" Component={LoginPage} />
 
           <Route path="*" Component={NotFound}></Route>
         </Route>

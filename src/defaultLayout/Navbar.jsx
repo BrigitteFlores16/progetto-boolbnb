@@ -1,6 +1,27 @@
 import { Link, NavLink } from "react-router-dom";
+// * importo il context e il bd utenti
+import { loginContext } from "../assets/contexts/loginContext";
+import { useState, useEffect } from "react";
+import { users } from "../assets/db";
 
 export default function Navbar() {
+  // * handleClickUserMenu
+  const [isActive, setIsActive] = useState(false);
+  const handleClickUserMenu = () => {
+    isActive ? setIsActive(false) : setIsActive(true);
+  };
+
+  // * handleLogout
+  const handleLogout = () => {
+    setIsLogged(false);
+    setLoggedUser();
+    setIsActive(false);
+  };
+
+  // * destrutturo email e password dal context
+  let { email, password, isLogged, setIsLogged, loggedUser, setLoggedUser } =
+    loginContext();
+
   return (
     <>
       <nav className="navbar fixed-top navbar-expand-lg bg-white border-bottom border-dark-subtle py-4 ">
@@ -41,21 +62,65 @@ export default function Navbar() {
                   Ricerca
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* __________cambiato classe elemento____________ */}
+              <li className={`nav-item ${isLogged ? "" : "d-none"}`}>
                 <NavLink className="nav-link" to="/new">
                   Inserisci alloggio
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink
-                  className="nav-link disabled"
-                  to="/"
-                  aria-disabled="true"
-                >
-                  Login
-                </NavLink>
-              </li> */}
+
+              {/* ! Login // aggiungo il link alla pagina di login */}
+              {isLogged == true && (
+                <li className="nav-item" onClick={handleClickUserMenu}>
+                  <NavLink className={`nav-link`} to="#" aria-disabled="true">
+                    <strong>{loggedUser.name}</strong>
+                  </NavLink>
+                </li>
+              )}
+              {isLogged == false && (
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    to="/login"
+                    aria-disabled="true"
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              )}
             </ul>
+
+            <div
+              className={`user-menu-container ${isActive ? "" : "d-none"} ${
+                isLogged ? "" : "d-none"
+              }`}
+            >
+              <div className="user-icon d-flex justify-content-center align-items-center">
+                <i className="fa-solid fa-user"></i>
+              </div>
+              <div className="user-menu">
+                <ul>
+                  <li>
+                    <div>
+                      <span>{loggedUser && loggedUser.name}</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span>{loggedUser && loggedUser.email}</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div
+                      className="logout mt-3 text-center"
+                      onClick={handleLogout}
+                    >
+                      <span>Logout</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
