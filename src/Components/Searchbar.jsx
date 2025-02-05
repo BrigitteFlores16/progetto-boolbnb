@@ -53,10 +53,10 @@ export default function Searchbar({
   const filterResults = () => {
     isHidden
       ? navigate("/search", {
-          state: {
-            filter: filterCity,
-          },
-        })
+        state: {
+          filter: filterCity,
+        },
+      })
       : fetchImmobili(filterCity, filterRooms, filterBeds, filterType);
   };
   const clearFilters = () => {
@@ -117,7 +117,7 @@ export default function Searchbar({
               value={filterRooms}
               onChange={onChangeRooms}
               className={isHidden ? "d-none" : "form-control"}
-              min="0"
+              min="1"
               max="255"
             />
           </div>
@@ -135,7 +135,7 @@ export default function Searchbar({
               value={filterBeds}
               onChange={onChangeBeds}
               className={isHidden ? "d-none" : "form-control"}
-              min="0"
+              min="1"
               max="255"
             />
           </div>
@@ -150,10 +150,10 @@ export default function Searchbar({
               {tipologieImmobile.lenght == 0
                 ? ""
                 : tipologieImmobile.map((tipologia) => (
-                    <option key={tipologia.nome} value={tipologia.nome}>
-                      {tipologia.nome}
-                    </option>
-                  ))}
+                  <option key={tipologia.nome} value={tipologia.nome}>
+                    {tipologia.nome}
+                  </option>
+                ))}
             </select>
           </div>
           <div
